@@ -1,0 +1,159 @@
+---
+import Layout from "./Layout.astro";
+import GallerySlider from "../components/GallerySlider.astro";
+
+interface GallerySlide {
+  src: string;
+  alt?: string;
+  caption?: string;
+  location?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  heroSeed: string;
+  distance: string;
+  duration: string;
+  difficulty: string;
+  season: string;
+  contactHref: string;
+  contactLabel: string;
+  gallerySlides: GallerySlide[];
+  equipmentLabel?: string;
+}
+
+const {
+  title,
+  subtitle,
+  heroSeed,
+  distance,
+  duration,
+  difficulty,
+  season,
+  contactHref,
+  contactLabel,
+  gallerySlides,
+  equipmentLabel = "Oprema uključena",
+} = Astro.props;
+---
+
+<Layout title={title}>
+  <!-- Hero -->
+  <section
+    class="relative flex min-h-[75vh] items-end overflow-hidden bg-slate-900"
+  >
+    <img
+      src={`https://picsum.photos/seed/${heroSeed}/1920/1080`}
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-45"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-slate-900/10"
+    >
+    </div>
+    <div class="relative z-10 mx-auto w-full max-w-6xl px-4 pb-16">
+      <p class="mb-3 text-sm font-bold tracking-widest text-teal-400 uppercase">
+        {subtitle}
+      </p>
+      <h1 class="mb-8 text-5xl font-bold text-white md:text-6xl">{title}</h1>
+      <div class="flex flex-wrap gap-3">
+        {
+          [
+            { icon: "📏", label: distance },
+            { icon: "⏱️", label: duration },
+            { icon: "⚡", label: difficulty },
+            { icon: "🌤️", label: season },
+          ].map((stat) => (
+            <div class="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
+              <span>{stat.icon}</span>
+              <span class="text-sm font-medium text-white">{stat.label}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid gap-16 lg:grid-cols-[1fr_300px]">
+      <div>
+        <slot />
+
+        <!-- Gallery -->
+        {
+          gallerySlides.length > 0 && (
+            <section class="mt-12">
+              <h2 class="mb-6 text-2xl font-bold text-slate-900">Galerija</h2>
+              <GallerySlider slides={gallerySlides} autoplay={5000} />
+            </section>
+          )
+        }
+      </div>
+
+      <!-- Sidebar -->
+      <aside>
+        <div
+          class="sticky top-24 rounded-2xl border border-slate-100 bg-slate-50 p-6"
+        >
+          <h3 class="mb-1 text-lg font-bold text-slate-900">{title}</h3>
+          <p class="mb-5 text-sm text-slate-500">{distance} · {duration}</p>
+          <ul class="mb-6 space-y-2.5 text-sm text-slate-600">
+            <li class="flex items-center gap-2">
+              <svg
+                class="h-4 w-4 text-teal-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              {difficulty}
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                class="h-4 w-4 text-teal-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              {season}
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                class="h-4 w-4 text-teal-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              {equipmentLabel}
+            </li>
+          </ul>
+          <a
+            href={contactHref}
+            class="block w-full rounded-lg bg-teal-600 px-6 py-3.5 text-center font-semibold text-white transition-colors hover:bg-teal-500"
+          >
+            {contactLabel}
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>

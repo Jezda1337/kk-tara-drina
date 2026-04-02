@@ -1,0 +1,414 @@
+---
+interface Slide {
+  src: string;
+  alt?: string;
+  caption?: string;
+  location?: string;
+}
+
+interface Props {
+  slides: Slide[];
+  autoplay?: number; // ms, default 5000
+}
+
+const { slides, autoplay = 5000 } = Astro.props;
+const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<section class="gallery-root" id={id} data-autoplay={autoplay}>
+  <!-- Main stage -->
+  <div class="stage" aria-label="Photo gallery">
+    {
+      slides.map((slide, i) => (
+        <div class:list={["slide", { active: i === 0 }]} data-index={i} aria-hidden={i !== 0}>
+          <div class="img-wrap">
+            <img src={slide.src} alt={slide.alt ?? ""} loading={i === 0 ? "eager" : "lazy"} />
+          </div>
+          <div class="caption">
+            <span class="caption-location">{slide.location ?? ""}</span>
+            <p class="caption-text">{slide.caption ?? ""}</p>
+          </div>
+        </div>
+      ))
+    }
+
+    <!-- Arrows -->
+    <button class="arrow arrow-prev" aria-label="Previous slide">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="arrow arrow-next" aria-label="Next slide">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <!-- Slide counter -->
+    <div class="counter">
+      <span class="counter-current">01</span>
+      <span class="counter-sep">/</span>
+      <span class="counter-total">{String(slides.length).padStart(2, "0")}</span>
+    </div>
+  </div>
+
+  <!-- Filmstrip thumbnails -->
+  <div class="filmstrip" role="tablist">
+    <div class="filmstrip-track">
+      {
+        slides.map((slide, i) => (
+          <button
+            class:list={["thumb", { active: i === 0 }]}
+            role="tab"
+            aria-selected={i === 0}
+            aria-label={`Go to slide ${i + 1}`}
+            data-index={i}
+          >
+            <img src={slide.src} alt="" loading="lazy" />
+            <div class="thumb-overlay" />
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="progress-bar" aria-hidden="true">
+    <div class="progress-fill"></div>
+  </div>
+</section>
+
+<style>
+  .gallery-root {
+    --accent: #14b8a6;
+    position: relative;
+    background: #050a0e;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    font-family: system-ui, sans-serif;
+    user-select: none;
+  }
+
+  /* ── Stage ── */
+  .stage {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #070f14;
+  }
+
+  @media (max-width: 640px) {
+    .stage { aspect-ratio: 4 / 3; }
+  }
+
+  /* ── Slides ── */
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+  }
+  .slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .img-wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 8s ease;
+    will-change: transform;
+  }
+  .slide.active .img-wrap img {
+    transform: scale(1.07);
+  }
+
+  /* Dark gradient overlay */
+  .slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to top, rgba(5, 10, 14, 0.85) 0%, rgba(5,10,14,0.1) 50%, transparent 100%),
+      linear-gradient(to right, rgba(5,10,14,0.3) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  /* Film grain overlay */
+  .slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* ── Caption ── */
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 2rem 1.5rem;
+    z-index: 3;
+    transform: translateY(6px);
+    opacity: 0;
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+  }
+  .slide.active .caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .caption-location {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+  .caption-text {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* ── Counter ── */
+  .counter {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 4;
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .counter-current {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  /* ── Arrows ── */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    backdrop-filter: blur(8px);
+  }
+  .arrow:hover {
+    background: rgba(20, 184, 166, 0.25);
+    border-color: rgba(20, 184, 166, 0.5);
+    transform: translateY(-50%) scale(1.08);
+  }
+  .arrow-prev { left: 1.25rem; }
+  .arrow-next { right: 1.25rem; }
+
+  /* ── Filmstrip ── */
+  .filmstrip {
+    background: #06101a;
+    padding: 0.625rem 1rem;
+    overflow: hidden;
+  }
+  .filmstrip-track {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    scroll-snap-type: x mandatory;
+  }
+  .filmstrip-track::-webkit-scrollbar { display: none; }
+
+  .thumb {
+    flex-shrink: 0;
+    width: 72px;
+    height: 48px;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+    scroll-snap-align: start;
+    padding: 0;
+    background: none;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 10, 14, 0.55);
+    transition: opacity 0.2s;
+  }
+  .thumb.active {
+    border-color: var(--accent);
+    transform: scaleY(1.06);
+  }
+  .thumb.active .thumb-overlay {
+    opacity: 0;
+  }
+  .thumb:hover:not(.active) .thumb-overlay {
+    opacity: 0.2;
+  }
+
+  /* ── Progress bar ── */
+  .progress-bar {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transform-origin: left;
+  }
+  .progress-fill.running {
+    transition: width linear;
+  }
+</style>
+
+<script define:vars={{ id, autoplay }}>
+  function initGallery() {
+    const root = document.getElementById(id);
+    if (!root || root.dataset.initialized) return;
+    root.dataset.initialized = "true";
+
+    const slides = root.querySelectorAll(".slide");
+    const thumbs = root.querySelectorAll(".thumb");
+    const counter = root.querySelector(".counter-current");
+    const fill = root.querySelector(".progress-fill");
+    const prevBtn = root.querySelector(".arrow-prev");
+    const nextBtn = root.querySelector(".arrow-next");
+    const filmstrip = root.querySelector(".filmstrip-track");
+
+    let current = 0;
+    let timer = null;
+    let paused = false;
+
+    function goTo(index) {
+      const prev = current;
+      current = (index + slides.length) % slides.length;
+
+      slides[prev].classList.remove("active");
+      slides[prev].setAttribute("aria-hidden", "true");
+      thumbs[prev].classList.remove("active");
+      thumbs[prev].setAttribute("aria-selected", "false");
+
+      slides[current].classList.add("active");
+      slides[current].setAttribute("aria-hidden", "false");
+      thumbs[current].classList.add("active");
+      thumbs[current].setAttribute("aria-selected", "true");
+
+      if (counter) counter.textContent = String(current + 1).padStart(2, "0");
+
+      // Scroll filmstrip horizontally only — never touch page scroll
+      const activeThumb = thumbs[current] as HTMLElement;
+      const track = filmstrip as HTMLElement;
+      if (track && activeThumb) {
+        const trackCenter = track.offsetWidth / 2;
+        const thumbCenter = activeThumb.offsetLeft + activeThumb.offsetWidth / 2;
+        track.scrollTo({ left: thumbCenter - trackCenter, behavior: "smooth" });
+      }
+
+      restartProgress();
+    }
+
+    function restartProgress() {
+      if (!fill) return;
+      fill.classList.remove("running");
+      fill.style.width = "0%";
+      fill.style.transition = "";
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          fill.classList.add("running");
+          fill.style.transition = `width ${autoplay}ms linear`;
+          fill.style.width = "100%";
+        });
+      });
+    }
+
+    function startAutoplay() {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        if (!paused) goTo(current + 1);
+      }, autoplay);
+    }
+
+    // Pause on hover
+    root.addEventListener("mouseenter", () => {
+      paused = true;
+      fill.style.animationPlayState = "paused";
+    });
+    root.addEventListener("mouseleave", () => {
+      paused = false;
+      fill.style.animationPlayState = "running";
+    });
+
+    // Arrow buttons
+    prevBtn?.addEventListener("click", () => { goTo(current - 1); startAutoplay(); });
+    nextBtn?.addEventListener("click", () => { goTo(current + 1); startAutoplay(); });
+
+    // Thumb clicks
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener("click", () => { goTo(i); startAutoplay(); });
+    });
+
+    // Keyboard
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { goTo(current - 1); startAutoplay(); }
+      if (e.key === "ArrowRight") { goTo(current + 1); startAutoplay(); }
+    });
+
+    // Touch swipe
+    let touchStartX = 0;
+    root.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener("touchend", (e) => {
+      const delta = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(delta) > 40) {
+        goTo(delta > 0 ? current + 1 : current - 1);
+        startAutoplay();
+      }
+    });
+
+    restartProgress();
+    startAutoplay();
+  }
+
+  document.addEventListener("astro:page-load", initGallery);
+  if (document.readyState !== "loading") initGallery();
+  else document.addEventListener("DOMContentLoaded", initGallery);
+</script>

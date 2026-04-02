@@ -1,8 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Kajak avanture na Tari i Drini">
+<Layout title="Kayak adventures on Tara and Drina">
   <!-- Hero -->
   <section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-900">
     <img
@@ -10,77 +10,68 @@ import Layout from "../layouts/Layout.astro";
       alt=""
       class="absolute inset-0 h-full w-full object-cover opacity-40"
     />
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-transparent to-slate-900/80"
-    >
-    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-transparent to-slate-900/80"></div>
     <div class="relative z-10 max-w-3xl px-4 text-center text-white">
       <p class="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-teal-400">
-        Kajak klub Tara Drina
+        Kayak Club Tara Drina
       </p>
       <h1 class="mb-6 text-5xl font-bold leading-tight md:text-7xl">
-        Avantura na vodi <br /><span class="text-teal-400">čeka vas</span>
+        Adventure on the water <br /><span class="text-teal-400">awaits you</span>
       </h1>
       <p class="mb-10 text-lg text-slate-200 md:text-xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Doživite neponovljivu avanturu na
-        rekama Tara i Drina sa iskusnim vodičima.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Experience an unforgettable
+        adventure on the Tara and Drina rivers with experienced guides.
       </p>
       <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
         <a
-          href="#ture"
+          href="#tours"
           class="rounded-full bg-teal-600 px-8 py-3.5 font-semibold text-white transition-colors hover:bg-teal-500"
         >
-          Istraži ture
+          Explore tours
         </a>
         <a
-          href="/kontakt"
+          href="/en/contact"
           class="rounded-full border border-white/30 bg-white/10 px-8 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
         >
-          Kontaktirajte nas
+          Contact us
         </a>
       </div>
     </div>
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
       <svg class="h-6 w-6 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"
-        ></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
       </svg>
     </div>
   </section>
 
   <!-- Tour cards -->
-  <section id="ture" class="bg-slate-50 px-4 py-20">
+  <section id="tours" class="bg-slate-50 px-4 py-20">
     <div class="mx-auto max-w-6xl">
       <div class="mb-14 text-center">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Naše ture</p>
-        <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">Izaberite svoju avanturu</h2>
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Our tours</p>
+        <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">Choose your adventure</h2>
         <p class="mx-auto mt-4 max-w-xl text-slate-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dve neverovatne rute kroz
-          netaknutu prirodu Srbije i Bosne.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Two incredible routes through the
+          unspoiled nature of Serbia and Bosnia.
         </p>
       </div>
       <div class="grid gap-8 md:grid-cols-2">
         <a
-          href="/ture/tara-drina"
+          href="/en/tours/tara-drina"
           class="group overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-xl"
         >
           <div class="relative h-72 overflow-hidden">
             <img
-              src="https://picsum.photos/seed/drina1/800/600"
-              alt="Drina reka"
+              src="https://picsum.photos/seed/tara1/800/600"
+              alt="Tara river"
               class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
-            >
-            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div class="absolute bottom-0 left-0 p-6 text-white">
               <div class="mb-2 flex gap-2 text-xs font-semibold text-teal-300">
-                <span>~15 km</span><span>·</span><span>~3 sata</span><span>·</span><span
-                  >Za sve uzraste</span
-                >
+                <span>120 km</span><span>·</span><span>5 days</span><span>·</span><span>Moderate</span>
               </div>
-              <h3 class="text-2xl font-bold">Perućac → Rača</h3>
+              <h3 class="text-2xl font-bold">Tara → Drina</h3>
             </div>
           </div>
           <div class="p-6">
@@ -88,40 +79,31 @@ import Layout from "../layouts/Layout.astro";
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam,
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
-            <span
-              class="mt-4 inline-flex items-center gap-1 font-semibold text-teal-700 transition-all group-hover:gap-2"
-            >
-              Saznaj više
+            <span class="mt-4 inline-flex items-center gap-1 font-semibold text-teal-700 transition-all group-hover:gap-2">
+              Learn more
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
             </span>
           </div>
         </a>
 
         <a
-          href="/ture/drina-sava"
+          href="/en/tours/drina-sava"
           class="group overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-xl"
         >
           <div class="relative h-72 overflow-hidden">
             <img
               src="https://picsum.photos/seed/drina1/800/600"
-              alt="Drina reka"
+              alt="Drina river"
               class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
-            >
-            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div class="absolute bottom-0 left-0 p-6 text-white">
               <div class="mb-2 flex gap-2 text-xs font-semibold text-teal-300">
-                <span>~12 km</span><span>·</span><span>~2.5 sata</span><span>·</span><span>Za sve uzraste</span>
+                <span>200 km</span><span>·</span><span>7 days</span><span>·</span><span>Challenging</span>
               </div>
-              <h3 class="text-2xl font-bold">Rača → Rogačica</h3>
+              <h3 class="text-2xl font-bold">Drina → Sava</h3>
             </div>
           </div>
           <div class="p-6">
@@ -129,16 +111,10 @@ import Layout from "../layouts/Layout.astro";
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa.
             </p>
-            <span
-              class="mt-4 inline-flex items-center gap-1 font-semibold text-teal-700 transition-all group-hover:gap-2"
-            >
-              Saznaj više
+            <span class="mt-4 inline-flex items-center gap-1 font-semibold text-teal-700 transition-all group-hover:gap-2">
+              Learn more
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
             </span>
           </div>
@@ -151,35 +127,23 @@ import Layout from "../layouts/Layout.astro";
   <section class="px-4 py-20">
     <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
       <div class="overflow-hidden rounded-2xl">
-        <img
-          src="https://picsum.photos/seed/club1/800/600"
-          alt="KK Tara Drina"
-          class="h-80 w-full object-cover"
-        />
+        <img src="https://picsum.photos/seed/club1/800/600" alt="KK Tara Drina" class="h-80 w-full object-cover" />
       </div>
       <div>
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">O nama</p>
-        <h2 class="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">Više od 20 godina na vodi</h2>
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">About us</p>
+        <h2 class="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">More than 20 years on the water</h2>
         <p class="mb-4 leading-relaxed text-slate-600">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris.
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
         </p>
         <p class="mb-8 leading-relaxed text-slate-600">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
           nulla pariatur. Excepteur sint occaecat cupidatat non proident.
         </p>
-        <a
-          href="/o-nama"
-          class="inline-flex items-center gap-2 font-semibold text-teal-700 hover:text-teal-600"
-        >
-          Više o klubu
+        <a href="/en/about" class="inline-flex items-center gap-2 font-semibold text-teal-700 hover:text-teal-600">
+          More about the club
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </a>
       </div>
@@ -190,26 +154,19 @@ import Layout from "../layouts/Layout.astro";
   <section class="overflow-hidden bg-teal-700 px-4 py-24 text-white">
     <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
       <div>
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-200">Počnite od nule</p>
-        <h2 class="mb-6 text-3xl font-bold md:text-4xl">Škola kajaka za sve uzraste</h2>
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-200">Start from zero</p>
+        <h2 class="mb-6 text-3xl font-bold md:text-4xl">Kayak school for all ages</h2>
         <p class="mb-8 leading-relaxed text-teal-100">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia
-          voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-          ratione sequi nesciunt.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. No one rejects or avoids
+          pleasure itself — but those who do not know how to pursue it rationally encounter
+          consequences.
         </p>
-        <a
-          href="/skola-kajaka"
-          class="inline-block rounded-full bg-white px-8 py-3.5 font-semibold text-teal-700 transition-colors hover:bg-teal-50"
-        >
-          Saznaj više
+        <a href="/en/kayak-school" class="inline-block rounded-full bg-white px-8 py-3.5 font-semibold text-teal-700 transition-colors hover:bg-teal-50">
+          Learn more
         </a>
       </div>
       <div class="overflow-hidden rounded-2xl">
-        <img
-          src="https://picsum.photos/seed/school1/800/600"
-          alt="Škola kajaka"
-          class="h-72 w-full object-cover"
-        />
+        <img src="https://picsum.photos/seed/school1/800/600" alt="Kayak school" class="h-72 w-full object-cover" />
       </div>
     </div>
   </section>
@@ -217,16 +174,13 @@ import Layout from "../layouts/Layout.astro";
   <!-- Contact CTA -->
   <section class="bg-slate-900 px-4 py-24 text-center text-white">
     <div class="mx-auto max-w-2xl">
-      <h2 class="mb-4 text-3xl font-bold md:text-4xl">Spremni za avanturu?</h2>
+      <h2 class="mb-4 text-3xl font-bold md:text-4xl">Ready for an adventure?</h2>
       <p class="mb-8 text-slate-400">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Kontaktirajte nas i planiramo vašu
-        savršenu turu zajedno.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Contact us and we'll plan your
+        perfect tour together.
       </p>
-      <a
-        href="/kontakt"
-        class="inline-block rounded-full bg-teal-600 px-8 py-3.5 font-semibold text-white transition-colors hover:bg-teal-500"
-      >
-        Kontaktirajte nas
+      <a href="/en/contact" class="inline-block rounded-full bg-teal-600 px-8 py-3.5 font-semibold text-white transition-colors hover:bg-teal-500">
+        Contact us
       </a>
     </div>
   </section>

@@ -1,0 +1,124 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+  <!-- Hero -->
+  <section class="relative flex h-64 items-end overflow-hidden bg-slate-900">
+    <img
+      src="https://picsum.photos/seed/contact1/1920/600"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-40"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+    <div class="relative z-10 mx-auto w-full max-w-6xl px-4 pb-10">
+      <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-400">Get in touch</p>
+      <h1 class="text-4xl font-bold text-white md:text-5xl">Contact</h1>
+    </div>
+  </section>
+
+  <!-- Contact section -->
+  <section class="px-4 py-20">
+    <div class="mx-auto grid max-w-6xl gap-16 md:grid-cols-2">
+      <!-- Info -->
+      <div>
+        <h2 class="mb-8 text-2xl font-bold text-slate-900">Information</h2>
+        <ul class="space-y-6">
+          <li class="flex items-start gap-4">
+            <span class="mt-1 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 text-xl">📍</span>
+            <div>
+              <p class="font-semibold text-slate-900">Address</p>
+              <p class="text-slate-600">Lorem ipsum, Serbia</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="mt-1 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 text-xl">📞</span>
+            <div>
+              <p class="font-semibold text-slate-900">Phone</p>
+              <a href="tel:+381xxxxxxxx" class="text-teal-700 hover:text-teal-600">+381 xx xxx xxxx</a>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="mt-1 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 text-xl">✉️</span>
+            <div>
+              <p class="font-semibold text-slate-900">Email</p>
+              <a href="mailto:info@kktaradrina.rs" class="text-teal-700 hover:text-teal-600">info@kktaradrina.rs</a>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="mt-1 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 text-xl">🕐</span>
+            <div>
+              <p class="font-semibold text-slate-900">Working hours</p>
+              <p class="text-slate-600">Mon–Fri: 09:00–17:00</p>
+              <p class="text-slate-600">Sat: 10:00–14:00</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Form -->
+      <div>
+        <h2 class="mb-8 text-2xl font-bold text-slate-900">Send a message</h2>
+        <form class="space-y-5">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="first-name" class="mb-1.5 block text-sm font-medium text-slate-700">First name</label>
+              <input
+                id="first-name"
+                type="text"
+                placeholder="Your first name"
+                class="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm transition-colors focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20"
+              />
+            </div>
+            <div>
+              <label for="last-name" class="mb-1.5 block text-sm font-medium text-slate-700">Last name</label>
+              <input
+                id="last-name"
+                type="text"
+                placeholder="Your last name"
+                class="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm transition-colors focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="email" class="mb-1.5 block text-sm font-medium text-slate-700">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="your@email.com"
+              class="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm transition-colors focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20"
+            />
+          </div>
+          <div>
+            <label for="tour" class="mb-1.5 block text-sm font-medium text-slate-700">Tour (optional)</label>
+            <select
+              id="tour"
+              class="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm transition-colors focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20"
+            >
+              <option value="">Select a tour</option>
+              <option value="tara-drina">Tara → Drina</option>
+              <option value="drina-sava">Drina → Sava</option>
+              <option value="school">Kayak school</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="mb-1.5 block text-sm font-medium text-slate-700">Message</label>
+            <textarea
+              id="message"
+              rows="5"
+              placeholder="Your message..."
+              class="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm transition-colors focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full rounded-lg bg-teal-600 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-teal-500"
+          >
+            Send message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

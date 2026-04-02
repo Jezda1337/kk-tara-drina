@@ -1,0 +1,85 @@
+---
+const locale = Astro.currentLocale ?? "rs";
+const isRS = locale === "rs";
+---
+
+<footer class="bg-slate-900 text-slate-400">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+      <div>
+        <h3 class="mb-3 text-lg font-bold text-white">KK Tara Drina</h3>
+        <p class="text-sm leading-relaxed">
+          {
+            isRS
+              ? "Kajak klub posvećen avanturama na rekama Tara i Drina. Organizujemo ture za sve nivoe iskustva."
+              : "Kayak club dedicated to adventures on the Tara and Drina rivers. We organize tours for all experience levels."
+          }
+        </p>
+      </div>
+
+      <div>
+        <h4 class="mb-4 text-sm font-bold uppercase tracking-widest text-slate-300">
+          {isRS ? "Ture" : "Tours"}
+        </h4>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a
+              href={isRS ? "/ture/tara-drina" : "/en/tours/tara-drina"}
+              class="transition-colors hover:text-teal-400">Tara → Drina</a
+            >
+          </li>
+          <li>
+            <a
+              href={isRS ? "/ture/drina-sava" : "/en/tours/drina-sava"}
+              class="transition-colors hover:text-teal-400">Drina → Sava</a
+            >
+          </li>
+          <li>
+            <a
+              href={isRS ? "/skola-kajaka" : "/en/kayak-school"}
+              class="transition-colors hover:text-teal-400"
+              >{isRS ? "Škola kajaka" : "Kayak school"}</a
+            >
+          </li>
+          <li>
+            <a
+              href={isRS ? "/o-nama" : "/en/about"}
+              class="transition-colors hover:text-teal-400">{isRS ? "O nama" : "About"}</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="mb-4 text-sm font-bold uppercase tracking-widest text-slate-300">
+          {isRS ? "Kontakt" : "Contact"}
+        </h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-2">
+            <span>📍</span>
+            <span>{isRS ? "Srbija" : "Serbia"}</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span>📞</span>
+            <a href="tel:+381xxxxxxxx" class="transition-colors hover:text-teal-400"
+              >+381 xx xxx xxxx</a
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span>✉️</span>
+            <a href="mailto:info@kktaradrina.rs" class="transition-colors hover:text-teal-400"
+              >info@kktaradrina.rs</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-slate-800 pt-8 text-center text-xs text-slate-600">
+      <p>
+        © {new Date().getFullYear()} KK Tara Drina.
+        {isRS ? "Sva prava zadržana." : "All rights reserved."}
+      </p>
+    </div>
+  </div>
+</footer>

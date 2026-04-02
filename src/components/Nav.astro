@@ -1,0 +1,225 @@
+---
+const locale = Astro.currentLocale ?? "rs";
+const isRS = locale === "rs";
+const pathname = Astro.url.pathname;
+
+const tourLinks = [
+  {
+    path: isRS ? "/ture/tara-drina" : "/en/tours/tara-drina",
+    label: isRS ? "Perućac → Rača" : "Perućac → Rača",
+  },
+  {
+    path: isRS ? "/ture/drina-sava" : "/en/tours/drina-sava",
+    label: isRS ? "Rača → Rogačica" : "Rača → Rogačica",
+  },
+];
+
+const routes = [
+  { path: isRS ? "/" : "/en/", label: isRS ? "Početna" : "Home" },
+  { path: isRS ? "/o-nama" : "/en/about", label: isRS ? "O nama" : "About" },
+  { label: isRS ? "Ture" : "Tours", dropdown: tourLinks },
+  {
+    path: isRS ? "/skola-kajaka" : "/en/kayak-school",
+    label: isRS ? "Škola kajaka" : "Kayak school",
+  },
+  {
+    path: isRS ? "/kontakt" : "/en/contact",
+    label: isRS ? "Kontakt" : "Contact",
+  },
+];
+
+const isToursActive = tourLinks.some((t) => pathname === t.path);
+---
+
+<script>
+  function initHamburger() {
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    hamburger?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+    });
+
+    // Close menu when clicking a link
+    mobileMenu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  }
+
+  document.addEventListener("astro:page-load", initHamburger);
+  if (document.readyState !== "loading") initHamburger();
+  else document.addEventListener("DOMContentLoaded", initHamburger);
+</script>
+
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+    <a href={isRS ? "/" : "/en/"} class="flex-shrink-0">
+      <img src="/logo.svg" width="70" alt="KK Tara Drina" />
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden list-none items-center gap-1 md:flex">
+      {
+        routes.map((route) => {
+          if (route.dropdown) {
+            return (
+              <li class="group relative">
+                <button
+                  class:list={[
+                    "flex cursor-default items-center gap-1 rounded px-3 py-1.5 text-sm font-medium tracking-wide uppercase transition-colors hover:bg-teal-50 hover:text-teal-700",
+                    isToursActive ? "text-teal-700" : "text-slate-700",
+                  ]}
+                >
+                  {route.label}
+                  <svg
+                    class="h-3 w-3 transition-transform group-hover:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <ul class="absolute top-full left-0 hidden min-w-44 rounded-lg border border-slate-100 bg-white py-1 shadow-xl group-hover:block">
+                  {route.dropdown.map((child) => (
+                    <li>
+                      <a
+                        href={child.path}
+                        class:list={[
+                          "block px-4 py-2.5 text-sm transition-colors hover:bg-teal-50 hover:text-teal-700",
+                          pathname === child.path
+                            ? "bg-teal-50 font-medium text-teal-700"
+                            : "text-slate-700",
+                        ]}
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          }
+
+          const isActive = pathname === route.path;
+          return (
+            <li class="relative">
+              <a
+                href={route.path}
+                aria-current={isActive ? "page" : undefined}
+                class:list={[
+                  "relative z-10 rounded px-3 py-1.5 text-sm font-medium tracking-wide uppercase transition-colors",
+                  isActive
+                    ? "text-white hover:text-slate-100"
+                    : "text-slate-700 hover:bg-teal-50 hover:text-teal-700",
+                ]}
+              >
+                {route.label}
+              </a>
+              {isActive && (
+                <span
+                  transition:name="active-nav-indicator"
+                  class="absolute inset-0 rounded bg-teal-700"
+                  aria-hidden="true"
+                />
+              )}
+            </li>
+          );
+        })
+      }
+      <li class="ml-2">
+        <a
+          href={isRS ? "/en/" : "/"}
+          class="rounded px-3 py-1.5 text-lg transition-colors hover:bg-slate-100"
+          >{isRS ? "🇺🇸" : "🇷🇸"}</a
+        >
+      </li>
+    </ul>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="hamburger"
+      class="rounded p-2 text-slate-700 hover:bg-slate-100 md:hidden"
+      aria-label="Menu"
+    >
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-slate-100 bg-white md:hidden"
+  >
+    <ul class="flex flex-col px-4 py-2">
+      {
+        routes.map((route) => {
+          if (route.dropdown) {
+            return (
+              <li class="py-1">
+                <span class="block px-2 py-1 text-xs font-bold tracking-widest text-slate-400 uppercase">
+                  {route.label}
+                </span>
+                <ul class="ml-2">
+                  {route.dropdown.map((child) => (
+                    <li>
+                      <a
+                        href={child.path}
+                        class:list={[
+                          "block px-2 py-2 text-sm transition-colors",
+                          pathname === child.path
+                            ? "font-medium text-teal-700"
+                            : "text-slate-700",
+                        ]}
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          }
+
+          const isActive = pathname === route.path;
+          return (
+            <li>
+              <a
+                href={route.path}
+                class:list={[
+                  "block px-2 py-2.5 text-sm font-medium tracking-wide uppercase",
+                  isActive ? "text-teal-700" : "text-slate-700",
+                ]}
+              >
+                {route.label}
+              </a>
+            </li>
+          );
+        })
+      }
+      <li class="border-t border-slate-100 py-2">
+        <a href={isRS ? "/en/" : "/"} class="block px-2 text-lg"
+          >{isRS ? "🇺🇸" : "🇷🇸"}</a
+        >
+      </li>
+    </ul>
+  </div>
+</header>

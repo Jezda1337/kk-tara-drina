@@ -1,0 +1,89 @@
+---
+import TourLayout from "../../../layouts/TourLayout.astro";
+
+const gallerySlides = [
+  { src: "https://picsum.photos/seed/drina_a1/1200/800", location: "Perućac Dam", caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit" },
+  { src: "https://picsum.photos/seed/drina_a2/1200/800", location: "Drina — upper section", caption: "Ut enim ad minim veniam quis nostrud exercitation ullamco" },
+  { src: "https://picsum.photos/seed/drina_a3/1200/800", location: "Bajina Bašta", caption: "Duis aute irure dolor in reprehenderit in voluptate" },
+  { src: "https://picsum.photos/seed/drina_a4/1200/800", location: "Calm waters", caption: "Excepteur sint occaecat cupidatat non proident sunt" },
+  { src: "https://picsum.photos/seed/drina_a5/1200/800", location: "Rača Beach", caption: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur" },
+  { src: "https://picsum.photos/seed/drina_a6/1200/800", location: "Drina", caption: "Sed ut perspiciatis unde omnis iste natus error sit" },
+];
+---
+
+<TourLayout
+  title="Perućac → Rača"
+  subtitle="Drina river kayaking — for everyone"
+  heroSeed="drinariver"
+  distance="~15 km"
+  duration="~3 hours"
+  difficulty="Easy — suitable for beginners"
+  season="May – October"
+  contactHref="/en/contact"
+  contactLabel="Book this tour"
+  gallerySlides={gallerySlides}
+  equipmentLabel="Equipment included"
+>
+  <section class="mb-12">
+    <h2 class="mb-6 text-2xl font-bold text-slate-900">About the tour</h2>
+    <div class="space-y-4 leading-relaxed text-slate-600">
+      <p>
+        The tour starts below the Perućac dam in Bajina Bašta and follows the calm Drina river
+        downstream to Rača beach. It's perfect for families, groups of friends, and anyone who
+        wants to enjoy nature by kayak — no prior experience needed.
+      </p>
+      <p>
+        We use wide, stable recreational kayaks that are easy to paddle. An experienced guide
+        accompanies the group throughout the entire route. The Drina in this section is calm
+        with no rapids.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis
+        iste natus error sit voluptatem accusantium doloremque laudantium.
+      </p>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-6 text-2xl font-bold text-slate-900">Stops along the route</h2>
+    <div class="space-y-4">
+      {[
+        { place: "Perućac Dam", time: "09:00", text: "Departure from the landing below the dam. Short intro to kayak handling — max 15 minutes." },
+        { place: "Bajina Bašta", time: "10:00", text: "Paddling past the town. Lorem ipsum dolor sit amet consectetur adipiscing elit ut enim." },
+        { place: "Mid-river break", time: "11:00", text: "Rest on the water — swimming, photos, relaxing. Duis aute irure dolor in reprehenderit." },
+        { place: "Rača Beach", time: "12:00", text: "Arrival at Rača beach. Swimming and lunch on the bank before the return trip." },
+      ].map((stop) => (
+        <div class="flex gap-4 rounded-xl border border-slate-100 p-5">
+          <div class="flex-shrink-0"><span class="block text-xs font-bold text-teal-600">{stop.time}</span></div>
+          <div>
+            <h3 class="mb-1 font-bold text-slate-900">{stop.place}</h3>
+            <p class="text-sm text-slate-600">{stop.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-6 text-2xl font-bold text-slate-900">What's included</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {[
+        { included: true, text: "Recreational kayak and paddle" },
+        { included: true, text: "Life jacket" },
+        { included: true, text: "Experienced guide" },
+        { included: true, text: "Beginner intro (15 min)" },
+        { included: true, text: "Transport to starting point" },
+        { included: true, text: "Insurance" },
+        { included: false, text: "Food and drinks" },
+        { included: false, text: "Personal expenses" },
+      ].map((item) => (
+        <div class="flex items-center gap-3 text-sm">
+          <span class:list={["flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold", item.included ? "bg-teal-100 text-teal-700" : "bg-red-50 text-red-400"]}>
+            {item.included ? "✓" : "✗"}
+          </span>
+          <span class:list={[item.included ? "text-slate-700" : "text-slate-400"]}>{item.text}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+</TourLayout>

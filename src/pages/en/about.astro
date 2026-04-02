@@ -1,0 +1,186 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="About us">
+  <!-- Hero -->
+  <section class="relative flex h-80 items-end overflow-hidden bg-slate-900 md:h-[28rem]">
+    <img
+      src="https://picsum.photos/seed/about1/1920/800"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-50"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+    <div class="relative z-10 mx-auto w-full max-w-6xl px-4 pb-12">
+      <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-400">Who we are</p>
+      <h1 class="text-4xl font-bold text-white md:text-5xl">About us</h1>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="px-4 py-20">
+    <div class="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
+      <div>
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Our story</p>
+        <h2 class="mb-6 text-3xl font-bold text-slate-900">Kayak Club Tara Drina</h2>
+        <p class="mb-4 leading-relaxed text-slate-600">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. The club was founded with one idea — to give people an
+          unforgettable experience on the Tara and Drina rivers.
+        </p>
+        <p class="mb-4 leading-relaxed text-slate-600">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+          nulla pariatur. We organize tours for all experience levels, from complete beginners to
+          seasoned kayakers looking for a new challenge.
+        </p>
+        <p class="leading-relaxed text-slate-600">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+          laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis.
+        </p>
+      </div>
+      <div class="overflow-hidden rounded-2xl">
+        <img
+          src="https://picsum.photos/seed/about2/800/600"
+          alt="Kayak Club Tara Drina"
+          class="h-96 w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Founding -->
+  <section class="bg-slate-50 px-4 py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-3xl">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Founding</p>
+        <h2 class="mb-10 text-3xl font-bold text-slate-900">How it all started</h2>
+        <div class="grid gap-8 sm:grid-cols-3">
+          <div class="rounded-2xl bg-white p-6 shadow-sm">
+            <p class="mb-1 text-3xl font-bold text-teal-700">199X.</p>
+            <p class="text-sm font-semibold text-slate-900">Year founded</p>
+            <p class="mt-2 text-sm text-slate-500">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit ut enim.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm">
+            <p class="mb-1 text-lg font-bold text-teal-700">First Last</p>
+            <p class="text-sm font-semibold text-slate-900">Club founder</p>
+            <p class="mt-2 text-sm text-slate-500">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white p-6 shadow-sm">
+            <p class="mb-1 text-lg font-bold text-teal-700">Foča, BiH</p>
+            <p class="text-sm font-semibold text-slate-900">Founded at</p>
+            <p class="mt-2 text-sm text-slate-500">
+              Excepteur sint occaecat cupidatat non proident sunt in culpa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="px-4 py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <div>
+          <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Location</p>
+          <h2 class="mb-6 text-3xl font-bold text-slate-900">Where to find us</h2>
+          <p class="mb-6 leading-relaxed text-slate-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our base is located right on
+            the river bank, from where we run all our tours and activities.
+          </p>
+          <ul class="space-y-4 text-sm text-slate-700">
+            <li class="flex items-start gap-3">
+              <span class="text-lg">📍</span>
+              <div>
+                <p class="font-semibold">Address</p>
+                <p class="text-slate-500">Lorem ipsum bb, Serbia</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-lg">📞</span>
+              <div>
+                <p class="font-semibold">Phone</p>
+                <a href="tel:+381xxxxxxxx" class="text-teal-700 hover:text-teal-600">+381 xx xxx xxxx</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-lg">✉️</span>
+              <div>
+                <p class="font-semibold">Email</p>
+                <a href="mailto:info@kktaradrina.rs" class="text-teal-700 hover:text-teal-600">info@kktaradrina.rs</a>
+              </div>
+            </li>
+          </ul>
+          <a
+            href="https://www.openstreetmap.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-8 inline-flex items-center gap-2 rounded-lg border border-teal-200 px-5 py-2.5 text-sm font-semibold text-teal-700 transition-colors hover:bg-teal-50"
+          >
+            View on map
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="overflow-hidden rounded-2xl bg-slate-100">
+          <img
+            src="https://picsum.photos/seed/location1/800/600"
+            alt="Club location"
+            class="h-80 w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="bg-teal-700 px-4 py-20 text-white">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-12 text-center">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-200">Activities</p>
+        <h2 class="text-3xl font-bold">What we do</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {
+          [
+            {
+              icon: "🚣",
+              title: "Kayak tours",
+              text: "We organize single-day tours on the Tara and Drina rivers for all experience levels.",
+              href: "/en/tours/tara-drina",
+              linkLabel: "See tours",
+            },
+            {
+              icon: "🎓",
+              title: "Kayak school",
+              text: "Learn kayaking from scratch with certified instructors in a safe environment.",
+              href: "/en/kayak-school",
+              linkLabel: "Learn more",
+            },
+            {
+              icon: "🏆",
+              title: "Competitions",
+              text: "We participate in local and regional kayak competitions every season.",
+              href: "/en/contact",
+              linkLabel: "Contact us",
+            },
+          ].map((item) => (
+            <div class="rounded-2xl bg-white/10 p-6">
+              <p class="mb-3 text-3xl">{item.icon}</p>
+              <h3 class="mb-2 text-lg font-bold">{item.title}</h3>
+              <p class="mb-4 text-sm leading-relaxed text-teal-100">{item.text}</p>
+              <a href={item.href} class="text-sm font-semibold text-teal-200 hover:text-white">
+                {item.linkLabel} →
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

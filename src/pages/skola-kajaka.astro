@@ -1,0 +1,146 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Škola kajaka">
+  <!-- Hero -->
+  <section class="relative flex h-80 items-end overflow-hidden bg-slate-900 md:h-[28rem]">
+    <img
+      src="https://picsum.photos/seed/school2/1920/800"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-50"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+    <div class="relative z-10 mx-auto w-full max-w-6xl px-4 pb-12">
+      <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-400">Naučite da veslate</p>
+      <h1 class="text-4xl font-bold text-white md:text-5xl">Škola kajaka</h1>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="px-4 py-20">
+    <div class="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
+      <div>
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Za svakoga</p>
+        <h2 class="mb-6 text-3xl font-bold text-slate-900">Od potpunog početnika do eksperta</h2>
+        <p class="mb-4 leading-relaxed text-slate-600">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+        <p class="leading-relaxed text-slate-600">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <div class="overflow-hidden rounded-2xl">
+        <img
+          src="https://picsum.photos/seed/school3/800/600"
+          alt="Škola kajaka"
+          class="h-80 w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Levels -->
+  <section class="bg-slate-50 px-4 py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 text-center">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Nivoi obuke</p>
+        <h2 class="text-3xl font-bold text-slate-900">Izaberite svoj nivo</h2>
+        <p class="mx-auto mt-4 max-w-xl text-slate-500">
+          Prilagođavamo program vašem iskustvu. Za informacije o terminima i uslovima, kontaktirajte nas direktno.
+        </p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        {
+          [
+            {
+              number: "01",
+              title: "Početnici",
+              duration: "Vikend kurs",
+              description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Naučite osnove sigurnog veslanja u kontrolisanom okruženju uz podršku instruktora.",
+              features: ["Osnove veslanja", "Bezbednost na vodi", "Osnovno upravljanje", "Oprema uključena"],
+            },
+            {
+              number: "02",
+              title: "Srednji nivo",
+              duration: "3–4 dana",
+              description: "Duis aute irure dolor in reprehenderit. Idealno za one koji već znaju osnove i žele da napreduju na rečnom kajakingu.",
+              features: ["Napredne tehnike", "Rečni kajaking", "Navigacija struje", "Spasilačke veštine"],
+            },
+            {
+              number: "03",
+              title: "Napredni",
+              duration: "5 dana",
+              description: "Excepteur sint occaecat cupidatat non proident. Za iskusne kajakaše koji žele ekspedicijsku obuku i voditeljsku sertifikaciju.",
+              features: ["Ekspedicionski kajaking", "Planiranje rute", "Voditeljska obuka", "Sertifikat"],
+            },
+          ].map((course) => (
+            <div class="rounded-2xl border border-slate-100 bg-white p-8">
+              <p class="mb-1 text-sm font-bold uppercase tracking-widest text-teal-600">
+                Nivo {course.number}
+              </p>
+              <h3 class="mb-1 text-2xl font-bold text-slate-900">{course.title}</h3>
+              <p class="mb-5 text-sm text-slate-400">{course.duration}</p>
+              <p class="mb-6 text-sm leading-relaxed text-slate-600">{course.description}</p>
+              <ul class="space-y-2.5">
+                {course.features.map((f) => (
+                  <li class="flex items-center gap-2 text-sm text-slate-600">
+                    <svg class="h-4 w-4 flex-shrink-0 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- What you'll learn -->
+  <section class="px-4 py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 text-center">
+        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Program</p>
+        <h2 class="text-3xl font-bold text-slate-900">Šta ćete naučiti</h2>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+        {
+          [
+            { icon: "🚣", title: "Tehnike veslanja", text: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor." },
+            { icon: "🛟", title: "Bezbednost", text: "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi." },
+            { icon: "🗺️", title: "Navigacija", text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum." },
+            { icon: "⛺", title: "Logorovanje", text: "Excepteur sint occaecat cupidatat non proident sunt in culpa officia." },
+          ].map((item) => (
+            <div class="rounded-xl bg-slate-50 p-6">
+              <p class="mb-3 text-3xl">{item.icon}</p>
+              <h3 class="mb-2 font-bold text-slate-900">{item.title}</h3>
+              <p class="text-sm leading-relaxed text-slate-600">{item.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-teal-700 px-4 py-20 text-center text-white">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="mb-4 text-3xl font-bold">Zainteresovani?</h2>
+      <p class="mb-8 text-teal-100">
+        Kontaktirajte nas za informacije o terminima, grupama i svemu što vas zanima.
+      </p>
+      <a
+        href="/kontakt"
+        class="inline-block rounded-full bg-white px-8 py-3.5 font-semibold text-teal-700 transition-colors hover:bg-teal-50"
+      >
+        Kontaktirajte nas
+      </a>
+    </div>
+  </section>
+</Layout>

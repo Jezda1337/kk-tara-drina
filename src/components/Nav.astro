@@ -8,24 +8,32 @@ const locale = Astro.currentLocale ?? "rs";
 const isRS = locale === "rs";
 const pathname = Astro.url.pathname;
 
-const tourLinks = [
+const serviceLinks = [
   {
-    path: isRS ? "/ture/tara-drina" : "/en/tours/tara-drina",
+    path: isRS ? "/ture/perucac-raca" : "/en/tours/perucac-raca",
     label: isRS ? "Perućac → Rača" : "Perućac → Rača",
   },
   {
-    path: isRS ? "/ture/drina-sava" : "/en/tours/drina-sava",
+    path: isRS ? "/ture/raca-rogacica" : "/en/tours/raca-rogacica",
     label: isRS ? "Rača → Rogačica" : "Rača → Rogačica",
+  },
+  {
+    path: isRS ? "/rekreacija" : "/en/recreation",
+    label: isRS ? "Rekreacija" : "Recreation",
   },
 ];
 
 const routes = [
   { path: isRS ? "/" : "/en/", label: isRS ? "Početna" : "Home" },
   { path: isRS ? "/o-nama" : "/en/about", label: isRS ? "O nama" : "About" },
-  { label: isRS ? "Ture" : "Tours", dropdown: tourLinks },
+  { label: isRS ? "Usluge" : "Services", dropdown: serviceLinks },
   {
     path: isRS ? "/skola-kajaka" : "/en/kayak-school",
     label: isRS ? "Škola kajaka" : "Kayak school",
+  },
+  {
+    path: isRS ? "/cenovnik" : "/en/pricing",
+    label: isRS ? "Cenovnik" : "Pricing",
   },
   {
     path: isRS ? "/kontakt" : "/en/contact",
@@ -33,7 +41,22 @@ const routes = [
   },
 ];
 
-const isToursActive = tourLinks.some((t) => pathname === t.path);
+const isServicesActive = serviceLinks.some((t) => pathname === t.path);
+
+const routeMap: Record<string, string> = {
+  "/": "/en/",
+  "/o-nama": "/en/about",
+  "/ture/perucac-raca": "/en/tours/perucac-raca",
+  "/ture/raca-rogacica": "/en/tours/raca-rogacica",
+  "/skola-kajaka": "/en/kayak-school",
+  "/cenovnik": "/en/pricing",
+  "/rekreacija": "/en/recreation",
+  "/kontakt": "/en/contact",
+};
+const reverseRouteMap = Object.fromEntries(Object.entries(routeMap).map(([k, v]) => [v, k]));
+const langSwitchHref = isRS
+  ? (routeMap[pathname] ?? "/en/")
+  : (reverseRouteMap[pathname] ?? "/");
 ---
 
 <script>
@@ -105,7 +128,7 @@ const isToursActive = tourLinks.some((t) => pathname === t.path);
                 <button
                   class:list={[
                     "nav-link nav-link--btn",
-                    isToursActive && "nav-link--active",
+                    isServicesActive && "nav-link--active",
                   ]}
                 >
                   {route.label}
@@ -155,7 +178,7 @@ const isToursActive = tourLinks.some((t) => pathname === t.path);
           );
         })
       }
-      <a href={isRS ? "/en/" : "/"} class="lang-toggle">
+      <a href={langSwitchHref} class="lang-toggle">
         {isRS ? "EN" : "RS"}
       </a>
     </nav>
@@ -180,12 +203,7 @@ const isToursActive = tourLinks.some((t) => pathname === t.path);
     <!-- Panel header -->
     <div class="mobile-panel__head">
       <a href={isRS ? "/" : "/en/"}>
-        <img
-          src="/logo.svg"
-          width="48"
-          alt="KK Tara Drina"
-          style="filter: brightness(0) invert(1);"
-        />
+        <img src="/logo.svg" width="48" alt="KK Tara Drina" />
       </a>
       <button id="close-menu" aria-label="Zatvori meni" class="close-btn">
         <svg
@@ -235,7 +253,7 @@ const isToursActive = tourLinks.some((t) => pathname === t.path);
       }
 
       <div class="mobile-footer">
-        <a href={isRS ? "/en/" : "/"} class="mobile-lang">
+        <a href={langSwitchHref} class="mobile-lang">
           {isRS ? "Switch to English →" : "Prebaci na srpski →"}
         </a>
       </div>
@@ -468,6 +486,7 @@ const isToursActive = tourLinks.some((t) => pathname === t.path);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    z-index: 50;
     transition:
       opacity 0.3s ease,
       visibility 0.3s ease;

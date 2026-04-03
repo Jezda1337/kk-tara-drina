@@ -1,0 +1,171 @@
+---
+import TourLayout from "../../layouts/TourLayout.astro";
+
+const gallerySlides = [
+  {
+    src: "https://picsum.photos/seed/drina_b1/1200/800",
+    location: "Izletište Rača",
+    caption: "Polazna tačka — peščana plaža Rača na obali Drine",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_b2/1200/800",
+    location: "Kućica na steni",
+    caption: "Svetski poznata Kućica na steni — vidljiva samo iz kajaka",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_b3/1200/800",
+    location: "Buk Bujakovići",
+    caption: "Vrhunac adrenalina — prolazak kroz buk Bujakovići",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_b4/1200/800",
+    location: "Drina — srednji tok",
+    caption: "Pravo snage reke koja nosi kroz nezaboravne predele",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_b5/1200/800",
+    location: "Skrivene plaže",
+    caption: "Savršene tačke za predah i kupanje — dostupne samo s vode",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_b6/1200/800",
+    location: "Rogačica",
+    caption: "Odredište ture — kraj avanture koja se ne zaboravlja",
+  },
+];
+---
+
+<TourLayout
+  title="Rača → Rogačica"
+  subtitle="Tura 2 — Kajak tura na Drini"
+  heroSeed="drina_middle"
+  distance="~20 km"
+  duration="3 – 3,5 sata"
+  difficulty="Umjerena — Kućica i brzaci"
+  season="Maj – Oktobar"
+  contactHref="/kontakt"
+  contactLabel="Rezervišite turu"
+  gallerySlides={gallerySlides}
+  equipmentLabel="Oprema uključena"
+>
+  <section class="mb-12">
+    <h2 class="mb-6 text-2xl font-bold text-slate-900">O turi</h2>
+    <div class="space-y-4 leading-relaxed text-slate-600">
+      <p>
+        Na samo 2 km od starta, naša avantura vas vodi direktno pored svetski
+        poznate
+        <strong>Kućice na steni</strong>. Imaćete priliku da osetite njenu
+        energiju iz neposredne blizine, napravite neverovatne fotografije iz
+        uglova koji su dostupni isključivo veslačima, i saznate tajnu njenog
+        opstanka na steni.
+      </p>
+      <p>
+        Iako je ova ruta poznata po miru i lepoti, ovde ćete osetiti pravu snagu
+        reke. Vrhunac adrenalina rezervisali smo za prolazak kroz buk <strong
+          >Bujakovići</strong
+        > — iskustvo koje nećete zaboraviti.
+      </p>
+      <p>
+        Ruta vodi kroz predele koji se best, i jedino istinski, vide iz kajaka.
+        Skrivene plaže duž obale idealne su za predah i kupanje, dok šume i
+        litice stvaraju prizore koji su vekovima oblikovali ovaj kraj.
+      </p>
+    </div>
+
+    <div
+      class="mt-6 inline-flex items-center gap-3 rounded-xl border border-emerald-100 bg-emerald-50 px-5 py-3"
+    >
+      <span
+        class="text-2xl font-bold text-emerald-700"
+        style="font-family:'Barlow Condensed',sans-serif;">4.000 din</span
+      >
+      <span class="text-sm text-slate-500">po osobi · oprema uključena</span>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-6 text-2xl font-bold text-slate-900">Ruta i zaustavljanja</h2>
+    <div class="space-y-4">
+      {
+        [
+          {
+            place: "Izletište Rača",
+            time: "Polazak",
+            text: "Start sa plaže Rača. Priprema opreme i kratak uvod za one koji prvi put sedaju u kajak.",
+          },
+          {
+            place: "Kućica na steni",
+            time: "~2 km",
+            text: "Prolazak direktno pored čuvene Kućice na steni. Foto pauza iz perspektive koja je dostupna jedino veslačima — saznajte tajnu njenog opstanka.",
+          },
+          {
+            place: "Skrivene plaže",
+            time: "Na vodi",
+            text: "Pauza na jednoj od skrivenih plaža duž obale. Kupanje i odmor u potpunoj tišini prirode.",
+          },
+          {
+            place: "Buk Bujakovići",
+            time: "Adrenalin",
+            text: "Vrhunac ture — prolazak kroz buk Bujakovići. Iskusite pravu snagu Drine uz podršku iskusnog vodiča.",
+          },
+          {
+            place: "Rogačica",
+            time: "Cilj",
+            text: "Dolazak u Rogačicu. Osveženje i organizovan prevoz nazad do baze u Bajinoj Bašti.",
+          },
+        ].map((stop) => (
+          <div class="flex gap-4 rounded-xl border border-slate-100 p-5">
+            <div class="flex-shrink-0">
+              <span class="block text-xs font-bold text-teal-600">
+                {stop.time}
+              </span>
+            </div>
+            <div>
+              <h3 class="mb-1 font-bold text-slate-900">{stop.place}</h3>
+              <p class="text-sm text-slate-600">{stop.text}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-6 text-2xl font-bold text-slate-900">Šta je uključeno</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {
+        [
+          { included: true, text: "Rekreativni kajak i veslo" },
+          { included: true, text: "Prsluk za spasavanje" },
+          { included: true, text: "Licencirani vodič" },
+          { included: true, text: "Uvod za početnike (15 min)" },
+          { included: true, text: "Organizovan prevoz od baze" },
+          {
+            included: true,
+            text: "Prostor za presvlačenje i odlaganje stvari",
+          },
+          { included: true, text: "Osveženje na odredištu" },
+          { included: false, text: "Hrana i lični rashodi" },
+        ].map((item) => (
+          <div class="flex items-center gap-3 text-sm">
+            <span
+              class:list={[
+                "flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold",
+                item.included
+                  ? "bg-teal-100 text-teal-700"
+                  : "bg-red-50 text-red-400",
+              ]}
+            >
+              {item.included ? "✓" : "✗"}
+            </span>
+            <span
+              class:list={[item.included ? "text-slate-700" : "text-slate-400"]}
+            >
+              {item.text}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</TourLayout>

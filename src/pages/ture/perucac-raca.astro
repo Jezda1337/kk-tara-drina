@@ -1,0 +1,165 @@
+---
+import TourLayout from "../../layouts/TourLayout.astro";
+
+const gallerySlides = [
+  {
+    src: "https://picsum.photos/seed/drina_a1/1200/800",
+    location: "Brana Perućac",
+    caption: "Polazna tačka — tirkizna Drina tik ispod brane u Perućcu",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_a2/1200/800",
+    location: "Reka Vrelo — 'Godina'",
+    caption: "Vodopad reke Vrelo (365m) koja se uliva direktno u Drinu",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_a3/1200/800",
+    location: "Tirkizne vode Drine",
+    caption: "Prepoznatljiva boja reke koja osvežava i u najvrelijim danima",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_a4/1200/800",
+    location: "Netaknuta priroda",
+    caption: "Šume i litice koje uokviruju tok Drine kroz Podrinje",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_a5/1200/800",
+    location: "Izletište Rača",
+    caption: "Odredište ture — peščana plaža idealna za odmor i kupanje",
+  },
+  {
+    src: "https://picsum.photos/seed/drina_a6/1200/800",
+    location: "Drina",
+    caption: "Svaki metar reke otkriva lepote skrivene onima na obali",
+  },
+];
+---
+
+<TourLayout
+  title="Perućac → Rača"
+  subtitle="Tura 1 — Kajak tura na Drini"
+  heroSeed="drinariver"
+  distance="~15 km"
+  duration="~2,5 sata"
+  difficulty="Laka — idealna za početnike"
+  season="Maj – Oktobar"
+  contactHref="/kontakt"
+  contactLabel="Rezervišite turu"
+  gallerySlides={gallerySlides}
+  equipmentLabel="Oprema uključena"
+>
+  <section class="mb-12">
+    <h2 class="mb-6 text-2xl font-bold text-slate-900">O turi</h2>
+    <div class="space-y-4 leading-relaxed text-slate-600">
+      <p>
+        Ova tura je idealna ulaznica u svet kajaka. Spust počinje tik ispod
+        brane u Perućcu, na mestu gde Drina dobija svoju prepoznatljivu tirkiznu
+        boju i svežinu koja okrepljuje i u najvrelijim letnjim danima.
+      </p>
+      <p>
+        Već na samom početku proći ćemo pored ušća reke Vrelo, poznatije kao <strong
+          >"Godina"</strong
+        >, jer je dugačka tačno 365 metara. Pogled na njen vodopad koji se uliva
+        u Drinu, direktno iz kajaka, prizor je koji se ne zaboravlja i sjajan
+        kadar za prve fotografije.
+      </p>
+      <p>
+        Tok Drine na ovoj relaciji je miran i prijatan — bez brzaka i prepreka.
+        Koristimo prostrane rekreativne kajake koji su stabilni i laki za
+        upravljanje. Iskusni vodič prati grupu tokom cele rute i brine se o
+        bezbednosti, ali i prenosi znanje o prirodi i istoriji ovog kraja.
+      </p>
+    </div>
+
+    <div
+      class="mt-6 inline-flex items-center gap-3 rounded-xl border border-emerald-100 bg-emerald-50 px-5 py-3"
+    >
+      <span
+        class="text-2xl font-bold text-emerald-700"
+        style="font-family:'Barlow Condensed',sans-serif;">3.600 din</span
+      >
+      <span class="text-sm text-slate-500">po osobi · oprema uključena</span>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-6 text-2xl font-bold text-slate-900">Ruta i zaustavljanja</h2>
+    <div class="space-y-4">
+      {
+        [
+          {
+            place: "Brana Perućac",
+            time: "Polazak",
+            text: "Start na pristaništu tik ispod brane. Kratki uvod u upravljanje kajakom — svega 15 minuta, pa kreće avantura.",
+          },
+          {
+            place: "Reka Vrelo — 'Godina'",
+            time: "Na vodi",
+            text: "Prolazak pored ušća reke Vrelo (365m). Direktan pogled na vodopad koji se uliva u Drinu — nezaboravan prizor i odlična foto pauza.",
+          },
+          {
+            place: "Mirni tok Drine",
+            time: "Na vodi",
+            text: "Veslanje kroz netaknutu prirodu Podrinja. Tišinu prekida samo zaveslaj vesla i pesma ptica iz šuma koje uokviruju tok.",
+          },
+          {
+            place: "Izletište Rača",
+            time: "Cilj",
+            text: "Dolazak na izletište Rača. Osveženje, kupanje i sabiranje utisaka sa vode. Organizovan prevoz nazad do baze.",
+          },
+        ].map((stop) => (
+          <div class="flex gap-4 rounded-xl border border-slate-100 p-5">
+            <div class="flex-shrink-0">
+              <span class="block text-xs font-bold text-teal-600">
+                {stop.time}
+              </span>
+            </div>
+            <div>
+              <h3 class="mb-1 font-bold text-slate-900">{stop.place}</h3>
+              <p class="text-sm text-slate-600">{stop.text}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-6 text-2xl font-bold text-slate-900">Šta je uključeno</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {
+        [
+          { included: true, text: "Rekreativni kajak i veslo" },
+          { included: true, text: "Prsluk za spasavanje" },
+          { included: true, text: "Licencirani vodič" },
+          { included: true, text: "Uvod za početnike (15 min)" },
+          { included: true, text: "Organizovan prevoz od baze" },
+          {
+            included: true,
+            text: "Prostor za presvlačenje i odlaganje stvari",
+          },
+          { included: true, text: "Osveženje na odredištu" },
+          { included: false, text: "Hrana i lični rashodi" },
+        ].map((item) => (
+          <div class="flex items-center gap-3 text-sm">
+            <span
+              class:list={[
+                "flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold",
+                item.included
+                  ? "bg-teal-100 text-teal-700"
+                  : "bg-red-50 text-red-400",
+              ]}
+            >
+              {item.included ? "✓" : "✗"}
+            </span>
+            <span
+              class:list={[item.included ? "text-slate-700" : "text-slate-400"]}
+            >
+              {item.text}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</TourLayout>

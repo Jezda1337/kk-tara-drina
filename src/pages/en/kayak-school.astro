@@ -2,20 +2,63 @@
 import Layout from "../../layouts/Layout.astro";
 
 const courses = [
-  { num: "01", eyebrow: "Beginner level", title: "Beginners", duration: "Weekend course", desc: "Learn the basics of safe paddling in a controlled environment with experienced instructors. Zero prior experience is no barrier.", features: ["Paddling basics", "Water safety", "Basic steering", "Equipment included"] },
-  { num: "02", eyebrow: "Intermediate level", title: "Advanced", duration: "3–4 days", desc: "Perfect for those who already know the basics and want to progress to river kayaking — rapids, current navigation and rescue techniques.", features: ["Advanced paddling", "River kayaking", "Current navigation", "Rescue skills"] },
-  { num: "03", eyebrow: "Expert level", title: "Expert", duration: "5 days", desc: "For experienced kayakers who want expedition training and guide certification. Route planning and group leadership.", features: ["Expedition kayaking", "Route planning", "Guide training", "Certificate"] },
+  {
+    num: "01",
+    eyebrow: "Beginner level",
+    title: "Beginners' kayak school",
+    duration: "5 sessions + final descent",
+    price: "6,000 RSD",
+    desc: "We run a beginners' kayak school on the Drina, at Rača picnic area. Over five days, a kayak instructor will introduce you to the basics of safe paddling on calm and easy whitewater.",
+    features: [
+      "Basic paddling equipment",
+      "Water safety fundamentals",
+      "Proper paddle grip & technique",
+      "Kayak steering basics",
+      "Entering current & eddies",
+      "Final river descent",
+    ],
+  },
+  {
+    num: "02",
+    eyebrow: "Advanced level",
+    title: "Advanced kayak school",
+    duration: "4 sessions",
+    price: "5,000 RSD",
+    desc: "Designed for those who already paddle and want to improve. Special focus on more demanding moves, precise entries into currents and eddies, and stronger kayak edging.",
+    features: [
+      "Advanced paddling techniques",
+      "Precise current entries",
+      "Kayak edging & lean",
+      "Efficient use of river flow",
+      "Locations: Crvene vode & Bujaković rapid",
+    ],
+  },
+  {
+    num: "03",
+    eyebrow: "Individual approach",
+    title: "Individual kayak school",
+    duration: "1 session (60 min)",
+    price: "2,500 RSD",
+    desc: "We tailor individual sessions to your goals, schedule and prior knowledge. You can learn paddling basics with a kayak instructor, improve existing skills, or learn the Eskimo roll.",
+    features: [
+      "Fully customised program",
+      "Beginner or advanced techniques",
+      "Skills refresher",
+      "Eskimo roll",
+      "Flexible scheduling",
+    ],
+  },
 ];
 
 const skills = [
-  { icon: "🚣", title: "Paddling technique", text: "Proper paddle stroke, steering in current, turning and stopping with control and efficiency." },
-  { icon: "🛟", title: "Safety", text: "Capsize procedures, self-rescue, and assisting others in the water." },
-  { icon: "🗺️", title: "Navigation", text: "Reading the river, assessing rapids, route planning and group management." },
-  { icon: "⛺", title: "Camping", text: "Basics of camping along the river for multi-day expeditions in nature." },
+  { icon: "🚣", title: "Paddling technique", text: "Proper paddle stroke, steering in current, turning and stopping — the foundation of everything." },
+  { icon: "🛟", title: "Water safety", text: "Capsize procedures, self-rescue, assisting others and basic water rescue techniques." },
+  { icon: "🗺️", title: "River navigation", text: "Reading the river, assessing rapids, entering currents and eddies, route planning on whitewater." },
+  { icon: "⛵", title: "Eskimo roll", text: "The technique of righting a capsized kayak without exiting — for advanced participants." },
 ];
 ---
 
-<Layout title="Kayak school">
+<Layout title="Kayak School — KK Tara Drina">
 
   <section class="page-hero">
     <img src="https://picsum.photos/seed/school2/1920/800" alt="" class="page-hero__bg" />
@@ -35,13 +78,25 @@ const skills = [
     <div class="container">
       <div class="split-layout">
         <div class="split-layout__text">
-          <span class="eyebrow">For everyone</span>
-          <h2 class="section-title">From complete beginner to expert</h2>
-          <p class="body-text">No prior experience needed to get started — just the will for adventure. Our instructors are former national team members with teaching experience who know how to adapt training to every participant.</p>
-          <p class="body-text">Courses for children from age 7, adults and groups of up to 12 people. All equipment is included — just show up in a swimsuit and good spirits.</p>
+          <span class="eyebrow">Expert-led</span>
+          <h2 class="section-title">School led by Marko Marjanović</h2>
+          <p class="body-text">
+            The kayak school is led by Marko Marjanović, a long-time Serbian national team
+            representative, participant in World and European Championships, licensed coach
+            and water rescue specialist.
+          </p>
+          <p class="body-text">
+            All programs are carefully designed for recreational paddling, with a focus on
+            safety and correct technique. The same precision and discipline needed for top
+            sporting results are built into every program.
+          </p>
+          <p class="body-text">
+            We provide all equipment for every school participant — kayak, paddle and life
+            jacket. Just show up in your swimwear and good spirits.
+          </p>
         </div>
         <div class="split-layout__media">
-          <img src="https://picsum.photos/seed/school3/900/700" alt="Kayak school" class="split-img" />
+          <img src="https://picsum.photos/seed/school3/900/700" alt="Kayak school on the Drina" class="split-img" />
           <div class="split-img__accent"></div>
         </div>
       </div>
@@ -57,8 +112,8 @@ const skills = [
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Training levels</span>
-        <h2 class="section-title">Choose your level</h2>
-        <p class="section-sub">We tailor the program to your experience. Contact us for information about dates and group availability.</p>
+        <h2 class="section-title">Choose your program</h2>
+        <p class="section-sub">We tailor the program to your experience and goals. Contact us for information on schedules and groups.</p>
       </div>
       <div class="level-grid">
         {courses.map((c) => (
@@ -67,6 +122,7 @@ const skills = [
             <p class="level-card__eyebrow">{c.eyebrow}</p>
             <h3 class="level-card__title">{c.title}</h3>
             <p class="level-card__duration">{c.duration}</p>
+            <p class="level-card__price">{c.price}</p>
             <p class="level-card__desc">{c.desc}</p>
             <ul class="level-card__features">
               {c.features.map((f) => (
@@ -95,8 +151,6 @@ const skills = [
           <path d="M-100,395 C215,358 378,400 580,366 C780,332 940,375 1140,340 C1330,310 1432,348 1540,330"/>
           <path d="M-100,360 C232,320 395,365 600,328 C800,295 960,338 1160,302 C1350,270 1440,310 1540,292"/>
           <path d="M-100,325 C250,282 412,328 620,290 C820,255 980,300 1180,262 C1370,228 1448,270 1540,252"/>
-          <path d="M-100,290 C268,244 430,292 638,252 C840,215 1000,262 1200,222 C1390,188 1455,232 1540,212"/>
-          <path d="M-100,255 C285,206 448,258 658,215 C862,175 1020,225 1222,182 C1412,145 1462,195 1540,172"/>
         </g>
       </svg>
     </div>
@@ -127,13 +181,28 @@ const skills = [
       <div class="cta-block">
         <span class="eyebrow">Interested?</span>
         <h2 class="cta-title">Sign up today</h2>
-        <p class="cta-sub">Contact us for information about dates, groups and anything else you'd like to know. We respond within 24 hours.</p>
+        <p class="cta-sub">Contact us for information on schedules and groups. The school is held at Rača picnic area in Bajina Bašta.</p>
         <a href="/en/contact" class="btn btn--primary btn--large">
           Contact us
-          <svg class="btn__arrow" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0a1a12"/>
+      </svg>
     </div>
   </section>
 
 </Layout>
+
+<style>
+  .level-card__price {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2a7a54;
+    margin-bottom: 0.75rem;
+  }
+</style>

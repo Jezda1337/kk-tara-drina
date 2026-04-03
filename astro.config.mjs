@@ -7,6 +7,10 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      minify: true,
+      cssMinify: true,
+    },
   },
   i18n: {
     locales: ["rs", "en"],
@@ -24,4 +28,3 @@ export default defineConfig({
     },
   ],
 });
-

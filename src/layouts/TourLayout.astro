@@ -39,25 +39,50 @@ const {
 ---
 
 <Layout title={title} transparentNav={true}>
-
   <!-- Hero -->
   <section class="hero">
-    <img src={`https://picsum.photos/seed/${heroSeed}/1920/1080`} alt="" class="hero__bg" />
+    <img
+      src={`https://picsum.photos/seed/${heroSeed}/1920/1080`}
+      alt=""
+      class="hero__bg"
+    />
     <div class="hero__overlay"></div>
 
     <!-- Topo lines -->
     <div class="topo-lines" aria-hidden="true">
-      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        viewBox="0 0 1440 600"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <g stroke="rgba(74,186,130,0.1)" stroke-width="0.8" fill="none">
-          <path d="M-100,500 C200,468 360,508 560,475 C760,442 920,482 1120,450 C1310,422 1420,458 1540,440"/>
-          <path d="M-100,468 C215,432 378,475 580,440 C780,408 940,450 1140,415 C1330,385 1432,422 1540,405"/>
-          <path d="M-100,435 C232,395 395,440 600,402 C800,368 960,412 1160,375 C1350,345 1440,385 1540,368"/>
-          <path d="M-100,402 C250,358 412,405 620,365 C820,328 980,375 1180,335 C1370,302 1448,348 1540,330"/>
-          <path d="M-100,368 C268,322 430,370 638,328 C840,290 1000,340 1200,298 C1390,262 1455,312 1540,292"/>
-          <path d="M-100,335 C285,285 448,335 658,292 C862,252 1020,305 1222,260 C1412,222 1462,278 1540,255"/>
-          <path d="M-100,302 C302,248 465,302 678,255 C885,215 1042,272 1245,225 C1435,185 1468,245 1540,220"/>
-          <path d="M-100,268 C320,212 482,270 698,220 C908,175 1065,238 1268,190 C1458,148 1474,212 1540,185"/>
-          <path d="M-100,235 C338,178 500,238 720,185 C932,138 1090,205 1292,155 C1482,112 1482,180 1540,152"/>
+          <path
+            d="M-100,500 C200,468 360,508 560,475 C760,442 920,482 1120,450 C1310,422 1420,458 1540,440"
+          ></path>
+          <path
+            d="M-100,468 C215,432 378,475 580,440 C780,408 940,450 1140,415 C1330,385 1432,422 1540,405"
+          ></path>
+          <path
+            d="M-100,435 C232,395 395,440 600,402 C800,368 960,412 1160,375 C1350,345 1440,385 1540,368"
+          ></path>
+          <path
+            d="M-100,402 C250,358 412,405 620,365 C820,328 980,375 1180,335 C1370,302 1448,348 1540,330"
+          ></path>
+          <path
+            d="M-100,368 C268,322 430,370 638,328 C840,290 1000,340 1200,298 C1390,262 1455,312 1540,292"
+          ></path>
+          <path
+            d="M-100,335 C285,285 448,335 658,292 C862,252 1020,305 1222,260 C1412,222 1462,278 1540,255"
+          ></path>
+          <path
+            d="M-100,302 C302,248 465,302 678,255 C885,215 1042,272 1245,225 C1435,185 1468,245 1540,220"
+          ></path>
+          <path
+            d="M-100,268 C320,212 482,270 698,220 C908,175 1065,238 1268,190 C1458,148 1474,212 1540,185"
+          ></path>
+          <path
+            d="M-100,235 C338,178 500,238 720,185 C932,138 1090,205 1292,155 C1482,112 1482,180 1540,152"
+          ></path>
         </g>
       </svg>
     </div>
@@ -67,19 +92,64 @@ const {
       <h1 class="hero__title">{title}</h1>
       <div class="stat-chips">
         <span class="stat-chip">
-          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z"/></svg>
+          <svg
+            width="12"
+            height="12"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z"
+            ></path></svg
+          >
           {distance}
         </span>
         <span class="stat-chip">
-          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <svg
+            width="12"
+            height="12"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            ><circle cx="12" cy="12" r="10"></circle><polyline
+              points="12 6 12 12 16 14"></polyline></svg
+          >
           {duration}
         </span>
         <span class="stat-chip">
-          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+          <svg
+            width="12"
+            height="12"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"
+            ></path></svg
+          >
           {difficulty}
         </span>
         <span class="stat-chip">
-          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+          <svg
+            width="12"
+            height="12"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+            ></path></svg
+          >
           {season}
         </span>
       </div>
@@ -87,8 +157,14 @@ const {
 
     <!-- wave → cream -->
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,45 C240,90 480,0 720,45 C960,90 1200,0 1440,45 L1440,90 L0,90 Z" fill="#f2ede4"/>
+      <svg
+        viewBox="0 0 1440 90"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,45 C240,90 480,0 720,45 C960,90 1200,0 1440,45 L1440,90 L0,90 Z"
+          fill="#f2ede4"></path>
       </svg>
     </div>
   </section>
@@ -98,12 +174,14 @@ const {
     <div class="tour-content-grid">
       <div>
         <slot />
-        {gallerySlides.length > 0 && (
-          <div class="content-section">
-            <h2>Galerija</h2>
-            <GallerySlider slides={gallerySlides} autoplay={5000} />
-          </div>
-        )}
+        {
+          gallerySlides.length > 0 && (
+            <div class="content-section">
+              <h2>Galerija</h2>
+              <GallerySlider slides={gallerySlides} autoplay={5000} />
+            </div>
+          )
+        }
       </div>
 
       <aside>
@@ -112,29 +190,85 @@ const {
           <p class="booking-card__meta">{distance} · {duration}</p>
           <ul class="booking-card__list">
             <li class="booking-card__list-item">
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"></path></svg
+              >
               {difficulty}
             </li>
             <li class="booking-card__list-item">
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"></path></svg
+              >
               {season}
             </li>
             <li class="booking-card__list-item">
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"></path></svg
+              >
               {equipmentLabel}
             </li>
           </ul>
-          <a href={contactHref} class="btn btn--primary" style="width:100%; justify-content:center;">
+          <a
+            href={contactHref}
+            class="btn btn--primary"
+            style="width:100%; justify-content:center;"
+          >
             {contactLabel}
-            <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              class="btn__arrow"
+              fill="none"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </a>
         </div>
       </aside>
     </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0a1a12"
+        ></path>
+      </svg>
+    </div>
   </div>
-
 </Layout>
 
 <style>
@@ -157,7 +291,12 @@ const {
   .hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, #0d2016 0%, rgba(13,32,22,0.5) 50%, rgba(13,32,22,0.15) 100%);
+    background: linear-gradient(
+      to top,
+      #0d2016 0%,
+      rgba(13, 32, 22, 0.5) 50%,
+      rgba(13, 32, 22, 0.15) 100%
+    );
   }
   .hero__content {
     position: relative;
@@ -168,7 +307,7 @@ const {
     padding: 0 1.5rem 6rem;
   }
   .hero__eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.24em;
@@ -178,12 +317,15 @@ const {
     display: block;
   }
   .hero__title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 800;
     line-height: 0.95;
     text-transform: uppercase;
     color: #fff;
     margin-bottom: 0;
+  }
+  :global(.tour-content) {
+    position: relative;
   }
 </style>

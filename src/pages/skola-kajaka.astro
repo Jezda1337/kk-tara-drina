@@ -5,38 +5,60 @@ const courses = [
   {
     num: "01",
     eyebrow: "Početnički nivo",
-    title: "Početnici",
-    duration: "Vikend kurs",
-    desc: "Naučite osnove sigurnog veslanja u kontrolisanom okruženju uz podršku iskusnih instruktora. Nulto prethodno iskustvo nije prepreka.",
-    features: ["Osnove veslanja", "Bezbednost na vodi", "Osnovno upravljanje", "Oprema uključena"],
+    title: "Škola kajaka za početnike",
+    duration: "5 časova + završni spust",
+    price: "6.000 din",
+    desc: "Održavamo školu kajaka za početnike na Drini, na izletištu Rača. Tokom pet dana, instruktor kajaka će vas upoznati sa osnovama bezbednog veslanja na mirnim i lakim divljim vodama.",
+    features: [
+      "Osnovna oprema za veslanje",
+      "Bezbednost na vodi",
+      "Pravilno držanje vesla",
+      "Upravljanje kajakom",
+      "Ulaz u struju i protivstruju",
+      "Završni spust niz reku",
+    ],
   },
   {
     num: "02",
-    eyebrow: "Srednji nivo",
-    title: "Napredni",
-    duration: "3–4 dana",
-    desc: "Idealno za one koji već znaju osnove i žele da napreduju na rečnom kajakingu — brzaci, navigacija struje i spasilačke tehnike.",
-    features: ["Napredne tehnike veslanja", "Rečni kajaking", "Navigacija struje", "Spasilačke veštine"],
+    eyebrow: "Napredni nivo",
+    title: "Napredna škola kajaka",
+    duration: "4 časa",
+    price: "5.000 din",
+    desc: "Namenjena je svima koji već veslaju i žele da napreduju. Posebnu pažnju posvećujemo izvođenju zahtevnijih pokreta, pravilnom ulasku u struju i protivstruju, i jačem naginjanju kajaka.",
+    features: [
+      "Zahtevniji pokreti i tehnike",
+      "Precizan ulaz u struju",
+      "Naginjanje kajaka",
+      "Korišćenje rečnog toka",
+      "Lokacije: Crvene vode i buk Bujaković",
+    ],
   },
   {
     num: "03",
-    eyebrow: "Ekspedicijski nivo",
-    title: "Ekspert",
-    duration: "5 dana",
-    desc: "Za iskusne kajakaše koji žele ekspedicijsku obuku i voditeljsku sertifikaciju. Planiranje rute i vođstvo grupe.",
-    features: ["Ekspedicionski kajaking", "Planiranje rute", "Voditeljska obuka", "Sertifikat"],
+    eyebrow: "Individualni pristup",
+    title: "Individualna škola kajaka",
+    duration: "1 čas (60 min)",
+    price: "2.500 din",
+    desc: "Individualnu školu prilagođavamo vašim željama, vremenu i vašem prethodnom znanju. Tokom individualnih časova možete naučiti osnove veslanja, unaprediti znanje ili naučiti eskimotažu.",
+    features: [
+      "Potpuno prilagođen program",
+      "Osnove ili napredne tehnike",
+      "Obnova znanja",
+      "Eskimotaža",
+      "Fleksibilni termini",
+    ],
   },
 ];
 
 const skills = [
-  { icon: "🚣", title: "Tehnike veslanja", text: "Pravilna tehnika zamahnute veslice, upravljanje u struji, okretanje i zaustavljanje." },
-  { icon: "🛟", title: "Bezbednost", text: "Postupci u slučaju prevrtanja, samospasavanje, pružanje pomoći drugima." },
-  { icon: "🗺️", title: "Navigacija", text: "Čitanje reke, procena brzaka, planiranje rute i upravljanje grupom." },
-  { icon: "⛺", title: "Logorovanje", text: "Osnove kampovanja uz reku za višednevne ekspedicije u prirodi." },
+  { icon: "🚣", title: "Tehnike veslanja", text: "Pravilna tehnika zamahnute veslice, upravljanje u struji, okretanje i zaustavljanje — osnova svega." },
+  { icon: "🛟", title: "Bezbednost na vodi", text: "Postupci u slučaju prevrtanja, samospasavanje, pružanje pomoći drugima i osnove spasilačkih tehnika." },
+  { icon: "🗺️", title: "Navigacija rekom", text: "Čitanje reke, procena brzaka, ulaz u struju i protivstruju, planiranje rute na divljoj vodi." },
+  { icon: "⛵", title: "Eskimotaža", text: "Tehnika vraćanja kajaka u uspravan položaj bez izlaska iz njega — za napredne polaznike." },
 ];
 ---
 
-<Layout title="Škola kajaka">
+<Layout title="Škola kajaka — KK Tara Drina">
 
   <section class="page-hero">
     <img src="https://picsum.photos/seed/school2/1920/800" alt="" class="page-hero__bg" />
@@ -57,20 +79,24 @@ const skills = [
     <div class="container">
       <div class="split-layout">
         <div class="split-layout__text">
-          <span class="eyebrow">Za svakoga</span>
-          <h2 class="section-title">Od potpunog početnika do eksperta</h2>
+          <span class="eyebrow">Stručno vodstvo</span>
+          <h2 class="section-title">Školu vodi Marko Marjanović</h2>
           <p class="body-text">
-            Ne treba vam nikakvo prethodno iskustvo da biste počeli — samo volja za avanturu.
-            Naši instruktori su bivši reprezentativci sa pedagoškim iskustvom, koji znaju
-            kako da prilagode obuku svakom polazniku.
+            Školu kajaka vodi Marko Marjanović, dugogodišnji reprezentativac Srbije, učesnik
+            svetskih i evropskih prvenstava, licencirani trener i spasilac na vodi.
           </p>
           <p class="body-text">
-            Kursevi su dostupni za decu od 7 godina, odrasle i grupe do 12 učesnika.
-            Sva oprema je uključena — dolazite samo u kupaćem i dobrom raspoloženju.
+            Svi programi su pažljivo osmišljeni i prilagođeni rekreativnom veslanju, sa fokusom
+            na bezbednost i pravilnu tehniku. Ista ona preciznost i disciplina koje su potrebne
+            za vrhunske sportske rezultate, utkani su u svaki naš program.
+          </p>
+          <p class="body-text">
+            Mi obezbeđujemo svu opremu za sve učesnike škole kajaka — kajak, veslo i prsluk za
+            spasavanje. Dolazite samo u kupaćem i dobrom raspoloženju.
           </p>
         </div>
         <div class="split-layout__media">
-          <img src="https://picsum.photos/seed/school3/900/700" alt="Škola kajaka" class="split-img" />
+          <img src="https://picsum.photos/seed/school3/900/700" alt="Škola kajaka na Drini" class="split-img" />
           <div class="split-img__accent"></div>
         </div>
       </div>
@@ -87,8 +113,8 @@ const skills = [
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Nivoi obuke</span>
-        <h2 class="section-title">Izaberite svoj nivo</h2>
-        <p class="section-sub">Prilagođavamo program vašem iskustvu. Kontaktirajte nas za informacije o terminima i grupama.</p>
+        <h2 class="section-title">Izaberite svoj program</h2>
+        <p class="section-sub">Prilagođavamo program vašem iskustvu i ciljevima. Kontaktirajte nas za informacije o terminima i grupama.</p>
       </div>
       <div class="level-grid">
         {courses.map((c) => (
@@ -97,6 +123,7 @@ const skills = [
             <p class="level-card__eyebrow">{c.eyebrow}</p>
             <h3 class="level-card__title">{c.title}</h3>
             <p class="level-card__duration">{c.duration}</p>
+            <p class="level-card__price">{c.price}</p>
             <p class="level-card__desc">{c.desc}</p>
             <ul class="level-card__features">
               {c.features.map((f) => (
@@ -160,13 +187,28 @@ const skills = [
       <div class="cta-block">
         <span class="eyebrow">Zainteresovani?</span>
         <h2 class="cta-title">Prijavite se danas</h2>
-        <p class="cta-sub">Kontaktirajte nas za informacije o terminima, grupama i svemu što vas zanima. Odgovaramo u roku od 24 sata.</p>
+        <p class="cta-sub">Kontaktirajte nas za informacije o terminima i grupama. Škola se održava na izletištu Rača u Bajinoj Bašti.</p>
         <a href="/kontakt" class="btn btn--primary btn--large">
           Kontaktirajte nas
           <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0a1a12"/>
+      </svg>
+    </div>
   </section>
 
 </Layout>
+
+<style>
+  .level-card__price {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2a7a54;
+    margin-bottom: 0.75rem;
+  }
+</style>

@@ -20,9 +20,17 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
   <div class="stage" aria-label="Photo gallery">
     {
       slides.map((slide, i) => (
-        <div class:list={["slide", { active: i === 0 }]} data-index={i} aria-hidden={i !== 0}>
+        <div
+          class:list={["slide", { active: i === 0 }]}
+          data-index={i}
+          aria-hidden={i !== 0}
+        >
           <div class="img-wrap">
-            <img src={slide.src} alt={slide.alt ?? ""} loading={i === 0 ? "eager" : "lazy"} />
+            <img
+              src={slide.src}
+              alt={slide.alt ?? ""}
+              loading={i === 0 ? "eager" : "lazy"}
+            />
           </div>
           <div class="caption">
             <span class="caption-location">{slide.location ?? ""}</span>
@@ -35,12 +43,22 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
     <!-- Arrows -->
     <button class="arrow arrow-prev" aria-label="Previous slide">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path
+          d="M13 4L7 10L13 16"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
       </svg>
     </button>
     <button class="arrow arrow-next" aria-label="Next slide">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path
+          d="M7 4L13 10L7 16"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
       </svg>
     </button>
 
@@ -48,7 +66,8 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
     <div class="counter">
       <span class="counter-current">01</span>
       <span class="counter-sep">/</span>
-      <span class="counter-total">{String(slides.length).padStart(2, "0")}</span>
+      <span class="counter-total">{String(slides.length).padStart(2, "0")}</span
+      >
     </div>
   </div>
 
@@ -98,7 +117,9 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
   }
 
   @media (max-width: 640px) {
-    .stage { aspect-ratio: 4 / 3; }
+    .stage {
+      aspect-ratio: 4 / 3;
+    }
   }
 
   /* ── Slides ── */
@@ -137,8 +158,13 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(to top, rgba(5, 10, 14, 0.85) 0%, rgba(5,10,14,0.1) 50%, transparent 100%),
-      linear-gradient(to right, rgba(5,10,14,0.3) 0%, transparent 40%);
+      linear-gradient(
+        to top,
+        rgba(5, 10, 14, 0.85) 0%,
+        rgba(5, 10, 14, 0.1) 50%,
+        transparent 100%
+      ),
+      linear-gradient(to right, rgba(5, 10, 14, 0.3) 0%, transparent 40%);
     pointer-events: none;
   }
 
@@ -163,7 +189,9 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
     z-index: 3;
     transform: translateY(6px);
     opacity: 0;
-    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+    transition:
+      opacity 0.5s ease 0.3s,
+      transform 0.5s ease 0.3s;
   }
   .slide.active .caption {
     opacity: 1;
@@ -220,7 +248,10 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    transition:
+      background 0.2s,
+      border-color 0.2s,
+      transform 0.2s;
     backdrop-filter: blur(8px);
   }
   .arrow:hover {
@@ -228,8 +259,12 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
     border-color: rgba(20, 184, 166, 0.5);
     transform: translateY(-50%) scale(1.08);
   }
-  .arrow-prev { left: 1.25rem; }
-  .arrow-next { right: 1.25rem; }
+  .arrow-prev {
+    left: 1.25rem;
+  }
+  .arrow-next {
+    right: 1.25rem;
+  }
 
   /* ── Filmstrip ── */
   .filmstrip {
@@ -242,10 +277,12 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
     gap: 0.5rem;
     overflow-x: auto;
     scrollbar-width: none;
-    padding-bottom: 2px;
+    padding-block: 4px;
     scroll-snap-type: x mandatory;
   }
-  .filmstrip-track::-webkit-scrollbar { display: none; }
+  .filmstrip-track::-webkit-scrollbar {
+    display: none;
+  }
 
   .thumb {
     flex-shrink: 0;
@@ -256,7 +293,9 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
     position: relative;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: border-color 0.2s, transform 0.2s;
+    transition:
+      border-color 0.2s,
+      transform 0.2s;
     scroll-snap-align: start;
     padding: 0;
     background: none;
@@ -335,11 +374,12 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
       if (counter) counter.textContent = String(current + 1).padStart(2, "0");
 
       // Scroll filmstrip horizontally only — never touch page scroll
-      const activeThumb = thumbs[current] as HTMLElement;
-      const track = filmstrip as HTMLElement;
+      const activeThumb = thumbs[current];
+      const track = filmstrip;
       if (track && activeThumb) {
         const trackCenter = track.offsetWidth / 2;
-        const thumbCenter = activeThumb.offsetLeft + activeThumb.offsetWidth / 2;
+        const thumbCenter =
+          activeThumb.offsetLeft + activeThumb.offsetWidth / 2;
         track.scrollTo({ left: thumbCenter - trackCenter, behavior: "smooth" });
       }
 
@@ -379,23 +419,44 @@ const id = `gallery-${Math.random().toString(36).slice(2, 8)}`;
     });
 
     // Arrow buttons
-    prevBtn?.addEventListener("click", () => { goTo(current - 1); startAutoplay(); });
-    nextBtn?.addEventListener("click", () => { goTo(current + 1); startAutoplay(); });
+    prevBtn?.addEventListener("click", () => {
+      goTo(current - 1);
+      startAutoplay();
+    });
+    nextBtn?.addEventListener("click", () => {
+      goTo(current + 1);
+      startAutoplay();
+    });
 
     // Thumb clicks
     thumbs.forEach((thumb, i) => {
-      thumb.addEventListener("click", () => { goTo(i); startAutoplay(); });
+      thumb.addEventListener("click", () => {
+        goTo(i);
+        startAutoplay();
+      });
     });
 
     // Keyboard
     root.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") { goTo(current - 1); startAutoplay(); }
-      if (e.key === "ArrowRight") { goTo(current + 1); startAutoplay(); }
+      if (e.key === "ArrowLeft") {
+        goTo(current - 1);
+        startAutoplay();
+      }
+      if (e.key === "ArrowRight") {
+        goTo(current + 1);
+        startAutoplay();
+      }
     });
 
     // Touch swipe
     let touchStartX = 0;
-    root.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.touches[0].clientX;
+      },
+      { passive: true },
+    );
     root.addEventListener("touchend", (e) => {
       const delta = touchStartX - e.changedTouches[0].clientX;
       if (Math.abs(delta) > 40) {

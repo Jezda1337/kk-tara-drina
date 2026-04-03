@@ -1,146 +1,172 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const courses = [
+  {
+    num: "01",
+    eyebrow: "Početnički nivo",
+    title: "Početnici",
+    duration: "Vikend kurs",
+    desc: "Naučite osnove sigurnog veslanja u kontrolisanom okruženju uz podršku iskusnih instruktora. Nulto prethodno iskustvo nije prepreka.",
+    features: ["Osnove veslanja", "Bezbednost na vodi", "Osnovno upravljanje", "Oprema uključena"],
+  },
+  {
+    num: "02",
+    eyebrow: "Srednji nivo",
+    title: "Napredni",
+    duration: "3–4 dana",
+    desc: "Idealno za one koji već znaju osnove i žele da napreduju na rečnom kajakingu — brzaci, navigacija struje i spasilačke tehnike.",
+    features: ["Napredne tehnike veslanja", "Rečni kajaking", "Navigacija struje", "Spasilačke veštine"],
+  },
+  {
+    num: "03",
+    eyebrow: "Ekspedicijski nivo",
+    title: "Ekspert",
+    duration: "5 dana",
+    desc: "Za iskusne kajakaše koji žele ekspedicijsku obuku i voditeljsku sertifikaciju. Planiranje rute i vođstvo grupe.",
+    features: ["Ekspedicionski kajaking", "Planiranje rute", "Voditeljska obuka", "Sertifikat"],
+  },
+];
+
+const skills = [
+  { icon: "🚣", title: "Tehnike veslanja", text: "Pravilna tehnika zamahnute veslice, upravljanje u struji, okretanje i zaustavljanje." },
+  { icon: "🛟", title: "Bezbednost", text: "Postupci u slučaju prevrtanja, samospasavanje, pružanje pomoći drugima." },
+  { icon: "🗺️", title: "Navigacija", text: "Čitanje reke, procena brzaka, planiranje rute i upravljanje grupom." },
+  { icon: "⛺", title: "Logorovanje", text: "Osnove kampovanja uz reku za višednevne ekspedicije u prirodi." },
+];
 ---
 
 <Layout title="Škola kajaka">
-  <!-- Hero -->
-  <section class="relative flex h-80 items-end overflow-hidden bg-slate-900 md:h-[28rem]">
-    <img
-      src="https://picsum.photos/seed/school2/1920/800"
-      alt=""
-      class="absolute inset-0 h-full w-full object-cover opacity-50"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-    <div class="relative z-10 mx-auto w-full max-w-6xl px-4 pb-12">
-      <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-400">Naučite da veslate</p>
-      <h1 class="text-4xl font-bold text-white md:text-5xl">Škola kajaka</h1>
+
+  <section class="page-hero">
+    <img src="https://picsum.photos/seed/school2/1920/800" alt="" class="page-hero__bg" />
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <span class="eyebrow eyebrow--light">Naučite da veslate</span>
+      <h1 class="page-title">Škola kajaka</h1>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z" fill="#f2ede4"/>
+      </svg>
     </div>
   </section>
 
   <!-- Intro -->
-  <section class="px-4 py-20">
-    <div class="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
-      <div>
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Za svakoga</p>
-        <h2 class="mb-6 text-3xl font-bold text-slate-900">Od potpunog početnika do eksperta</h2>
-        <p class="mb-4 leading-relaxed text-slate-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-        </p>
-        <p class="leading-relaxed text-slate-600">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum.
-        </p>
+  <section class="section section--cream">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-layout__text">
+          <span class="eyebrow">Za svakoga</span>
+          <h2 class="section-title">Od potpunog početnika do eksperta</h2>
+          <p class="body-text">
+            Ne treba vam nikakvo prethodno iskustvo da biste počeli — samo volja za avanturu.
+            Naši instruktori su bivši reprezentativci sa pedagoškim iskustvom, koji znaju
+            kako da prilagode obuku svakom polazniku.
+          </p>
+          <p class="body-text">
+            Kursevi su dostupni za decu od 7 godina, odrasle i grupe do 12 učesnika.
+            Sva oprema je uključena — dolazite samo u kupaćem i dobrom raspoloženju.
+          </p>
+        </div>
+        <div class="split-layout__media">
+          <img src="https://picsum.photos/seed/school3/900/700" alt="Škola kajaka" class="split-img" />
+          <div class="split-img__accent"></div>
+        </div>
       </div>
-      <div class="overflow-hidden rounded-2xl">
-        <img
-          src="https://picsum.photos/seed/school3/800/600"
-          alt="Škola kajaka"
-          class="h-80 w-full object-cover"
-        />
-      </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,70 L1440,70 L0,70 Z" fill="#ffffff"/>
+      </svg>
     </div>
   </section>
 
   <!-- Levels -->
-  <section class="bg-slate-50 px-4 py-20">
-    <div class="mx-auto max-w-6xl">
-      <div class="mb-14 text-center">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Nivoi obuke</p>
-        <h2 class="text-3xl font-bold text-slate-900">Izaberite svoj nivo</h2>
-        <p class="mx-auto mt-4 max-w-xl text-slate-500">
-          Prilagođavamo program vašem iskustvu. Za informacije o terminima i uslovima, kontaktirajte nas direktno.
-        </p>
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Nivoi obuke</span>
+        <h2 class="section-title">Izaberite svoj nivo</h2>
+        <p class="section-sub">Prilagođavamo program vašem iskustvu. Kontaktirajte nas za informacije o terminima i grupama.</p>
       </div>
-      <div class="grid gap-8 md:grid-cols-3">
-        {
-          [
-            {
-              number: "01",
-              title: "Početnici",
-              duration: "Vikend kurs",
-              description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Naučite osnove sigurnog veslanja u kontrolisanom okruženju uz podršku instruktora.",
-              features: ["Osnove veslanja", "Bezbednost na vodi", "Osnovno upravljanje", "Oprema uključena"],
-            },
-            {
-              number: "02",
-              title: "Srednji nivo",
-              duration: "3–4 dana",
-              description: "Duis aute irure dolor in reprehenderit. Idealno za one koji već znaju osnove i žele da napreduju na rečnom kajakingu.",
-              features: ["Napredne tehnike", "Rečni kajaking", "Navigacija struje", "Spasilačke veštine"],
-            },
-            {
-              number: "03",
-              title: "Napredni",
-              duration: "5 dana",
-              description: "Excepteur sint occaecat cupidatat non proident. Za iskusne kajakaše koji žele ekspedicijsku obuku i voditeljsku sertifikaciju.",
-              features: ["Ekspedicionski kajaking", "Planiranje rute", "Voditeljska obuka", "Sertifikat"],
-            },
-          ].map((course) => (
-            <div class="rounded-2xl border border-slate-100 bg-white p-8">
-              <p class="mb-1 text-sm font-bold uppercase tracking-widest text-teal-600">
-                Nivo {course.number}
-              </p>
-              <h3 class="mb-1 text-2xl font-bold text-slate-900">{course.title}</h3>
-              <p class="mb-5 text-sm text-slate-400">{course.duration}</p>
-              <p class="mb-6 text-sm leading-relaxed text-slate-600">{course.description}</p>
-              <ul class="space-y-2.5">
-                {course.features.map((f) => (
-                  <li class="flex items-center gap-2 text-sm text-slate-600">
-                    <svg class="h-4 w-4 flex-shrink-0 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
+      <div class="level-grid">
+        {courses.map((c) => (
+          <div class="level-card">
+            <div class="level-card__num">{c.num}</div>
+            <p class="level-card__eyebrow">{c.eyebrow}</p>
+            <h3 class="level-card__title">{c.title}</h3>
+            <p class="level-card__duration">{c.duration}</p>
+            <p class="level-card__desc">{c.desc}</p>
+            <ul class="level-card__features">
+              {c.features.map((f) => (
+                <li class="level-card__feature">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,80 C360,0 1080,80 1440,0 L1440,80 L0,80 Z" fill="#1a4a2e"/>
+      </svg>
     </div>
   </section>
 
-  <!-- What you'll learn -->
-  <section class="px-4 py-20">
-    <div class="mx-auto max-w-6xl">
-      <div class="mb-14 text-center">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Program</p>
-        <h2 class="text-3xl font-bold text-slate-900">Šta ćete naučiti</h2>
+  <!-- Skills — dark forest + topo -->
+  <section class="section section--forest-topo">
+    <div class="topo-lines" aria-hidden="true">
+      <svg viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="rgba(74,186,130,0.12)" stroke-width="0.8" fill="none">
+          <path d="M-100,430 C200,395 360,435 560,402 C760,370 920,410 1120,378 C1310,350 1420,385 1540,368"/>
+          <path d="M-100,395 C215,358 378,400 580,366 C780,332 940,375 1140,340 C1330,310 1432,348 1540,330"/>
+          <path d="M-100,360 C232,320 395,365 600,328 C800,295 960,338 1160,302 C1350,270 1440,310 1540,292"/>
+          <path d="M-100,325 C250,282 412,328 620,290 C820,255 980,300 1180,262 C1370,228 1448,270 1540,252"/>
+          <path d="M-100,290 C268,244 430,292 638,252 C840,215 1000,262 1200,222 C1390,188 1455,232 1540,212"/>
+          <path d="M-100,255 C285,206 448,258 658,215 C862,175 1020,225 1222,182 C1412,145 1462,195 1540,172"/>
+          <path d="M-100,220 C302,168 465,225 678,178 C885,135 1042,188 1245,142 C1435,105 1468,158 1540,135"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow eyebrow--light">Program</span>
+        <h2 class="section-title section-title--light">Šta ćete naučiti</h2>
       </div>
-      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-        {
-          [
-            { icon: "🚣", title: "Tehnike veslanja", text: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor." },
-            { icon: "🛟", title: "Bezbednost", text: "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi." },
-            { icon: "🗺️", title: "Navigacija", text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum." },
-            { icon: "⛺", title: "Logorovanje", text: "Excepteur sint occaecat cupidatat non proident sunt in culpa officia." },
-          ].map((item) => (
-            <div class="rounded-xl bg-slate-50 p-6">
-              <p class="mb-3 text-3xl">{item.icon}</p>
-              <h3 class="mb-2 font-bold text-slate-900">{item.title}</h3>
-              <p class="text-sm leading-relaxed text-slate-600">{item.text}</p>
-            </div>
-          ))
-        }
+      <div class="skill-grid">
+        {skills.map((s) => (
+          <div class="skill-card" style="background:rgba(255,255,255,0.05);">
+            <div class="skill-card__icon">{s.icon}</div>
+            <h3 class="skill-card__title" style="color:#fff;">{s.title}</h3>
+            <p class="skill-card__text" style="color:rgba(255,255,255,0.45);">{s.text}</p>
+          </div>
+        ))}
       </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f2ede4"/>
+      </svg>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-teal-700 px-4 py-20 text-center text-white">
-    <div class="mx-auto max-w-2xl">
-      <h2 class="mb-4 text-3xl font-bold">Zainteresovani?</h2>
-      <p class="mb-8 text-teal-100">
-        Kontaktirajte nas za informacije o terminima, grupama i svemu što vas zanima.
-      </p>
-      <a
-        href="/kontakt"
-        class="inline-block rounded-full bg-white px-8 py-3.5 font-semibold text-teal-700 transition-colors hover:bg-teal-50"
-      >
-        Kontaktirajte nas
-      </a>
+  <section class="section section--cta">
+    <div class="container">
+      <div class="cta-block">
+        <span class="eyebrow">Zainteresovani?</span>
+        <h2 class="cta-title">Prijavite se danas</h2>
+        <p class="cta-sub">Kontaktirajte nas za informacije o terminima, grupama i svemu što vas zanima. Odgovaramo u roku od 24 sata.</p>
+        <a href="/kontakt" class="btn btn--primary btn--large">
+          Kontaktirajte nas
+          <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
     </div>
   </section>
+
 </Layout>

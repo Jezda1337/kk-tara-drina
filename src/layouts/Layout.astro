@@ -8,11 +8,13 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title?: string;
   description?: string;
+  transparentNav?: boolean;
 }
 
 const {
   title = "Kajak klub Tara Drina",
   description = "Kajak avanture na rekama Tara i Drina. Organizujemo ture, školu kajaka i sportska takmičenja.",
+  transparentNav = false,
 } = Astro.props;
 
 const locale = Astro.currentLocale ?? "rs";
@@ -29,11 +31,17 @@ const lang = locale === "rs" ? "sr" : "en";
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | KK Tara Drina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap"
+      rel="stylesheet"
+    />
     <Font cssVariable="--font-roboto" preload />
     <ClientRouter />
   </head>
-  <body class="bg-white text-slate-900 antialiased">
-    <Nav />
+  <body class="bg-cream text-forest antialiased">
+    <Nav transparent={transparentNav} />
     <main>
       <slot />
     </main>

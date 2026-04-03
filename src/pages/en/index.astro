@@ -2,186 +2,227 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Kayak adventures on Tara and Drina">
-  <!-- Hero -->
-  <section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-900">
-    <img
-      src="https://picsum.photos/seed/kayakriver/1920/1080"
-      alt=""
-      class="absolute inset-0 h-full w-full object-cover opacity-40"
-    />
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-transparent to-slate-900/80"></div>
-    <div class="relative z-10 max-w-3xl px-4 text-center text-white">
-      <p class="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-teal-400">
-        Kayak Club Tara Drina
+<Layout title="Kayak adventures on Tara and Drina" transparentNav={true}>
+
+  <section class="hero">
+    <img src="https://picsum.photos/seed/kayakriver/1920/1080" alt="" class="hero__bg" />
+    <div class="hero__overlay"></div>
+
+    <div class="topo-lines" aria-hidden="true">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="rgba(74,186,130,0.12)" stroke-width="0.8" fill="none">
+          <path d="M-100,540 C150,510 300,555 480,520 C660,485 820,530 1000,500 C1160,475 1320,510 1540,490"/>
+          <path d="M-100,510 C160,475 310,522 490,485 C680,448 840,495 1020,462 C1180,435 1330,472 1540,452"/>
+          <path d="M-100,480 C172,442 325,490 508,450 C698,412 858,462 1042,428 C1202,400 1345,438 1540,418"/>
+          <path d="M-100,450 C185,408 340,458 528,415 C718,375 878,428 1065,392 C1225,362 1360,402 1540,382"/>
+          <path d="M-100,418 C200,372 358,425 548,380 C738,338 898,395 1088,355 C1248,322 1375,368 1540,348"/>
+          <path d="M-100,385 C218,336 378,392 572,344 C762,300 922,360 1115,318 C1275,282 1392,335 1540,312"/>
+          <path d="M-100,352 C235,300 398,358 598,308 C792,262 952,325 1148,282 C1308,245 1408,302 1540,278"/>
+          <path d="M-100,318 C252,264 418,325 622,272 C820,225 982,292 1178,246 C1338,208 1422,270 1540,244"/>
+          <path d="M-100,285 C270,228 438,292 648,236 C850,188 1012,258 1210,210 C1370,172 1438,238 1540,210"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">Kayak Club Tara Drina</p>
+      <h1 class="hero__title">Rivers that<br /><em>take your breath away</em></h1>
+      <p class="hero__sub">
+        Experience an unforgettable adventure through the Drina canyon and the wild waters of Tara —
+        with experienced guides who know every stone.
       </p>
-      <h1 class="mb-6 text-5xl font-bold leading-tight md:text-7xl">
-        Adventure on the water <br /><span class="text-teal-400">awaits you</span>
-      </h1>
-      <p class="mb-10 text-lg text-slate-200 md:text-xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Experience an unforgettable
-        adventure on the Tara and Drina rivers with experienced guides.
-      </p>
-      <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
-        <a
-          href="#tours"
-          class="rounded-full bg-teal-600 px-8 py-3.5 font-semibold text-white transition-colors hover:bg-teal-500"
-        >
+      <div class="hero__cta">
+        <a href="#tours" class="btn btn--primary">
           Explore tours
+          <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </a>
-        <a
-          href="/en/contact"
-          class="rounded-full border border-white/30 bg-white/10 px-8 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-        >
-          Contact us
-        </a>
+        <a href="/en/contact" class="btn btn--outline">Contact us</a>
       </div>
     </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="h-6 w-6 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <svg width="20" height="28" fill="none" viewBox="0 0 20 28">
+        <rect x="1" y="1" width="18" height="26" rx="9" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.4"/>
+        <circle class="scroll-dot" cx="10" cy="8" r="2.5" fill="currentColor" fill-opacity="0.5"/>
+      </svg>
+    </div>
+
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,45 C240,90 480,0 720,45 C960,90 1200,0 1440,45 L1440,90 L0,90 Z" fill="#f2ede4"/>
       </svg>
     </div>
   </section>
 
-  <!-- Tour cards -->
-  <section id="tours" class="bg-slate-50 px-4 py-20">
-    <div class="mx-auto max-w-6xl">
-      <div class="mb-14 text-center">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Our tours</p>
-        <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">Choose your adventure</h2>
-        <p class="mx-auto mt-4 max-w-xl text-slate-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Two incredible routes through the
-          unspoiled nature of Serbia and Bosnia.
-        </p>
+  <section id="tours" class="section section--cream">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Our tours</span>
+        <h2 class="section-title">Choose your adventure</h2>
+        <p class="section-sub">Two incredible routes through the unspoiled nature of Serbia and Bosnia, for all ages and experience levels.</p>
       </div>
-      <div class="grid gap-8 md:grid-cols-2">
-        <a
-          href="/en/tours/tara-drina"
-          class="group overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-xl"
-        >
-          <div class="relative h-72 overflow-hidden">
-            <img
-              src="https://picsum.photos/seed/tara1/800/600"
-              alt="Tara river"
-              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 p-6 text-white">
-              <div class="mb-2 flex gap-2 text-xs font-semibold text-teal-300">
-                <span>120 km</span><span>·</span><span>5 days</span><span>·</span><span>Moderate</span>
-              </div>
-              <h3 class="text-2xl font-bold">Tara → Drina</h3>
+      <div class="tour-grid">
+        <a href="/en/tours/tara-drina" class="tour-card group">
+          <div class="tour-card__img-wrap">
+            <img src="https://picsum.photos/seed/drina1/900/700" alt="Drina canyon" class="tour-card__img"/>
+            <div class="tour-card__gradient"></div>
+            <div class="tour-card__badge"><span>~15 km</span><span class="badge-sep">·</span><span>~3 hours</span><span class="badge-sep">·</span><span>All ages</span></div>
+            <div class="tour-card__body">
+              <h3 class="tour-card__title">Perućac → Rača</h3>
+              <p class="tour-card__desc">Emerald waters of the Drina through a magnificent canyon — the best route for families and beginners.</p>
+              <span class="tour-card__cta">Learn more <svg class="tour-card__arrow" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </div>
           </div>
-          <div class="p-6">
-            <p class="text-slate-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <span class="mt-4 inline-flex items-center gap-1 font-semibold text-teal-700 transition-all group-hover:gap-2">
-              Learn more
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </span>
-          </div>
         </a>
-
-        <a
-          href="/en/tours/drina-sava"
-          class="group overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-xl"
-        >
-          <div class="relative h-72 overflow-hidden">
-            <img
-              src="https://picsum.photos/seed/drina1/800/600"
-              alt="Drina river"
-              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 p-6 text-white">
-              <div class="mb-2 flex gap-2 text-xs font-semibold text-teal-300">
-                <span>200 km</span><span>·</span><span>7 days</span><span>·</span><span>Challenging</span>
-              </div>
-              <h3 class="text-2xl font-bold">Drina → Sava</h3>
+        <a href="/en/tours/drina-sava" class="tour-card group">
+          <div class="tour-card__img-wrap">
+            <img src="https://picsum.photos/seed/tara2/900/700" alt="Drina river" class="tour-card__img"/>
+            <div class="tour-card__gradient"></div>
+            <div class="tour-card__badge"><span>~12 km</span><span class="badge-sep">·</span><span>~2.5 hours</span><span class="badge-sep">·</span><span>All ages</span></div>
+            <div class="tour-card__body">
+              <h3 class="tour-card__title">Rača → Rogačica</h3>
+              <p class="tour-card__desc">Calm waters and dramatic cliffs — perfect for a relaxed adventure on a river that captures the heart.</p>
+              <span class="tour-card__cta">Learn more <svg class="tour-card__arrow" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </div>
           </div>
-          <div class="p-6">
-            <p class="text-slate-600">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa.
-            </p>
-            <span class="mt-4 inline-flex items-center gap-1 font-semibold text-teal-700 transition-all group-hover:gap-2">
-              Learn more
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </span>
+        </a>
+      </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,70 L1440,70 L0,70 Z" fill="#0a1a12"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section section--dark-topo">
+    <div class="topo-lines" aria-hidden="true">
+      <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="rgba(74,186,130,0.1)" stroke-width="0.9" fill="none">
+          <path d="M-100,620 C180,588 340,628 540,598 C740,568 900,608 1100,578 C1290,552 1400,582 1540,565"/>
+          <path d="M-100,585 C192,550 352,592 558,560 C758,528 918,570 1118,538 C1308,510 1412,545 1540,528"/>
+          <path d="M-100,550 C205,512 368,555 578,520 C778,488 938,532 1138,498 C1328,468 1425,505 1540,488"/>
+          <path d="M-100,515 C218,474 385,518 598,480 C800,445 958,492 1158,455 C1348,422 1432,462 1540,445"/>
+          <path d="M-100,480 C232,435 402,482 618,442 C822,405 978,455 1178,415 C1368,380 1442,422 1540,405"/>
+          <path d="M-100,445 C248,396 420,445 638,402 C845,362 995,415 1198,372 C1388,332 1452,382 1540,362"/>
+          <path d="M-100,408 C262,356 438,408 658,362 C868,318 1012,372 1218,325 C1408,282 1462,338 1540,318"/>
+          <path d="M-100,372 C278,316 458,372 678,322 C892,275 1028,332 1238,282 C1428,235 1472,295 1540,272"/>
+          <path d="M-100,335 C295,275 478,335 700,282 C918,232 1045,295 1258,242 C1448,195 1482,258 1540,235"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="features-header">
+        <div class="features-header__left">
+          <span class="eyebrow eyebrow--light">Kayak Club Tara Drina</span>
+          <h2 class="section-title section-title--light">Adventure is in<br/>our DNA</h2>
+          <a href="/en/about" class="btn btn--emerald" style="margin-top:1.75rem;">
+            Learn more about us
+            <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="features-header__right">
+          <p class="features-lead">Over 70% of our guests each year are returning visitors or came through a personal recommendation — because once you experience the Drina with us, it's hard not to come back.</p>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-item"><span class="feature-item__bar"></span><div><h3 class="feature-item__title">20+ years of experience</h3><p class="feature-item__text">Guiding guests since 2003 — every stone and current on the Drina is known to us.</p></div></div>
+        <div class="feature-item"><span class="feature-item__bar"></span><div><h3 class="feature-item__title">Certified guides</h3><p class="feature-item__text">Our instructors are former national team members with international licenses.</p></div></div>
+        <div class="feature-item"><span class="feature-item__bar"></span><div><h3 class="feature-item__title">Personal service</h3><p class="feature-item__text">Small group sizes — every guest receives full attention throughout the tour.</p></div></div>
+        <div class="feature-item"><span class="feature-item__bar"></span><div><h3 class="feature-item__title">Premium equipment</h3><p class="feature-item__text">Certified kayaks, life vests and helmets inspected and maintained regularly.</p></div></div>
+        <div class="feature-item"><span class="feature-item__bar"></span><div><h3 class="feature-item__title">All ages welcome</h3><p class="feature-item__text">Children from age 7, seniors, complete beginners — everyone is welcome.</p></div></div>
+        <div class="feature-item"><span class="feature-item__bar"></span><div><h3 class="feature-item__title">Responsible tourism</h3><p class="feature-item__text">We protect the rivers we love — minimal footprint, maximum experience.</p></div></div>
+      </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,110 L0,82 L36,70 L72,78 L108,55 L144,66 L180,42 L216,58 L252,34 L288,52 L324,26 L360,46 L396,20 L432,40 L468,16 L504,38 L540,12 L576,32 L612,8 L648,30 L684,14 L720,34 L756,10 L792,30 L828,6 L864,26 L900,18 L936,38 L972,14 L1008,34 L1044,20 L1080,40 L1116,26 L1152,48 L1188,34 L1224,56 L1260,44 L1296,65 L1332,52 L1368,72 L1404,60 L1440,80 L1440,110 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-layout__media">
+          <div class="img-stack">
+            <img src="https://picsum.photos/seed/club1/900/700" alt="KK Tara Drina team" class="img-stack__main"/>
+            <div class="img-stack__secondary"><img src="https://picsum.photos/seed/kayak22/400/400" alt="Kayaking on the Drina"/></div>
+            <div class="img-stack__accent"></div>
           </div>
-        </a>
+        </div>
+        <div class="split-layout__text">
+          <span class="eyebrow">About us</span>
+          <h2 class="section-title">More than 20 years on the water</h2>
+          <p class="body-text">Kayak Club Tara Drina was founded out of a love for the wild rivers of the Balkans. Our instructors are former national team members and experienced guides who treat every guest like family.</p>
+          <p class="body-text">Safety is our priority — all equipment is certified and regularly maintained. Every tour follows the standards that have earned us the trust of thousands of families.</p>
+          <a href="/en/about" class="text-link">More about the club <svg class="text-link__arrow" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
       </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,110 L0,88 L40,76 L80,85 L120,62 L160,74 L200,50 L240,64 L280,40 L320,56 L360,30 L400,48 L440,24 L480,44 L520,18 L560,38 L600,14 L640,34 L680,10 L720,32 L760,8 L800,28 L840,4 L880,24 L920,16 L960,36 L1000,12 L1040,32 L1080,20 L1120,40 L1160,28 L1200,50 L1240,38 L1280,60 L1320,48 L1360,70 L1400,58 L1440,78 L1440,110 Z" fill="#1a4a2e"/>
+      </svg>
     </div>
   </section>
 
-  <!-- About strip -->
-  <section class="px-4 py-20">
-    <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
-      <div class="overflow-hidden rounded-2xl">
-        <img src="https://picsum.photos/seed/club1/800/600" alt="KK Tara Drina" class="h-80 w-full object-cover" />
+  <section class="section section--forest-topo" style="padding-bottom:10rem;">
+    <div class="topo-lines" aria-hidden="true">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="rgba(74,186,130,0.14)" stroke-width="0.9" fill="none">
+          <path d="M-100,540 C180,508 340,548 540,515 C740,482 900,522 1100,492 C1290,466 1400,498 1540,478"/>
+          <path d="M-100,505 C192,470 352,512 558,478 C758,444 918,488 1118,455 C1308,426 1412,462 1540,442"/>
+          <path d="M-100,470 C205,432 368,475 578,440 C778,406 938,450 1138,415 C1328,385 1422,422 1540,402"/>
+          <path d="M-100,435 C218,394 385,440 598,402 C800,368 958,415 1158,378 C1348,348 1432,388 1540,368"/>
+          <path d="M-100,400 C232,355 402,402 618,362 C822,325 978,375 1178,335 C1368,302 1442,345 1540,325"/>
+          <path d="M-100,365 C248,316 420,365 638,322 C845,282 995,332 1198,290 C1388,255 1452,302 1540,282"/>
+          <path d="M-100,330 C262,278 438,330 658,284 C868,242 1012,295 1218,250 C1408,210 1462,265 1540,242"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="split-layout split-layout--reversed">
+        <div class="split-layout__text">
+          <span class="eyebrow eyebrow--light">Start from zero</span>
+          <h2 class="section-title section-title--light">Kayak school<br/>for all ages</h2>
+          <p class="body-text body-text--light">No prior experience needed — just the will for adventure. Our instructors guide you step by step, from your first paddle strokes to confidently navigating the river.</p>
+          <p class="body-text body-text--light">Courses available for children from age 7, adults, and groups. We adapt the pace to every participant.</p>
+          <a href="/en/kayak-school" class="btn btn--emerald" style="margin-top:0.5rem;">
+            Learn more
+            <svg class="btn__arrow" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="split-layout__media">
+          <img src="https://picsum.photos/seed/school1/900/700" alt="Kayak school" class="split-img"/>
+          <div class="split-img__accent split-img__accent--right"></div>
+        </div>
       </div>
-      <div>
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">About us</p>
-        <h2 class="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">More than 20 years on the water</h2>
-        <p class="mb-4 leading-relaxed text-slate-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-        </p>
-        <p class="mb-8 leading-relaxed text-slate-600">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-        </p>
-        <a href="/en/about" class="inline-flex items-center gap-2 font-semibold text-teal-700 hover:text-teal-600">
-          More about the club
-          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,45 C360,90 1080,0 1440,45 L1440,90 L0,90 Z" fill="#f2ede4"/>
+      </svg>
     </div>
   </section>
 
-  <!-- Kayak school teaser -->
-  <section class="overflow-hidden bg-teal-700 px-4 py-24 text-white">
-    <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
-      <div>
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-200">Start from zero</p>
-        <h2 class="mb-6 text-3xl font-bold md:text-4xl">Kayak school for all ages</h2>
-        <p class="mb-8 leading-relaxed text-teal-100">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. No one rejects or avoids
-          pleasure itself — but those who do not know how to pursue it rationally encounter
-          consequences.
-        </p>
-        <a href="/en/kayak-school" class="inline-block rounded-full bg-white px-8 py-3.5 font-semibold text-teal-700 transition-colors hover:bg-teal-50">
-          Learn more
-        </a>
-      </div>
-      <div class="overflow-hidden rounded-2xl">
-        <img src="https://picsum.photos/seed/school1/800/600" alt="Kayak school" class="h-72 w-full object-cover" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <section class="bg-slate-900 px-4 py-24 text-center text-white">
-    <div class="mx-auto max-w-2xl">
-      <h2 class="mb-4 text-3xl font-bold md:text-4xl">Ready for an adventure?</h2>
-      <p class="mb-8 text-slate-400">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Contact us and we'll plan your
-        perfect tour together.
-      </p>
-      <a href="/en/contact" class="inline-block rounded-full bg-teal-600 px-8 py-3.5 font-semibold text-white transition-colors hover:bg-teal-500">
-        Contact us
-      </a>
-    </div>
-  </section>
 </Layout>
+
+<style>
+  .hero { position:relative; min-height:100svh; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#0d2016; }
+  .hero__bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.45; }
+  .hero__overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(13,32,22,.3) 0%,rgba(13,32,22,.1) 40%,rgba(13,32,22,.65) 75%,#0d2016 100%); }
+  .hero__content { position:relative; z-index:2; max-width:56rem; padding:6rem 1.5rem 0; text-align:center; }
+  .hero__eyebrow { font-family:'Barlow Condensed',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:#4aba82; margin-bottom:1.25rem; display:block; }
+  .hero__title { font-family:'Barlow Condensed',sans-serif; font-size:clamp(3.5rem,10vw,7.5rem); font-weight:800; line-height:.95; letter-spacing:-.01em; color:#fff; margin-bottom:1.5rem; text-transform:uppercase; }
+  .hero__title em { font-style:italic; color:#4aba82; }
+  .hero__sub { font-size:1.0625rem; line-height:1.7; color:rgba(255,255,255,.72); max-width:36rem; margin:0 auto 2.5rem; }
+  .hero__cta { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+  .hero__scroll-hint { position:absolute; bottom:6.5rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,.4); animation:scrollFloat 2.5s ease-in-out infinite; z-index:2; }
+  @keyframes scrollFloat { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+  .scroll-dot { animation:scrollDot 2.5s ease-in-out infinite; }
+  @keyframes scrollDot { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+  .features-header__left { display:flex; flex-direction:column; }
+</style>

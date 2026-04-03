@@ -3,83 +3,534 @@ const locale = Astro.currentLocale ?? "rs";
 const isRS = locale === "rs";
 ---
 
-<footer class="bg-slate-900 text-slate-400">
-  <div class="mx-auto max-w-6xl px-4 py-16">
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-      <div>
-        <h3 class="mb-3 text-lg font-bold text-white">KK Tara Drina</h3>
-        <p class="text-sm leading-relaxed">
+<!-- ── Pre-footer CTA ──────────────────────────────────────────────────── -->
+<section class="prefooter">
+  <!-- Topo lines -->
+  <div class="topo-lines" aria-hidden="true">
+    <svg
+      viewBox="0 0 1440 400"
+      preserveAspectRatio="xMidYMid slice"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g stroke="rgba(74,186,130,0.1)" stroke-width="0.8" fill="none">
+        <path
+          d="M-100,360 C180,330 360,368 560,338 C760,308 920,348 1120,318 C1310,292 1420,325 1540,308"
+        ></path>
+        <path
+          d="M-100,330 C192,298 372,338 578,305 C778,275 938,318 1138,285 C1328,258 1428,295 1540,278"
+        ></path>
+        <path
+          d="M-100,300 C205,265 385,308 598,272 C798,240 958,285 1158,250 C1348,222 1432,265 1540,248"
+        ></path>
+        <path
+          d="M-100,270 C220,232 400,278 618,240 C818,205 978,252 1178,215 C1368,185 1438,235 1540,215"
+        ></path>
+        <path
+          d="M-100,240 C235,198 415,248 638,208 C838,172 998,222 1200,182 C1390,148 1445,205 1540,182"
+        ></path>
+        <path
+          d="M-100,210 C252,165 432,218 658,175 C862,138 1018,192 1222,148 C1412,112 1452,175 1540,150"
+        ></path>
+        <path
+          d="M-100,180 C268,132 450,188 678,142 C885,102 1038,162 1245,115 C1435,78 1460,145 1540,118"
+        ></path>
+        <path
+          d="M-100,150 C285,98 468,158 698,108 C908,65 1058,132 1268,82 C1458,45 1468,115 1540,88"
+        ></path>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Mountain silhouette at top — connects from cream sections above -->
+  <div class="prefooter__mountain" aria-hidden="true">
+    <svg
+      viewBox="0 0 1440 90"
+      preserveAspectRatio="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0,90 L0,65 L40,52 L80,62 L120,38 L160,54 L200,28 L240,46 L280,22 L320,40 L360,15 L400,35 L440,10 L480,30 L520,6 L560,26 L600,4 L640,22 L680,8 L720,26 L760,4 L800,22 L840,2 L880,20 L920,12 L960,30 L1000,8 L1040,26 L1080,14 L1120,32 L1160,20 L1200,40 L1240,28 L1280,48 L1320,36 L1360,56 L1400,44 L1440,65 L1440,90 Z"
+        fill="#0a1a12"></path>
+    </svg>
+  </div>
+
+  <div class="prefooter__inner">
+    <p class="eyebrow eyebrow--light">
+      {isRS ? "Hajde da planiramo" : "Let's plan together"}
+    </p>
+    <h2 class="prefooter__title">
+      {isRS ? "Spremni za avanturu?" : "Ready for an adventure?"}
+    </h2>
+    <p class="prefooter__sub">
+      {
+        isRS
+          ? "Kontaktirajte nas i zajedno ćemo pronaći turu koja vam savršeno odgovara — za solo putnike, parove ili porodice."
+          : "Contact us and we'll find the perfect tour for you — solo travelers, couples, or families of any size."
+      }
+    </p>
+    <div class="prefooter__cta">
+      <a
+        href={isRS ? "/kontakt" : "/en/contact"}
+        class="btn btn--primary btn--large"
+      >
+        {isRS ? "Kontaktirajte nas" : "Contact us"}
+        <svg
+          class="btn__arrow"
+          fill="none"
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+        >
+          <path
+            d="M3 8h10M9 4l4 4-4 4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </a>
+      <a
+        href={isRS ? "/ture/tara-drina" : "/en/tours/tara-drina"}
+        class="btn btn--emerald btn--large"
+      >
+        {isRS ? "Pogledaj ture" : "View tours"}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <!-- Topo lines -->
+  <div class="topo-lines" aria-hidden="true">
+    <svg
+      viewBox="0 0 1440 500"
+      preserveAspectRatio="xMidYMid slice"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g stroke="rgba(74,186,130,0.07)" stroke-width="0.8" fill="none">
+        <path
+          d="M-100,450 C200,415 380,455 580,422 C780,388 940,428 1140,395 C1330,368 1430,402 1540,385"
+        ></path>
+        <path
+          d="M-100,415 C215,378 395,420 598,385 C798,352 958,394 1158,360 C1348,332 1438,368 1540,350"
+        ></path>
+        <path
+          d="M-100,380 C232,340 412,385 618,348 C820,315 978,360 1178,324 C1368,295 1442,335 1540,315"
+        ></path>
+        <path
+          d="M-100,345 C250,302 430,350 638,310 C842,275 998,325 1200,288 C1390,258 1448,302 1540,280"
+        ></path>
+        <path
+          d="M-100,310 C268,265 448,315 658,272 C865,235 1020,290 1222,250 C1412,218 1455,268 1540,245"
+        ></path>
+        <path
+          d="M-100,275 C285,228 465,280 678,235 C888,195 1042,255 1245,212 C1435,178 1462,235 1540,210"
+        ></path>
+        <path
+          d="M-100,240 C302,192 482,248 698,198 C910,155 1065,220 1268,175 C1458,140 1470,202 1540,175"
+        ></path>
+        <path
+          d="M-100,205 C320,155 500,215 718,162 C932,115 1088,185 1292,138 C1482,102 1478,170 1540,142"
+        ></path>
+        <path
+          d="M-100,170 C338,118 520,182 740,126 C955,78 1112,152 1318,102 C1508,65 1488,138 1540,110"
+        ></path>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Big watermark text -->
+  <div class="footer__watermark" aria-hidden="true">TARA · DRINA</div>
+
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img
+          src="/logo.svg"
+          width="56"
+          alt="KK Tara Drina"
+          class="footer__logo"
+        />
+        <p class="footer__tagline">
           {
             isRS
-              ? "Kajak klub posvećen avanturama na rekama Tara i Drina. Organizujemo ture za sve nivoe iskustva."
-              : "Kayak club dedicated to adventures on the Tara and Drina rivers. We organize tours for all experience levels."
+              ? "Kajak klub posvećen avanturama na rekama Tara i Drina. Organizujemo ture za sve nivoe iskustva od 2003."
+              : "Kayak club dedicated to adventures on the Tara and Drina rivers. Tours for all experience levels since 2003."
           }
         </p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook" class="footer__social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+              ></path></svg
+            >
+          </a>
+          <a href="#" aria-label="Instagram" class="footer__social-link">
+            <svg
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              ><rect x="2" y="2" width="20" height="20" rx="5" ry="5"
+              ></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"
+              ></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+            >
+          </a>
+          <a href="#" aria-label="YouTube" class="footer__social-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M22.54 6.42a2.78 2.78 0 00-1.94-1.94C18.88 4 12 4 12 4s-6.88 0-8.6.48A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.94 1.94C5.12 20 12 20 12 20s6.88 0 8.6-.48a2.78 2.78 0 001.94-1.94A29 29 0 0023 12a29 29 0 00-.46-5.58z"
+              ></path><polygon
+                fill="white"
+                points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg
+            >
+          </a>
+        </div>
       </div>
 
-      <div>
-        <h4 class="mb-4 text-sm font-bold uppercase tracking-widest text-slate-300">
-          {isRS ? "Ture" : "Tours"}
-        </h4>
-        <ul class="space-y-2 text-sm">
+      <div class="footer__col">
+        <h4 class="footer__heading">{isRS ? "Ture" : "Tours"}</h4>
+        <ul class="footer__links">
           <li>
             <a
               href={isRS ? "/ture/tara-drina" : "/en/tours/tara-drina"}
-              class="transition-colors hover:text-teal-400">Tara → Drina</a
+              class="footer__link">Perućac → Rača</a
             >
           </li>
           <li>
             <a
               href={isRS ? "/ture/drina-sava" : "/en/tours/drina-sava"}
-              class="transition-colors hover:text-teal-400">Drina → Sava</a
+              class="footer__link">Rača → Rogačica</a
             >
           </li>
           <li>
             <a
               href={isRS ? "/skola-kajaka" : "/en/kayak-school"}
-              class="transition-colors hover:text-teal-400"
-              >{isRS ? "Škola kajaka" : "Kayak school"}</a
+              class="footer__link">{isRS ? "Škola kajaka" : "Kayak school"}</a
             >
           </li>
           <li>
-            <a
-              href={isRS ? "/o-nama" : "/en/about"}
-              class="transition-colors hover:text-teal-400">{isRS ? "O nama" : "About"}</a
+            <a href={isRS ? "/o-nama" : "/en/about"} class="footer__link"
+              >{isRS ? "O nama" : "About us"}</a
+            >
+          </li>
+          <li>
+            <a href={isRS ? "/kontakt" : "/en/contact"} class="footer__link"
+              >{isRS ? "Kontakt" : "Contact"}</a
             >
           </li>
         </ul>
       </div>
 
-      <div>
-        <h4 class="mb-4 text-sm font-bold uppercase tracking-widest text-slate-300">
-          {isRS ? "Kontakt" : "Contact"}
-        </h4>
-        <ul class="space-y-3 text-sm">
-          <li class="flex items-start gap-2">
-            <span>📍</span>
-            <span>{isRS ? "Srbija" : "Serbia"}</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span>📞</span>
-            <a href="tel:+381xxxxxxxx" class="transition-colors hover:text-teal-400"
-              >+381 xx xxx xxxx</a
+      <div class="footer__col">
+        <h4 class="footer__heading">{isRS ? "Kontakt" : "Contact"}</h4>
+        <ul class="footer__contact">
+          <li class="footer__contact-row">
+            <svg
+              class="footer__contact-icon"
+              width="13"
+              height="13"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+              ></path></svg
+            >
+            <span
+              >{
+                isRS
+                  ? "Srbija / Bosna i Hercegovina"
+                  : "Serbia / Bosnia and Herzegovina"
+              }</span
             >
           </li>
-          <li class="flex items-start gap-2">
-            <span>✉️</span>
-            <a href="mailto:info@kktaradrina.rs" class="transition-colors hover:text-teal-400"
+          <li class="footer__contact-row">
+            <svg
+              class="footer__contact-icon"
+              width="13"
+              height="13"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+              ></path></svg
+            >
+            <a href="tel:+381xxxxxxxx" class="footer__link">+381 xx xxx xxxx</a>
+          </li>
+          <li class="footer__contact-row">
+            <svg
+              class="footer__contact-icon"
+              width="13"
+              height="13"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+              ></path></svg
+            >
+            <a href="mailto:info@kktaradrina.rs" class="footer__link"
               >info@kktaradrina.rs</a
             >
+          </li>
+          <li class="footer__contact-row" style="margin-top: 1rem;">
+            <svg
+              class="footer__contact-icon"
+              width="13"
+              height="13"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+            >
+            <div>
+              <div>
+                {isRS ? "Pon–Pet: 09:00–17:00" : "Mon–Fri: 09:00–17:00"}
+              </div>
+              <div>{isRS ? "Sub: 10:00–14:00" : "Sat: 10:00–14:00"}</div>
+            </div>
           </li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-12 border-t border-slate-800 pt-8 text-center text-xs text-slate-600">
+    <div class="footer__bottom">
       <p>
         © {new Date().getFullYear()} KK Tara Drina.
         {isRS ? "Sva prava zadržana." : "All rights reserved."}
       </p>
+      <a href={isRS ? "/en/" : "/"} class="footer__lang">
+        {isRS ? "English version →" : "Srpska verzija →"}
+      </a>
     </div>
   </div>
 </footer>
+
+<style>
+  /* ── Pre-footer ──────────────────────────────────────────────────────── */
+  .prefooter {
+    position: relative;
+    background: #0a1a12;
+    padding: 6rem 1.5rem 5rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  .prefooter__mountain {
+    position: absolute;
+    top: -1px;
+    inset-inline: 0;
+    line-height: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .prefooter__mountain svg {
+    display: block;
+    width: 100%;
+  }
+  .prefooter__inner {
+    position: relative;
+    z-index: 3;
+    max-width: 48rem;
+    margin-inline: auto;
+    padding-top: 2rem;
+  }
+  .prefooter__title {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    margin-top: 0.5rem;
+  }
+  .prefooter__sub {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.45);
+    max-width: 32rem;
+    margin: 0 auto 2.5rem;
+  }
+  .prefooter__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── Footer ──────────────────────────────────────────────────────────── */
+  .footer {
+    position: relative;
+    background: #0d2016;
+    overflow: hidden;
+  }
+  .footer__watermark {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(6rem, 18vw, 16rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.025);
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+    pointer-events: none;
+    line-height: 1;
+    user-select: none;
+    z-index: 1;
+  }
+  .footer__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding: 4rem 1.5rem 2rem;
+  }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  @media (min-width: 640px) {
+    .footer__grid {
+      grid-template-columns: 1.6fr 1fr 1.2fr;
+      gap: 3rem;
+    }
+  }
+
+  .footer__logo {
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+  .footer__tagline {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.3);
+    max-width: 22rem;
+    margin-bottom: 1.25rem;
+  }
+  .footer__social {
+    display: flex;
+    gap: 0.625rem;
+  }
+  .footer__social-link {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.35);
+    transition:
+      color 0.2s,
+      border-color 0.2s;
+    text-decoration: none;
+  }
+  .footer__social-link:hover {
+    color: #4aba82;
+    border-color: rgba(74, 186, 130, 0.4);
+  }
+
+  .footer__heading {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.25);
+    margin-bottom: 1.125rem;
+  }
+  .footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .footer__link {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer__link:hover {
+    color: #4aba82;
+  }
+
+  .footer__contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .footer__contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .footer__contact-icon {
+    flex-shrink: 0;
+    color: rgba(74, 186, 130, 0.6);
+    margin-top: 0.1rem;
+  }
+
+  .footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.18);
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .footer__lang {
+    color: rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer__lang:hover {
+    color: rgba(255, 255, 255, 0.5);
+  }
+</style>

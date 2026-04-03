@@ -1,4 +1,9 @@
 ---
+interface Props {
+  transparent?: boolean;
+}
+const { transparent = false } = Astro.props;
+
 const locale = Astro.currentLocale ?? "rs";
 const isRS = locale === "rs";
 const pathname = Astro.url.pathname;
@@ -32,194 +37,557 @@ const isToursActive = tourLinks.some((t) => pathname === t.path);
 ---
 
 <script>
-  function initHamburger() {
+  function initNav() {
+    const header = document.getElementById("site-header");
+    const overlay = document.getElementById("mobile-overlay");
     const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobile-menu");
+    const closeBtn = document.getElementById("close-menu");
+    const isTransparent = header?.dataset.transparent === "true";
 
-    hamburger?.addEventListener("click", () => {
-      mobileMenu?.classList.toggle("hidden");
-    });
+    // Scroll: transparent → solid
+    if (isTransparent && header) {
+      const update = () => {
+        if (window.scrollY > 60) {
+          header.classList.add("nav--scrolled");
+        } else {
+          header.classList.remove("nav--scrolled");
+        }
+      };
+      window.addEventListener("scroll", update, { passive: true });
+      update();
+    }
 
-    // Close menu when clicking a link
-    mobileMenu?.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-      });
+    // Mobile overlay
+    const open = () => {
+      overlay?.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      hamburger?.setAttribute("aria-expanded", "true");
+    };
+    const close = () => {
+      overlay?.classList.remove("is-open");
+      document.body.style.overflow = "";
+      hamburger?.setAttribute("aria-expanded", "false");
+    };
+
+    hamburger?.addEventListener("click", open);
+    closeBtn?.addEventListener("click", close);
+    overlay
+      ?.querySelectorAll("a")
+      .forEach((a) => a.addEventListener("click", close));
+    overlay?.addEventListener("click", (e) => {
+      if (e.target === overlay) close();
     });
   }
 
-  document.addEventListener("astro:page-load", initHamburger);
-  if (document.readyState !== "loading") initHamburger();
-  else document.addEventListener("DOMContentLoaded", initHamburger);
+  document.addEventListener("astro:page-load", initNav);
+  if (document.readyState !== "loading") initNav();
+  else document.addEventListener("DOMContentLoaded", initNav);
 </script>
 
-<header class="sticky top-0 z-50 bg-white shadow-sm">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-    <a href={isRS ? "/" : "/en/"} class="flex-shrink-0">
-      <img src="/logo.svg" width="70" alt="KK Tara Drina" />
+<header
+  id="site-header"
+  data-transparent={transparent ? "true" : "false"}
+  class:list={["site-header", transparent ? "nav--transparent" : "nav--solid"]}
+>
+  <div class="inner">
+    <!-- Logo -->
+    <a href={isRS ? "/" : "/en/"} class="logo-link">
+      <img src="/logo.svg" width="52" alt="KK Tara Drina" class="logo-img" />
     </a>
 
     <!-- Desktop nav -->
-    <ul class="hidden list-none items-center gap-1 md:flex">
+    <nav class="desktop-nav" aria-label="Glavna navigacija">
       {
         routes.map((route) => {
           if (route.dropdown) {
             return (
-              <li class="group relative">
+              <div class="nav-item group">
                 <button
                   class:list={[
-                    "flex cursor-default items-center gap-1 rounded px-3 py-1.5 text-sm font-medium tracking-wide uppercase transition-colors hover:bg-teal-50 hover:text-teal-700",
-                    isToursActive ? "text-teal-700" : "text-slate-700",
+                    "nav-link nav-link--btn",
+                    isToursActive && "nav-link--active",
                   ]}
                 >
                   {route.label}
                   <svg
-                    class="h-3 w-3 transition-transform group-hover:rotate-180"
+                    class="chevron"
                     fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                    viewBox="0 0 10 6"
+                    aria-hidden="true"
                   >
                     <path
+                      d="M1 1l4 4 4-4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
                     />
                   </svg>
                 </button>
-                <ul class="absolute top-full left-0 hidden min-w-44 rounded-lg border border-slate-100 bg-white py-1 shadow-xl group-hover:block">
-                  {route.dropdown.map((child) => (
-                    <li>
+                <div class="dropdown">
+                  <div class="dropdown__inner">
+                    {route.dropdown.map((child) => (
                       <a
                         href={child.path}
                         class:list={[
-                          "block px-4 py-2.5 text-sm transition-colors hover:bg-teal-50 hover:text-teal-700",
-                          pathname === child.path
-                            ? "bg-teal-50 font-medium text-teal-700"
-                            : "text-slate-700",
+                          "dropdown__link",
+                          pathname === child.path && "dropdown__link--active",
                         ]}
                       >
                         {child.label}
                       </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
+                    ))}
+                  </div>
+                </div>
+              </div>
             );
           }
 
           const isActive = pathname === route.path;
           return (
-            <li class="relative">
-              <a
-                href={route.path}
-                aria-current={isActive ? "page" : undefined}
-                class:list={[
-                  "relative z-10 rounded px-3 py-1.5 text-sm font-medium tracking-wide uppercase transition-colors",
-                  isActive
-                    ? "text-white hover:text-slate-100"
-                    : "text-slate-700 hover:bg-teal-50 hover:text-teal-700",
-                ]}
-              >
-                {route.label}
-              </a>
-              {isActive && (
-                <span
-                  transition:name="active-nav-indicator"
-                  class="absolute inset-0 rounded bg-teal-700"
-                  aria-hidden="true"
-                />
-              )}
-            </li>
+            <a
+              href={route.path}
+              aria-current={isActive ? "page" : undefined}
+              class:list={["nav-link", isActive && "nav-link--active"]}
+            >
+              {route.label}
+            </a>
           );
         })
       }
-      <li class="ml-2">
-        <a
-          href={isRS ? "/en/" : "/"}
-          class="rounded px-3 py-1.5 text-lg transition-colors hover:bg-slate-100"
-          >{isRS ? "🇺🇸" : "🇷🇸"}</a
-        >
-      </li>
-    </ul>
+      <a href={isRS ? "/en/" : "/"} class="lang-toggle">
+        {isRS ? "EN" : "RS"}
+      </a>
+    </nav>
 
-    <!-- Mobile hamburger -->
+    <!-- Hamburger -->
     <button
       id="hamburger"
-      class="rounded p-2 text-slate-700 hover:bg-slate-100 md:hidden"
-      aria-label="Menu"
+      aria-label={isRS ? "Otvori meni" : "Open menu"}
+      aria-expanded="false"
+      class="hamburger"
     >
-      <svg
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
   </div>
+</header>
 
-  <!-- Mobile menu -->
-  <div
-    id="mobile-menu"
-    class="hidden border-t border-slate-100 bg-white md:hidden"
-  >
-    <ul class="flex flex-col px-4 py-2">
+<!-- Mobile full-screen overlay -->
+<div id="mobile-overlay" class="mobile-overlay" aria-hidden="true">
+  <div class="mobile-panel">
+    <!-- Panel header -->
+    <div class="mobile-panel__head">
+      <a href={isRS ? "/" : "/en/"}>
+        <img
+          src="/logo.svg"
+          width="48"
+          alt="KK Tara Drina"
+          style="filter: brightness(0) invert(1);"
+        />
+      </a>
+      <button id="close-menu" aria-label="Zatvori meni" class="close-btn">
+        <svg
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <path d="M4 4l14 14M18 4L4 18" stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="mobile-nav">
       {
         routes.map((route) => {
           if (route.dropdown) {
             return (
-              <li class="py-1">
-                <span class="block px-2 py-1 text-xs font-bold tracking-widest text-slate-400 uppercase">
-                  {route.label}
-                </span>
-                <ul class="ml-2">
-                  {route.dropdown.map((child) => (
-                    <li>
-                      <a
-                        href={child.path}
-                        class:list={[
-                          "block px-2 py-2 text-sm transition-colors",
-                          pathname === child.path
-                            ? "font-medium text-teal-700"
-                            : "text-slate-700",
-                        ]}
-                      >
-                        {child.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
+              <div class="mobile-group">
+                <p class="mobile-group__label">{route.label}</p>
+                {route.dropdown.map((child) => (
+                  <a
+                    href={child.path}
+                    class:list={[
+                      "mobile-link mobile-link--sub",
+                      pathname === child.path && "mobile-link--active",
+                    ]}
+                  >
+                    {child.label}
+                  </a>
+                ))}
+              </div>
             );
           }
-
           const isActive = pathname === route.path;
           return (
-            <li>
-              <a
-                href={route.path}
-                class:list={[
-                  "block px-2 py-2.5 text-sm font-medium tracking-wide uppercase",
-                  isActive ? "text-teal-700" : "text-slate-700",
-                ]}
-              >
-                {route.label}
-              </a>
-            </li>
+            <a
+              href={route.path}
+              class:list={["mobile-link", isActive && "mobile-link--active"]}
+            >
+              {route.label}
+            </a>
           );
         })
       }
-      <li class="border-t border-slate-100 py-2">
-        <a href={isRS ? "/en/" : "/"} class="block px-2 text-lg"
-          >{isRS ? "🇺🇸" : "🇷🇸"}</a
-        >
-      </li>
-    </ul>
+
+      <div class="mobile-footer">
+        <a href={isRS ? "/en/" : "/"} class="mobile-lang">
+          {isRS ? "Switch to English →" : "Prebaci na srpski →"}
+        </a>
+      </div>
+    </nav>
   </div>
-</header>
+</div>
+
+<style>
+  /* ─── Header ──────────────────────────────────────────────────────────── */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition:
+      background 0.4s ease,
+      backdrop-filter 0.4s ease;
+  }
+  .nav--transparent {
+    background: transparent;
+  }
+  .nav--solid,
+  .nav--scrolled {
+    background: rgba(13, 32, 22, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.125rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Logo always white (white filter) */
+  .logo-img {
+    display: block;
+    transition: opacity 0.2s;
+  }
+  .logo-link:hover .logo-img {
+    opacity: 0.8;
+  }
+
+  /* ─── Desktop nav ─────────────────────────────────────────────────────── */
+  .desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 0;
+  }
+  @media (min-width: 768px) {
+    .desktop-nav {
+      display: flex;
+    }
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.875rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .nav-link--btn {
+    cursor: default;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0.875rem;
+    right: 0.875rem;
+    height: 1.5px;
+    background: #4aba82;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .nav-link:hover,
+  .nav-link--active {
+    color: #fff;
+  }
+  .nav-link:hover::after,
+  .nav-link--active::after {
+    transform: scaleX(1);
+  }
+
+  .chevron {
+    width: 0.6rem;
+    height: 0.6rem;
+    transition: transform 0.2s;
+  }
+  .group:hover .chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ─── Dropdown ────────────────────────────────────────────────────────── */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0.375rem);
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
+  }
+  .group:hover .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .dropdown__inner {
+    background: #0d2016;
+    border: 1px solid rgba(74, 186, 130, 0.15);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    min-width: 12rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+  .dropdown__link {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    transition:
+      color 0.15s,
+      background 0.15s;
+    text-decoration: none;
+  }
+  .dropdown__link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .dropdown__link--active {
+    color: #4aba82;
+  }
+
+  /* ─── Lang toggle ─────────────────────────────────────────────────────── */
+  .lang-toggle {
+    margin-left: 1rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 0.3rem 0.65rem;
+    border-radius: 3px;
+    transition:
+      color 0.2s,
+      border-color 0.2s;
+    text-decoration: none;
+  }
+  .lang-toggle:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+
+  /* ─── Hamburger ───────────────────────────────────────────────────────── */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  @media (min-width: 768px) {
+    .hamburger {
+      display: none;
+    }
+  }
+  .bar {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: #fff;
+    border-radius: 2px;
+    transition:
+      transform 0.3s ease,
+      opacity 0.2s ease;
+  }
+  .hamburger[aria-expanded="true"] .bar:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .hamburger[aria-expanded="true"] .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger[aria-expanded="true"] .bar:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* ─── Mobile overlay ──────────────────────────────────────────────────── */
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 49;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+  .mobile-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  @media (min-width: 768px) {
+    .mobile-overlay {
+      display: none;
+    }
+  }
+
+  .mobile-panel {
+    position: absolute;
+    inset-block: 0;
+    right: 0;
+    width: min(22rem, 92vw);
+    background: #0d2016;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .mobile-overlay.is-open .mobile-panel {
+    transform: translateX(0);
+  }
+
+  .mobile-panel__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.375rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .close-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color 0.2s;
+  }
+  .close-btn:hover {
+    color: #fff;
+  }
+
+  .mobile-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 0.125rem;
+  }
+  .mobile-link {
+    display: block;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.375rem 0.5rem;
+    line-height: 1.15;
+    text-decoration: none;
+    transition:
+      color 0.2s,
+      padding-left 0.25s ease;
+  }
+  .mobile-link:hover {
+    color: #4aba82;
+    padding-left: 0.875rem;
+  }
+  .mobile-link--active {
+    color: #4aba82;
+  }
+  .mobile-link--sub {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+    padding-left: 1rem;
+  }
+  .mobile-link--sub:hover {
+    color: #4aba82;
+    padding-left: 1.5rem;
+  }
+  .mobile-group {
+    margin-bottom: 0.375rem;
+  }
+  .mobile-group__label {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.25);
+    padding: 0.75rem 0.5rem 0.25rem;
+  }
+
+  .mobile-footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .mobile-lang {
+    display: block;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    padding: 0.5rem;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .mobile-lang:hover {
+    color: rgba(255, 255, 255, 0.65);
+  }
+</style>

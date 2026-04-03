@@ -3,184 +3,152 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="About us">
-  <!-- Hero -->
-  <section class="relative flex h-80 items-end overflow-hidden bg-slate-900 md:h-[28rem]">
-    <img
-      src="https://picsum.photos/seed/about1/1920/800"
-      alt=""
-      class="absolute inset-0 h-full w-full object-cover opacity-50"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-    <div class="relative z-10 mx-auto w-full max-w-6xl px-4 pb-12">
-      <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-400">Who we are</p>
-      <h1 class="text-4xl font-bold text-white md:text-5xl">About us</h1>
+
+  <section class="page-hero">
+    <img src="https://picsum.photos/seed/about1/1920/800" alt="" class="page-hero__bg" />
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <span class="eyebrow eyebrow--light">Who we are</span>
+      <h1 class="page-title">About us</h1>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z" fill="#f2ede4"/>
+      </svg>
     </div>
   </section>
 
-  <!-- Story -->
-  <section class="px-4 py-20">
-    <div class="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
-      <div>
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Our story</p>
-        <h2 class="mb-6 text-3xl font-bold text-slate-900">Kayak Club Tara Drina</h2>
-        <p class="mb-4 leading-relaxed text-slate-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. The club was founded with one idea — to give people an
-          unforgettable experience on the Tara and Drina rivers.
-        </p>
-        <p class="mb-4 leading-relaxed text-slate-600">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. We organize tours for all experience levels, from complete beginners to
-          seasoned kayakers looking for a new challenge.
-        </p>
-        <p class="leading-relaxed text-slate-600">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis.
-        </p>
-      </div>
-      <div class="overflow-hidden rounded-2xl">
-        <img
-          src="https://picsum.photos/seed/about2/800/600"
-          alt="Kayak Club Tara Drina"
-          class="h-96 w-full object-cover"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- Founding -->
-  <section class="bg-slate-50 px-4 py-20">
-    <div class="mx-auto max-w-6xl">
-      <div class="mx-auto max-w-3xl">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Founding</p>
-        <h2 class="mb-10 text-3xl font-bold text-slate-900">How it all started</h2>
-        <div class="grid gap-8 sm:grid-cols-3">
-          <div class="rounded-2xl bg-white p-6 shadow-sm">
-            <p class="mb-1 text-3xl font-bold text-teal-700">199X.</p>
-            <p class="text-sm font-semibold text-slate-900">Year founded</p>
-            <p class="mt-2 text-sm text-slate-500">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit ut enim.
-            </p>
-          </div>
-          <div class="rounded-2xl bg-white p-6 shadow-sm">
-            <p class="mb-1 text-lg font-bold text-teal-700">First Last</p>
-            <p class="text-sm font-semibold text-slate-900">Club founder</p>
-            <p class="mt-2 text-sm text-slate-500">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse.
-            </p>
-          </div>
-          <div class="rounded-2xl bg-white p-6 shadow-sm">
-            <p class="mb-1 text-lg font-bold text-teal-700">Foča, BiH</p>
-            <p class="text-sm font-semibold text-slate-900">Founded at</p>
-            <p class="mt-2 text-sm text-slate-500">
-              Excepteur sint occaecat cupidatat non proident sunt in culpa.
-            </p>
+  <section class="section section--cream">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-layout__text">
+          <span class="eyebrow">Our story</span>
+          <h2 class="section-title">Kayak Club Tara Drina</h2>
+          <p class="body-text">The club was founded with one idea — to give people an unforgettable experience on the Tara and Drina rivers. Over the decades, we grew into one of the most trusted kayak clubs in the region, with hundreds of satisfied families and adventurers.</p>
+          <p class="body-text">We organize tours for all experience levels, from complete beginners to seasoned kayakers looking for a new challenge on the wild waters of the Balkans.</p>
+          <p class="body-text">Our team doesn't change — the same guides, the same dedication, the same rivers, year after year. That's why guests return every season.</p>
+        </div>
+        <div class="split-layout__media">
+          <div class="img-stack">
+            <img src="https://picsum.photos/seed/about2/900/700" alt="Kayak Club Tara Drina" class="img-stack__main"/>
+            <div class="img-stack__secondary"><img src="https://picsum.photos/seed/about3/400/400" alt="On the river"/></div>
+            <div class="img-stack__accent"></div>
           </div>
         </div>
       </div>
     </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,70 L1440,70 L0,70 Z" fill="#ffffff"/>
+      </svg>
+    </div>
   </section>
 
-  <!-- Location -->
-  <section class="px-4 py-20">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid items-center gap-12 md:grid-cols-2">
-        <div>
-          <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-600">Location</p>
-          <h2 class="mb-6 text-3xl font-bold text-slate-900">Where to find us</h2>
-          <p class="mb-6 leading-relaxed text-slate-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our base is located right on
-            the river bank, from where we run all our tours and activities.
-          </p>
-          <ul class="space-y-4 text-sm text-slate-700">
-            <li class="flex items-start gap-3">
-              <span class="text-lg">📍</span>
-              <div>
-                <p class="font-semibold">Address</p>
-                <p class="text-slate-500">Lorem ipsum bb, Serbia</p>
-              </div>
+  <section class="section section--white">
+    <div class="container">
+      <div style="max-width:48rem;margin-inline:auto;">
+        <span class="eyebrow" style="text-align:center;display:block;">Founding</span>
+        <h2 class="section-title" style="text-align:center;">How it all started</h2>
+        <div class="founding-grid" style="margin-top:2.5rem;">
+          <div class="founding-card">
+            <p class="founding-card__value">199X.</p>
+            <p class="founding-card__label">Year founded</p>
+            <p class="founding-card__text">Club founded with the vision of making kayaking accessible to everyone on the Drina.</p>
+          </div>
+          <div class="founding-card">
+            <p class="founding-card__value">First Last</p>
+            <p class="founding-card__label">Club founder</p>
+            <p class="founding-card__text">A former national team member who decided to share the path of paddling with the world.</p>
+          </div>
+          <div class="founding-card">
+            <p class="founding-card__value">Foča</p>
+            <p class="founding-card__label">Founded at</p>
+            <p class="founding-card__text">The heart of the Drina — a town that has lived alongside the river for centuries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,80 C360,0 1080,80 1440,0 L1440,80 L0,80 Z" fill="#0a1a12"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section section--dark-topo">
+    <div class="topo-lines" aria-hidden="true">
+      <svg viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="rgba(74,186,130,0.1)" stroke-width="0.8" fill="none">
+          <path d="M-100,440 C200,405 360,448 560,415 C760,382 920,422 1120,390 C1310,362 1420,398 1540,380"/>
+          <path d="M-100,405 C215,368 378,412 580,378 C780,344 940,388 1140,352 C1330,322 1432,362 1540,345"/>
+          <path d="M-100,370 C232,330 395,375 600,338 C800,305 960,350 1160,312 C1350,280 1440,322 1540,305"/>
+          <path d="M-100,335 C250,292 412,338 620,298 C820,262 980,310 1180,272 C1370,238 1448,282 1540,265"/>
+          <path d="M-100,300 C268,254 430,302 638,260 C840,222 1000,272 1200,232 C1390,198 1455,244 1540,225"/>
+          <path d="M-100,265 C285,216 448,268 658,222 C862,180 1020,235 1222,192 C1412,155 1462,205 1540,185"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow eyebrow--light">Activities</span>
+        <h2 class="section-title section-title--light">What we do</h2>
+      </div>
+      <div class="activity-grid">
+        <div class="activity-card">
+          <div class="activity-card__icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.5l3-3 3 3 5-5 3 3"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 19.5h18"/></svg></div>
+          <h3 class="activity-card__title">Kayak tours</h3>
+          <p class="activity-card__text">Single-day tours on the Tara and Drina rivers for all experience levels — from family outings to adventures for seasoned kayakers.</p>
+          <a href="/en/tours/tara-drina" class="text-link" style="color:#4aba82;margin-top:0;">View tours →</a>
+        </div>
+        <div class="activity-card">
+          <div class="activity-card__icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg></div>
+          <h3 class="activity-card__title">Kayak school</h3>
+          <p class="activity-card__text">Learn kayaking from scratch with certified instructors. Courses for children, adults and groups, tailored to every participant.</p>
+          <a href="/en/kayak-school" class="text-link" style="color:#4aba82;margin-top:0;">Learn more →</a>
+        </div>
+        <div class="activity-card">
+          <div class="activity-card__icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/></svg></div>
+          <h3 class="activity-card__title">Competitions</h3>
+          <p class="activity-card__text">We participate in and organize local and regional kayak competitions every season, open to all categories.</p>
+          <a href="/en/contact" class="text-link" style="color:#4aba82;margin-top:0;">Contact us →</a>
+        </div>
+      </div>
+    </div>
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f2ede4"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section section--cta">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-layout__text">
+          <span class="eyebrow">Location</span>
+          <h2 class="section-title">Where to find us</h2>
+          <p class="body-text">Our base is located right on the riverbank, from where we run all our tours and activities. Easy access by public transport or private vehicle.</p>
+          <ul class="contact-info-list" style="margin-bottom:1.5rem;">
+            <li class="contact-info-item">
+              <span class="contact-info-item__icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></span>
+              <div><p class="contact-info-item__label">Address</p><p class="contact-info-item__value">Lorem ipsum bb, Serbia</p></div>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-lg">📞</span>
-              <div>
-                <p class="font-semibold">Phone</p>
-                <a href="tel:+381xxxxxxxx" class="text-teal-700 hover:text-teal-600">+381 xx xxx xxxx</a>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-lg">✉️</span>
-              <div>
-                <p class="font-semibold">Email</p>
-                <a href="mailto:info@kktaradrina.rs" class="text-teal-700 hover:text-teal-600">info@kktaradrina.rs</a>
-              </div>
+            <li class="contact-info-item">
+              <span class="contact-info-item__icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></span>
+              <div><p class="contact-info-item__label">Phone</p><p class="contact-info-item__value"><a href="tel:+381xxxxxxxx">+381 xx xxx xxxx</a></p></div>
             </li>
           </ul>
-          <a
-            href="https://www.openstreetmap.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-8 inline-flex items-center gap-2 rounded-lg border border-teal-200 px-5 py-2.5 text-sm font-semibold text-teal-700 transition-colors hover:bg-teal-50"
-          >
+          <a href="https://www.openstreetmap.org" target="_blank" rel="noopener noreferrer" class="btn btn--dark">
             View on map
-            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-            </svg>
+            <svg class="btn__arrow" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
-        <div class="overflow-hidden rounded-2xl bg-slate-100">
-          <img
-            src="https://picsum.photos/seed/location1/800/600"
-            alt="Club location"
-            class="h-80 w-full object-cover"
-          />
+        <div class="split-layout__media">
+          <img src="https://picsum.photos/seed/location1/900/700" alt="Club location" class="split-img"/>
+          <div class="split-img__accent"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What we do -->
-  <section class="bg-teal-700 px-4 py-20 text-white">
-    <div class="mx-auto max-w-6xl">
-      <div class="mb-12 text-center">
-        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-teal-200">Activities</p>
-        <h2 class="text-3xl font-bold">What we do</h2>
-      </div>
-      <div class="grid gap-6 md:grid-cols-3">
-        {
-          [
-            {
-              icon: "🚣",
-              title: "Kayak tours",
-              text: "We organize single-day tours on the Tara and Drina rivers for all experience levels.",
-              href: "/en/tours/tara-drina",
-              linkLabel: "See tours",
-            },
-            {
-              icon: "🎓",
-              title: "Kayak school",
-              text: "Learn kayaking from scratch with certified instructors in a safe environment.",
-              href: "/en/kayak-school",
-              linkLabel: "Learn more",
-            },
-            {
-              icon: "🏆",
-              title: "Competitions",
-              text: "We participate in local and regional kayak competitions every season.",
-              href: "/en/contact",
-              linkLabel: "Contact us",
-            },
-          ].map((item) => (
-            <div class="rounded-2xl bg-white/10 p-6">
-              <p class="mb-3 text-3xl">{item.icon}</p>
-              <h3 class="mb-2 text-lg font-bold">{item.title}</h3>
-              <p class="mb-4 text-sm leading-relaxed text-teal-100">{item.text}</p>
-              <a href={item.href} class="text-sm font-semibold text-teal-200 hover:text-white">
-                {item.linkLabel} →
-              </a>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
 </Layout>

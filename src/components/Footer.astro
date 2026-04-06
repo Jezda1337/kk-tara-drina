@@ -10,6 +10,7 @@ const routeMap: Record<string, string> = {
   "/ture/raca-rogacica": "/en/tours/raca-rogacica",
   "/skola-kajaka": "/en/kayak-school",
   "/cenovnik": "/en/pricing",
+  "/pravilnik": "/en/rules",
   "/rekreacija": "/en/recreation",
   "/kontakt": "/en/contact",
 };
@@ -256,6 +257,11 @@ const langSwitchHref = isRS
           <li>
             <a href={isRS ? "/cenovnik" : "/en/pricing"} class="footer__link"
               >{isRS ? "Cenovnik" : "Pricing"}</a
+            >
+          </li>
+          <li>
+            <a href={isRS ? "/pravilnik" : "/en/rules"} class="footer__link"
+              >{isRS ? "Pravilnik" : "Rules"}</a
             >
           </li>
           <li>

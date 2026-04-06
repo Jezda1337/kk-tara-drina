@@ -8,7 +8,7 @@ const locale = Astro.currentLocale ?? "rs";
 const isRS = locale === "rs";
 const pathname = Astro.url.pathname;
 
-const serviceLinks = [
+const tourLinks = [
   {
     path: isRS ? "/ture/perucac-raca" : "/en/tours/perucac-raca",
     label: isRS ? "Perućac → Rača" : "Perućac → Rača",
@@ -17,23 +17,27 @@ const serviceLinks = [
     path: isRS ? "/ture/raca-rogacica" : "/en/tours/raca-rogacica",
     label: isRS ? "Rača → Rogačica" : "Rača → Rogačica",
   },
-  {
-    path: isRS ? "/rekreacija" : "/en/recreation",
-    label: isRS ? "Rekreacija" : "Recreation",
-  },
 ];
 
 const routes = [
   { path: isRS ? "/" : "/en/", label: isRS ? "Početna" : "Home" },
   { path: isRS ? "/o-nama" : "/en/about", label: isRS ? "O nama" : "About" },
-  { label: isRS ? "Usluge" : "Services", dropdown: serviceLinks },
+  { label: isRS ? "Ture" : "Tours", dropdown: tourLinks },
   {
     path: isRS ? "/skola-kajaka" : "/en/kayak-school",
     label: isRS ? "Škola kajaka" : "Kayak school",
   },
   {
+    path: isRS ? "/rekreacija" : "/en/recreation",
+    label: isRS ? "Rekreacija" : "Recreation",
+  },
+  {
     path: isRS ? "/cenovnik" : "/en/pricing",
     label: isRS ? "Cenovnik" : "Pricing",
+  },
+  {
+    path: isRS ? "/pravilnik" : "/en/rules",
+    label: isRS ? "Pravilnik" : "Rules",
   },
   {
     path: isRS ? "/kontakt" : "/en/contact",
@@ -41,7 +45,7 @@ const routes = [
   },
 ];
 
-const isServicesActive = serviceLinks.some((t) => pathname === t.path);
+const isServicesActive = tourLinks.some((t) => pathname === t.path);
 
 const routeMap: Record<string, string> = {
   "/": "/en/",
@@ -50,10 +54,13 @@ const routeMap: Record<string, string> = {
   "/ture/raca-rogacica": "/en/tours/raca-rogacica",
   "/skola-kajaka": "/en/kayak-school",
   "/cenovnik": "/en/pricing",
+  "/pravilnik": "/en/rules",
   "/rekreacija": "/en/recreation",
   "/kontakt": "/en/contact",
 };
-const reverseRouteMap = Object.fromEntries(Object.entries(routeMap).map(([k, v]) => [v, k]));
+const reverseRouteMap = Object.fromEntries(
+  Object.entries(routeMap).map(([k, v]) => [v, k]),
+);
 const langSwitchHref = isRS
   ? (routeMap[pathname] ?? "/en/")
   : (reverseRouteMap[pathname] ?? "/");
@@ -99,6 +106,17 @@ const langSwitchHref = isRS
       .forEach((a) => a.addEventListener("click", close));
     overlay?.addEventListener("click", (e) => {
       if (e.target === overlay) close();
+    });
+
+    // Mobile dropdown toggles
+    const dropdownToggles = document.querySelectorAll(".mobile-group__toggle");
+    dropdownToggles.forEach((toggle) => {
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        const group = toggle.closest(".mobile-group");
+        const isOpen = group?.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
     });
   }
 
@@ -225,18 +243,40 @@ const langSwitchHref = isRS
           if (route.dropdown) {
             return (
               <div class="mobile-group">
-                <p class="mobile-group__label">{route.label}</p>
-                {route.dropdown.map((child) => (
-                  <a
-                    href={child.path}
-                    class:list={[
-                      "mobile-link mobile-link--sub",
-                      pathname === child.path && "mobile-link--active",
-                    ]}
+                <button
+                  class="mobile-group__toggle"
+                  aria-expanded="false"
+                  aria-label={route.label}
+                >
+                  <span class="mobile-group__label">{route.label}</span>
+                  <svg
+                    class="mobile-group__chevron"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                    aria-hidden="true"
                   >
-                    {child.label}
-                  </a>
-                ))}
+                    <path
+                      d="M1 1l4 4 4-4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div class="mobile-group__items">
+                  {route.dropdown.map((child) => (
+                    <a
+                      href={child.path}
+                      class:list={[
+                        "mobile-link mobile-link--sub",
+                        pathname === child.path && "mobile-link--active",
+                      ]}
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             );
           }
@@ -579,14 +619,55 @@ const langSwitchHref = isRS
   .mobile-group {
     margin-bottom: 0.375rem;
   }
+  .mobile-group__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(74, 186, 130, 0.2);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    transition: all 0.2s ease;
+  }
+  .mobile-group__toggle:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(74, 186, 130, 0.4);
+    color: #4aba82;
+  }
+  .mobile-group.is-open .mobile-group__toggle {
+    background: rgba(74, 186, 130, 0.1);
+    border-color: rgba(74, 186, 130, 0.4);
+    color: #4aba82;
+  }
   .mobile-group__label {
     font-family: "Barlow Condensed", sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.25);
-    padding: 0.75rem 0.5rem 0.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.15;
+  }
+  .mobile-group__chevron {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  .mobile-group.is-open .mobile-group__chevron {
+    transform: rotate(180deg);
+  }
+  .mobile-group__items {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .mobile-group.is-open .mobile-group__items {
+    max-height: 500px;
   }
 
   .mobile-footer {

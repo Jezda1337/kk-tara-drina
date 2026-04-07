@@ -12,6 +12,7 @@ export default defineConfig({
       cssMinify: true,
     },
   },
+  trailingSlash: "never",
   i18n: {
     locales: ["rs", "en"],
     defaultLocale: "rs",

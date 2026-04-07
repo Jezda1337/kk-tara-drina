@@ -4,8 +4,9 @@ const isRS = locale === "rs";
 const pathname = Astro.url.pathname;
 
 const routeMap: Record<string, string> = {
-  "/": "/en/",
+  "/": "/en",
   "/o-nama": "/en/about",
+  "/ture": "/en/tours",
   "/ture/perucac-raca": "/en/tours/perucac-raca",
   "/ture/raca-rogacica": "/en/tours/raca-rogacica",
   "/skola-kajaka": "/en/kayak-school",
@@ -14,9 +15,11 @@ const routeMap: Record<string, string> = {
   "/rekreacija": "/en/recreation",
   "/kontakt": "/en/contact",
 };
-const reverseRouteMap = Object.fromEntries(Object.entries(routeMap).map(([k, v]) => [v, k]));
+const reverseRouteMap = Object.fromEntries(
+  Object.entries(routeMap).map(([k, v]) => [v, k]),
+);
 const langSwitchHref = isRS
-  ? (routeMap[pathname] ?? "/en/")
+  ? (routeMap[pathname] ?? "/en")
   : (reverseRouteMap[pathname] ?? "/");
 ---
 
@@ -117,7 +120,7 @@ const langSwitchHref = isRS
         </svg>
       </a>
       <a
-        href={isRS ? "/ture/perucac-raca" : "/en/tours/perucac-raca"}
+        href={isRS ? "/ture" : "/en/tours"}
         class="btn btn--emerald btn--large"
       >
         {isRS ? "Pogledaj ture" : "View tours"}
@@ -228,18 +231,21 @@ const langSwitchHref = isRS
       </div>
 
       <div class="footer__col">
-        <h4 class="footer__heading">{isRS ? "Usluge" : "Services"}</h4>
+        <h4 class="footer__heading">{isRS ? "Navigacija" : "Navigation"}</h4>
         <ul class="footer__links">
           <li>
-            <a
-              href={isRS ? "/ture/perucac-raca" : "/en/tours/perucac-raca"}
-              class="footer__link">Tura 1 — Perućac → Rača</a
+            <a href={isRS ? "/" : "/en"} class="footer__link"
+              >{isRS ? "Početna" : "Home"}</a
             >
           </li>
           <li>
-            <a
-              href={isRS ? "/ture/raca-rogacica" : "/en/tours/raca-rogacica"}
-              class="footer__link">Tura 2 — Rača → Rogačica</a
+            <a href={isRS ? "/o-nama" : "/en/about"} class="footer__link"
+              >{isRS ? "O nama" : "About us"}</a
+            >
+          </li>
+          <li>
+            <a href={isRS ? "/ture" : "/en/tours"} class="footer__link"
+              >{isRS ? "Kajak ture" : "Kayak tours"}</a
             >
           </li>
           <li>
@@ -262,11 +268,6 @@ const langSwitchHref = isRS
           <li>
             <a href={isRS ? "/pravilnik" : "/en/rules"} class="footer__link"
               >{isRS ? "Pravilnik" : "Rules"}</a
-            >
-          </li>
-          <li>
-            <a href={isRS ? "/o-nama" : "/en/about"} class="footer__link"
-              >{isRS ? "O nama" : "About us"}</a
             >
           </li>
           <li>

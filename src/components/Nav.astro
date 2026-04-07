@@ -8,21 +8,13 @@ const locale = Astro.currentLocale ?? "rs";
 const isRS = locale === "rs";
 const pathname = Astro.url.pathname;
 
-const tourLinks = [
-  {
-    path: isRS ? "/ture/perucac-raca" : "/en/tours/perucac-raca",
-    label: isRS ? "Perućac → Rača" : "Perućac → Rača",
-  },
-  {
-    path: isRS ? "/ture/raca-rogacica" : "/en/tours/raca-rogacica",
-    label: isRS ? "Rača → Rogačica" : "Rača → Rogačica",
-  },
-];
-
 const routes = [
-  { path: isRS ? "/" : "/en/", label: isRS ? "Početna" : "Home" },
+  { path: isRS ? "/" : "/en", label: isRS ? "Početna" : "Home" },
   { path: isRS ? "/o-nama" : "/en/about", label: isRS ? "O nama" : "About" },
-  { label: isRS ? "Ture" : "Tours", dropdown: tourLinks },
+  {
+    path: isRS ? "/ture" : "/en/tours",
+    label: isRS ? "Ture" : "Tours",
+  },
   {
     path: isRS ? "/skola-kajaka" : "/en/kayak-school",
     label: isRS ? "Škola kajaka" : "Kayak school",
@@ -45,11 +37,10 @@ const routes = [
   },
 ];
 
-const isServicesActive = tourLinks.some((t) => pathname === t.path);
-
 const routeMap: Record<string, string> = {
-  "/": "/en/",
+  "/": "/en",
   "/o-nama": "/en/about",
+  "/ture": "/en/tours",
   "/ture/perucac-raca": "/en/tours/perucac-raca",
   "/ture/raca-rogacica": "/en/tours/raca-rogacica",
   "/skola-kajaka": "/en/kayak-school",
@@ -62,7 +53,7 @@ const reverseRouteMap = Object.fromEntries(
   Object.entries(routeMap).map(([k, v]) => [v, k]),
 );
 const langSwitchHref = isRS
-  ? (routeMap[pathname] ?? "/en/")
+  ? (routeMap[pathname] ?? "/en")
   : (reverseRouteMap[pathname] ?? "/");
 ---
 
@@ -107,22 +98,9 @@ const langSwitchHref = isRS
     overlay?.addEventListener("click", (e) => {
       if (e.target === overlay) close();
     });
-
-    // Mobile dropdown toggles
-    const dropdownToggles = document.querySelectorAll(".mobile-group__toggle");
-    dropdownToggles.forEach((toggle) => {
-      toggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        const group = toggle.closest(".mobile-group");
-        const isOpen = group?.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-    });
   }
 
   document.addEventListener("astro:page-load", initNav);
-  if (document.readyState !== "loading") initNav();
-  else document.addEventListener("DOMContentLoaded", initNav);
 </script>
 
 <header
@@ -140,50 +118,6 @@ const langSwitchHref = isRS
     <nav class="desktop-nav" aria-label="Glavna navigacija">
       {
         routes.map((route) => {
-          if (route.dropdown) {
-            return (
-              <div class="nav-item group">
-                <button
-                  class:list={[
-                    "nav-link nav-link--btn",
-                    isServicesActive && "nav-link--active",
-                  ]}
-                >
-                  {route.label}
-                  <svg
-                    class="chevron"
-                    fill="none"
-                    viewBox="0 0 10 6"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M1 1l4 4 4-4"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <div class="dropdown">
-                  <div class="dropdown__inner">
-                    {route.dropdown.map((child) => (
-                      <a
-                        href={child.path}
-                        class:list={[
-                          "dropdown__link",
-                          pathname === child.path && "dropdown__link--active",
-                        ]}
-                      >
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            );
-          }
-
           const isActive = pathname === route.path;
           return (
             <a
@@ -240,46 +174,6 @@ const langSwitchHref = isRS
     <nav class="mobile-nav">
       {
         routes.map((route) => {
-          if (route.dropdown) {
-            return (
-              <div class="mobile-group">
-                <button
-                  class="mobile-group__toggle"
-                  aria-expanded="false"
-                  aria-label={route.label}
-                >
-                  <span class="mobile-group__label">{route.label}</span>
-                  <svg
-                    class="mobile-group__chevron"
-                    fill="none"
-                    viewBox="0 0 10 6"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M1 1l4 4 4-4"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <div class="mobile-group__items">
-                  {route.dropdown.map((child) => (
-                    <a
-                      href={child.path}
-                      class:list={[
-                        "mobile-link mobile-link--sub",
-                        pathname === child.path && "mobile-link--active",
-                      ]}
-                    >
-                      {child.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            );
-          }
           const isActive = pathname === route.path;
           return (
             <a

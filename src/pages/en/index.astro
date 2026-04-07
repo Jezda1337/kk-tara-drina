@@ -32,7 +32,7 @@ import Layout from "../../layouts/Layout.astro";
         and landscapes only truly seen from a kayak. Our adventure starts here, in the heart of Bajina Bašta.
       </p>
       <div class="hero__cta">
-        <a href="#tours" class="btn btn--primary">
+        <a href="/en/tours" class="btn btn--primary">
           Explore tours
           <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,39 +56,62 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <section id="tours" class="section section--cream">
+  <section class="section section--cream">
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow">Our tours on the Drina</span>
-        <h2 class="section-title">Choose your adventure</h2>
+        <span class="eyebrow">What we offer</span>
+        <h2 class="section-title">Everything the Drina has to offer</h2>
         <p class="section-sub">
-          Whatever route you choose, your only job is to bring a good mood —
-          we'll take care of everything else. Expert support, equipment and transport included.
+          Whatever your experience level or mood — we have the right adventure on the water for you.
         </p>
       </div>
-      <div class="tour-grid">
-        <a href="/en/tours/perucac-raca" class="tour-card group">
-          <div class="tour-card__img-wrap">
-            <img src="https://picsum.photos/seed/drina1/900/700" alt="Turquoise Drina below Perućac dam" class="tour-card__img"/>
-            <div class="tour-card__gradient"></div>
-            <div class="tour-card__badge"><span>~15 km</span><span class="badge-sep">·</span><span>~2.5h</span><span class="badge-sep">·</span><span>3,600 RSD</span></div>
-            <div class="tour-card__body">
-              <h3 class="tour-card__title">Perućac → Rača</h3>
-              <p class="tour-card__desc">The perfect introduction to kayaking. Turquoise Drina, Vrelo waterfall and pristine Podrinje nature.</p>
-              <span class="tour-card__cta">Learn more <svg class="tour-card__arrow" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </div>
+      <div class="services-grid">
+        <a href="/en/tours" class="service-card">
+          <div class="service-card__img-wrap">
+            <img src="https://picsum.photos/seed/drina1/900/600" alt="Kayak tours on the Drina" class="service-card__img"/>
+            <div class="service-card__overlay"></div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Kayak tours</h3>
+            <p class="service-card__text">Two routes down the Drina — from a gentle introduction to an adrenaline-filled adventure past the famous Rock House. Equipment, guide and transport included.</p>
+            <span class="service-card__cta">
+              View tours
+              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </div>
         </a>
-        <a href="/en/tours/raca-rogacica" class="tour-card group">
-          <div class="tour-card__img-wrap">
-            <img src="https://picsum.photos/seed/tara2/900/700" alt="House on the Rock on the Drina" class="tour-card__img"/>
-            <div class="tour-card__gradient"></div>
-            <div class="tour-card__badge"><span>3–3.5h</span><span class="badge-sep">·</span><span>House on the Rock</span><span class="badge-sep">·</span><span>4,000 RSD</span></div>
-            <div class="tour-card__body">
-              <h3 class="tour-card__title">Rača → Rogačica</h3>
-              <p class="tour-card__desc">Past the famous House on the Rock and through the Bujaković rapid — for those who want more.</p>
-              <span class="tour-card__cta">Learn more <svg class="tour-card__arrow" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </div>
+        <a href="/en/kayak-school" class="service-card">
+          <div class="service-card__img-wrap">
+            <img src="https://picsum.photos/seed/school1/900/600" alt="Kayak school" class="service-card__img"/>
+            <div class="service-card__overlay"></div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Kayak school</h3>
+            <p class="service-card__text">Beginner, advanced and individual programmes. Led by licensed coach and Serbian national team representative Marko Marjanović.</p>
+            <span class="service-card__cta">
+              Learn more
+              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+        <a href="/en/recreation" class="service-card">
+          <div class="service-card__img-wrap">
+            <img src="https://picsum.photos/seed/kayak22/900/600" alt="Recreational paddling" class="service-card__img"/>
+            <div class="service-card__overlay"></div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Recreation</h3>
+            <p class="service-card__text">For those who already paddle and want regular sessions on the water. Use of club equipment and facilities with a monthly membership.</p>
+            <span class="service-card__cta">
+              Learn more
+              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </div>
         </a>
       </div>
@@ -228,4 +251,19 @@ import Layout from "../../layouts/Layout.astro";
   .scroll-dot { animation:scrollDot 2.5s ease-in-out infinite; }
   @keyframes scrollDot { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
   .features-header__left { display:flex; flex-direction:column; }
+
+  /* ── Services grid ── */
+  .services-grid { display:grid; grid-template-columns:1fr; gap:1.5rem; }
+  @media (min-width:768px) { .services-grid { grid-template-columns:repeat(3,1fr); } }
+  .service-card { display:flex; flex-direction:column; text-decoration:none; border-radius:.875rem; overflow:hidden; background:#fff; border:1px solid rgba(13,32,22,.08); box-shadow:0 2px 16px rgba(13,32,22,.07); transition:box-shadow .3s,transform .3s; }
+  .service-card:hover { box-shadow:0 12px 40px rgba(13,32,22,.15); transform:translateY(-4px); }
+  .service-card__img-wrap { position:relative; height:13rem; overflow:hidden; }
+  .service-card__img { width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.4,0,.2,1); }
+  .service-card:hover .service-card__img { transform:scale(1.05); }
+  .service-card__overlay { position:absolute; inset:0; background:linear-gradient(to bottom,transparent 40%,rgba(13,32,22,.35) 100%); }
+  .service-card__body { padding:1.5rem; display:flex; flex-direction:column; flex:1; }
+  .service-card__title { font-family:'Barlow Condensed',sans-serif; font-size:1.6rem; font-weight:800; text-transform:uppercase; letter-spacing:.02em; color:#0d2016; margin-bottom:.625rem; line-height:1; }
+  .service-card__text { font-size:.875rem; line-height:1.65; color:rgba(13,32,22,.6); flex:1; margin-bottom:1.25rem; }
+  .service-card__cta { display:inline-flex; align-items:center; gap:.375rem; font-family:'Barlow Condensed',sans-serif; font-size:.8rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#2a7a54; transition:gap .2s; }
+  .service-card:hover .service-card__cta { gap:.6rem; }
 </style>

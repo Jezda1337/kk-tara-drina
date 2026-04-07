@@ -48,7 +48,7 @@ import Layout from "../layouts/Layout.astro";
         koji se jedino istinski vide iz kajaka. Naša avantura počinje ovde, u srcu Bajine Bašte.
       </p>
       <div class="hero__cta">
-        <a href="#ture" class="btn btn--primary">
+        <a href="/ture" class="btn btn--primary">
           Istraži ture
           <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -76,61 +76,67 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       TOURS — cream, full-bleed image cards
+       SERVICES — cream, 3-card overview
   ════════════════════════════════════════════════════════════════ -->
-  <section id="ture" class="section section--cream">
+  <section class="section section--cream">
     <div class="container">
       <div class="section-header">
-        <p class="eyebrow">Naše ture na Drini</p>
-        <h2 class="section-title">Izaberite svoju avanturu</h2>
+        <p class="eyebrow">Šta nudimo</p>
+        <h2 class="section-title">Sve što Drina može da ponudi</h2>
         <p class="section-sub">
-          Bez obzira na to koju rutu odaberete, vaš jedini zadatak je da ponesete dobro raspoloženje —
-          za sve ostalo brinemo mi. Stručna podrška, oprema i prevoz uključeni.
+          Bez obzira na iskustvo i raspoloženje — za vas imamo pravo iskustvo na vodi.
         </p>
       </div>
 
-      <div class="tour-grid">
-        <a href="/ture/perucac-raca" class="tour-card group">
-          <div class="tour-card__img-wrap">
-            <img src="https://picsum.photos/seed/drina1/900/700" alt="Tirkizna Drina ispod brane Perućac" class="tour-card__img"/>
-            <div class="tour-card__gradient"></div>
-            <div class="tour-card__badge">
-              <span>~15 km</span><span class="badge-sep">·</span>
-              <span>~2,5h</span><span class="badge-sep">·</span>
-              <span>3.600 din</span>
-            </div>
-            <div class="tour-card__body">
-              <h3 class="tour-card__title">Perućac → Rača</h3>
-              <p class="tour-card__desc">Idealna ulaznica u svet kajaka. Tirkizna Drina, vodopad reke Vrelo i netaknuta priroda Podrinja.</p>
-              <span class="tour-card__cta">
-                Saznaj više
-                <svg class="tour-card__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </div>
+      <div class="services-grid">
+        <a href="/ture" class="service-card">
+          <div class="service-card__img-wrap">
+            <img src="https://picsum.photos/seed/drina1/900/600" alt="Kajak ture na Drini" class="service-card__img"/>
+            <div class="service-card__overlay"></div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Kajak ture</h3>
+            <p class="service-card__text">Dve rute niz Drinu — od mirnijeg uvoda do adrenalinske avanture pored Kućice na steni. Oprema, vodič i prevoz uključeni.</p>
+            <span class="service-card__cta">
+              Pogledaj ture
+              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </div>
         </a>
 
-        <a href="/ture/raca-rogacica" class="tour-card group">
-          <div class="tour-card__img-wrap">
-            <img src="https://picsum.photos/seed/tara2/900/700" alt="Kućica na steni na Drini" class="tour-card__img"/>
-            <div class="tour-card__gradient"></div>
-            <div class="tour-card__badge">
-              <span>3–3,5h</span><span class="badge-sep">·</span>
-              <span>Kućica na steni</span><span class="badge-sep">·</span>
-              <span>4.000 din</span>
-            </div>
-            <div class="tour-card__body">
-              <h3 class="tour-card__title">Rača → Rogačica</h3>
-              <p class="tour-card__desc">Prolazak pored čuvene Kućice na steni i adrenalinski buk Bujakovići — za one koji žele više.</p>
-              <span class="tour-card__cta">
-                Saznaj više
-                <svg class="tour-card__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </div>
+        <a href="/skola-kajaka" class="service-card">
+          <div class="service-card__img-wrap">
+            <img src="https://picsum.photos/seed/school1/900/600" alt="Škola kajaka" class="service-card__img"/>
+            <div class="service-card__overlay"></div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Škola kajaka</h3>
+            <p class="service-card__text">Početnički, napredni i individualni programi. Vodi licencirani trener i reprezentativac Srbije Marko Marjanović.</p>
+            <span class="service-card__cta">
+              Saznaj više
+              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="/rekreacija" class="service-card">
+          <div class="service-card__img-wrap">
+            <img src="https://picsum.photos/seed/kayak22/900/600" alt="Rekreativno veslanje" class="service-card__img"/>
+            <div class="service-card__overlay"></div>
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Rekreacija</h3>
+            <p class="service-card__text">Za one koji već veslaju i žele redovne termine na vodi. Korišćenje klupske opreme i prostora uz mesečnu članarinu.</p>
+            <span class="service-card__cta">
+              Saznaj više
+              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </div>
         </a>
       </div>
@@ -910,4 +916,82 @@ import Layout from "../layouts/Layout.astro";
     color: rgba(13,32,22,0.5);
     margin-bottom: 2rem;
   }
+
+  /* ─── Services grid ──────────────────────────────────────────────── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border-radius: 0.875rem;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(13,32,22,0.08);
+    box-shadow: 0 2px 16px rgba(13,32,22,0.07);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .service-card:hover {
+    box-shadow: 0 12px 40px rgba(13,32,22,0.15);
+    transform: translateY(-4px);
+  }
+  .service-card__img-wrap {
+    position: relative;
+    height: 13rem;
+    overflow: hidden;
+  }
+  .service-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  }
+  .service-card:hover .service-card__img { transform: scale(1.05); }
+  .service-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(13,32,22,0.35) 100%);
+  }
+  .service-card__body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .service-card__title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #0d2016;
+    margin-bottom: 0.625rem;
+    line-height: 1;
+  }
+  .service-card__text {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: rgba(13,32,22,0.6);
+    flex: 1;
+    margin-bottom: 1.25rem;
+  }
+  .service-card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2a7a54;
+    transition: gap 0.2s;
+  }
+  .service-card:hover .service-card__cta { gap: 0.6rem; }
 </style>

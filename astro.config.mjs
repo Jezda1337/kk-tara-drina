@@ -8,7 +8,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), noExternalPlugin()],
     build: {
       minify: true,
       cssMinify: true,
@@ -35,4 +35,25 @@ export default defineConfig({
   ],
 
   adapter: cloudflare(),
+  output: "server",
 });
+
+function noExternalPlugin() {
+  return {
+    name: "optimize-dependencies",
+    configEnvironment(environment = "server") {
+      // We're only interested in server environments
+      if (environment !== "client") {
+        return {
+          optimizeDeps: {
+            include: [
+              "postcss",
+              // Or you can use this syntax if you don't depend directly on a dependency
+              // "expressive-code > postcss"
+            ],
+          },
+        };
+      }
+    },
+  };
+}

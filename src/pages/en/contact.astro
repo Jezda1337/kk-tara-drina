@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { actions } from 'astro:actions';
 ---
 
 <Layout title="Contact — KK Tara Drina">
@@ -76,7 +77,7 @@ import Layout from "../../layouts/Layout.astro";
           <p style="font-size:0.875rem; color:#4a6258; margin:0.5rem 0 1.5rem; line-height:1.6;">
             Fill in the form and we'll get back to you within 24 hours.
           </p>
-          <form style="margin-top:1.5rem;">
+          <form style="margin-top:1.5rem;" method="POST" action={actions.send}>
             <div class="form-group">
               <label class="form-label" for="ime-prezime">Full name</label>
               <input id="ime-prezime" type="text" placeholder="Your full name" class="form-input" />

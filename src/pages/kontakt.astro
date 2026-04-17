@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { actions } from 'astro:actions';
 ---
 
 <Layout title="Kontakt — KK Tara Drina">
@@ -78,18 +79,18 @@ import Layout from "../layouts/Layout.astro";
           <p style="font-size:0.875rem; color:#4a6258; margin:0.5rem 0 1.5rem; line-height:1.6;">
             Umesto da samo pišete mail, popunite formu — odgovaramo u roku od 24 sata.
           </p>
-          <form style="margin-top:1.5rem;">
+          <form style="margin-top:1.5rem;" action={actions.send} method="POST">
             <div class="form-group">
               <label class="form-label" for="ime-prezime">Ime i prezime</label>
-              <input id="ime-prezime" type="text" placeholder="Vaše ime i prezime" class="form-input" />
+              <input id="ime-prezime" name="fullname" type="text" placeholder="Vaše ime i prezime" class="form-input" />
             </div>
             <div class="form-group">
               <label class="form-label" for="telefon">Broj telefona</label>
-              <input id="telefon" type="tel" placeholder="+381 6x xxx xxxx" class="form-input" />
+              <input id="telefon" name="phone" type="tel" placeholder="+381 6x xxx xxxx" class="form-input" />
             </div>
             <div class="form-group">
               <label class="form-label" for="usluga">Šta vas zanima?</label>
-              <select id="usluga" class="form-select">
+              <select id="usluga" class="form-select" name="service">
                 <option value="">Odaberite uslugu</option>
                 <option value="tura1">Tura 1 — Perućac → Rača</option>
                 <option value="tura2">Tura 2 — Rača → Rogačica</option>
@@ -100,15 +101,15 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="form-group">
               <label class="form-label" for="datum">Planirani datum</label>
-              <input id="datum" type="date" class="form-input" />
+              <input id="datum" type="date" name="date" class="form-input" />
             </div>
             <div class="form-group">
               <label class="form-label" for="osobe">Broj osoba</label>
-              <input id="osobe" type="number" min="1" placeholder="Npr. 4" class="form-input" />
+              <input id="osobe" name="ppl_int" type="number" min="1" placeholder="Npr. 4" class="form-input" />
             </div>
             <div class="form-group">
               <label class="form-label" for="poruka">Poruka (opciono)</label>
-              <textarea id="poruka" rows="4" placeholder="Dodatne napomene, pitanja..." class="form-textarea"></textarea>
+              <textarea id="poruka" rows="4" name="message" placeholder="Dodatne napomene, pitanja..." class="form-textarea"></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--large" style="width:100%; justify-content:center;">
               Pošalji upit

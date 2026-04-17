@@ -3,6 +3,8 @@ import { defineConfig, fontProviders } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -12,7 +14,9 @@ export default defineConfig({
       cssMinify: true,
     },
   },
+
   trailingSlash: "never",
+
   i18n: {
     locales: ["rs", "en"],
     defaultLocale: "rs",
@@ -20,6 +24,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
   fonts: [
     {
       provider: fontProviders.fontsource(),
@@ -28,4 +33,6 @@ export default defineConfig({
       styles: ["normal", "italic"],
     },
   ],
+
+  adapter: cloudflare(),
 });

@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Kajak avanture na Tari i Drini" transparentNav={true}>
-
   <!-- ════════════════════════════════════════════════════════════════
        HERO
   ════════════════════════════════════════════════════════════════ -->
@@ -17,23 +16,57 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- Topo lines texture on hero -->
     <div class="topo-lines" aria-hidden="true">
-      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        viewBox="0 0 1440 600"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <g stroke="rgba(74,186,130,0.12)" stroke-width="0.8" fill="none">
-          <path d="M-100,540 C150,510 300,555 480,520 C660,485 820,530 1000,500 C1160,475 1320,510 1540,490"/>
-          <path d="M-100,515 C150,485 300,530 480,495 C660,460 820,505 1000,475 C1160,450 1320,485 1540,465"/>
-          <path d="M-100,490 C160,455 310,505 490,468 C680,432 840,478 1020,448 C1180,422 1330,460 1540,438"/>
-          <path d="M-100,465 C170,428 320,478 510,440 C700,404 850,452 1040,420 C1200,395 1340,432 1540,412"/>
-          <path d="M-100,440 C180,400 340,452 530,412 C720,374 870,425 1060,392 C1220,365 1350,405 1540,384"/>
-          <path d="M-100,412 C185,370 345,425 540,382 C735,340 888,398 1080,362 C1240,332 1365,378 1540,354"/>
-          <path d="M-100,385 C190,340 355,398 555,352 C750,308 906,370 1100,332 C1260,300 1375,350 1540,324"/>
-          <path d="M-100,358 C200,308 370,370 575,322 C775,278 928,342 1125,302 C1285,268 1388,322 1540,295"/>
-          <path d="M-100,330 C210,278 385,342 595,292 C798,245 948,314 1148,272 C1308,238 1395,295 1540,265"/>
-          <path d="M-100,302 C220,248 398,314 615,262 C820,212 968,285 1170,242 C1330,208 1402,268 1540,235"/>
-          <path d="M-100,275 C235,218 412,285 635,232 C842,182 988,255 1195,212 C1352,178 1412,240 1540,208"/>
-          <path d="M-100,248 C250,188 428,255 658,202 C868,152 1008,228 1222,182 C1375,148 1422,212 1540,182"/>
-          <path d="M-100,220 C265,158 445,225 680,172 C895,120 1028,200 1248,152 C1398,118 1432,185 1540,155"/>
-          <path d="M-100,194 C280,130 462,198 705,142 C925,90 1050,172 1275,124 C1420,90 1440,158 1540,128"/>
-          <path d="M-100,168 C295,102 480,172 730,112 C955,60 1072,146 1302,96 C1438,64 1448,132 1540,102"/>
+          <path
+            d="M-100,540 C150,510 300,555 480,520 C660,485 820,530 1000,500 C1160,475 1320,510 1540,490"
+          ></path>
+          <path
+            d="M-100,515 C150,485 300,530 480,495 C660,460 820,505 1000,475 C1160,450 1320,485 1540,465"
+          ></path>
+          <path
+            d="M-100,490 C160,455 310,505 490,468 C680,432 840,478 1020,448 C1180,422 1330,460 1540,438"
+          ></path>
+          <path
+            d="M-100,465 C170,428 320,478 510,440 C700,404 850,452 1040,420 C1200,395 1340,432 1540,412"
+          ></path>
+          <path
+            d="M-100,440 C180,400 340,452 530,412 C720,374 870,425 1060,392 C1220,365 1350,405 1540,384"
+          ></path>
+          <path
+            d="M-100,412 C185,370 345,425 540,382 C735,340 888,398 1080,362 C1240,332 1365,378 1540,354"
+          ></path>
+          <path
+            d="M-100,385 C190,340 355,398 555,352 C750,308 906,370 1100,332 C1260,300 1375,350 1540,324"
+          ></path>
+          <path
+            d="M-100,358 C200,308 370,370 575,322 C775,278 928,342 1125,302 C1285,268 1388,322 1540,295"
+          ></path>
+          <path
+            d="M-100,330 C210,278 385,342 595,292 C798,245 948,314 1148,272 C1308,238 1395,295 1540,265"
+          ></path>
+          <path
+            d="M-100,302 C220,248 398,314 615,262 C820,212 968,285 1170,242 C1330,208 1402,268 1540,235"
+          ></path>
+          <path
+            d="M-100,275 C235,218 412,285 635,232 C842,182 988,255 1195,212 C1352,178 1412,240 1540,208"
+          ></path>
+          <path
+            d="M-100,248 C250,188 428,255 658,202 C868,152 1008,228 1222,182 C1375,148 1422,212 1540,182"
+          ></path>
+          <path
+            d="M-100,220 C265,158 445,225 680,172 C895,120 1028,200 1248,152 C1398,118 1432,185 1540,155"
+          ></path>
+          <path
+            d="M-100,194 C280,130 462,198 705,142 C925,90 1050,172 1275,124 C1420,90 1440,158 1540,128"
+          ></path>
+          <path
+            d="M-100,168 C295,102 480,172 730,112 C955,60 1072,146 1302,96 C1438,64 1448,132 1540,102"
+          ></path>
         </g>
       </svg>
     </div>
@@ -44,33 +77,62 @@ import Layout from "../layouts/Layout.astro";
         Drina kakvu<br /><em>tek treba otkriti</em>
       </h1>
       <p class="hero__sub">
-        Reka Drina nije samo voda — ona je put kroz netaknutu prirodu, skrivene rukavce i predele
-        koji se jedino istinski vide iz kajaka. Naša avantura počinje ovde, u srcu Bajine Bašte.
+        Reka Drina nije samo voda — ona je put kroz netaknutu prirodu, skrivene
+        rukavce i predele koji se jedino istinski vide iz kajaka. Naša avantura
+        počinje ovde, u srcu Bajine Bašte.
       </p>
       <div class="hero__cta">
         <a href="/ture" class="btn btn--primary">
           Istraži ture
-          <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg
+            class="btn__arrow"
+            fill="none"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </a>
-        <a href="/kontakt" class="btn btn--outline">
-          Pošaljite upit
-        </a>
+        <a href="/kontakt" class="btn btn--outline"> Pošaljite upit </a>
       </div>
     </div>
 
     <div class="hero__scroll-hint" aria-hidden="true">
       <svg width="20" height="28" fill="none" viewBox="0 0 20 28">
-        <rect x="1" y="1" width="18" height="26" rx="9" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.4"/>
-        <circle class="scroll-dot" cx="10" cy="8" r="2.5" fill="currentColor" fill-opacity="0.5"/>
+        <rect
+          x="1"
+          y="1"
+          width="18"
+          height="26"
+          rx="9"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-opacity="0.4"></rect>
+        <circle
+          class="scroll-dot"
+          cx="10"
+          cy="8"
+          r="2.5"
+          fill="currentColor"
+          fill-opacity="0.5"></circle>
       </svg>
     </div>
 
     <!-- wave → cream -->
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,45 C240,90 480,0 720,45 C960,90 1200,0 1440,45 L1440,90 L0,90 Z" fill="#f2ede4"/>
+      <svg
+        viewBox="0 0 1440 90"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,45 C240,90 480,0 720,45 C960,90 1200,0 1440,45 L1440,90 L0,90 Z"
+          fill="#f2ede4"></path>
       </svg>
     </div>
   </section>
@@ -91,16 +153,34 @@ import Layout from "../layouts/Layout.astro";
       <div class="services-grid">
         <a href="/ture" class="service-card">
           <div class="service-card__img-wrap">
-            <img src="https://picsum.photos/seed/drina1/900/600" alt="Kajak ture na Drini" class="service-card__img"/>
+            <img
+              src="https://picsum.photos/seed/drina1/900/600"
+              alt="Kajak ture na Drini"
+              class="service-card__img"
+            />
             <div class="service-card__overlay"></div>
           </div>
           <div class="service-card__body">
             <h3 class="service-card__title">Kajak ture</h3>
-            <p class="service-card__text">Dve rute niz Drinu — od mirnijeg uvoda do adrenalinske avanture pored Kućice na steni. Oprema, vodič i prevoz uključeni.</p>
+            <p class="service-card__text">
+              Dve rute niz Drinu — od mirnijeg uvoda do adrenalinske avanture
+              pored Kućice na steni. Oprema, vodič i prevoz uključeni.
+            </p>
             <span class="service-card__cta">
               Pogledaj ture
-              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
               </svg>
             </span>
           </div>
@@ -108,16 +188,34 @@ import Layout from "../layouts/Layout.astro";
 
         <a href="/skola-kajaka" class="service-card">
           <div class="service-card__img-wrap">
-            <img src="https://picsum.photos/seed/school1/900/600" alt="Škola kajaka" class="service-card__img"/>
+            <img
+              src="https://picsum.photos/seed/school1/900/600"
+              alt="Škola kajaka"
+              class="service-card__img"
+            />
             <div class="service-card__overlay"></div>
           </div>
           <div class="service-card__body">
             <h3 class="service-card__title">Škola kajaka</h3>
-            <p class="service-card__text">Početnički, napredni i individualni programi. Vodi licencirani trener i reprezentativac Srbije Marko Marjanović.</p>
+            <p class="service-card__text">
+              Početnički, napredni i individualni programi. Vodi licencirani
+              trener i reprezentativac Srbije Marko Marjanović.
+            </p>
             <span class="service-card__cta">
               Saznaj više
-              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
               </svg>
             </span>
           </div>
@@ -125,16 +223,34 @@ import Layout from "../layouts/Layout.astro";
 
         <a href="/rekreacija" class="service-card">
           <div class="service-card__img-wrap">
-            <img src="https://picsum.photos/seed/kayak22/900/600" alt="Rekreativno veslanje" class="service-card__img"/>
+            <img
+              src="https://picsum.photos/seed/kayak22/900/600"
+              alt="Rekreativno veslanje"
+              class="service-card__img"
+            />
             <div class="service-card__overlay"></div>
           </div>
           <div class="service-card__body">
             <h3 class="service-card__title">Rekreacija</h3>
-            <p class="service-card__text">Za one koji već veslaju i žele redovne termine na vodi. Korišćenje klupske opreme i prostora uz mesečnu članarinu.</p>
+            <p class="service-card__text">
+              Za one koji već veslaju i žele redovne termine na vodi. Korišćenje
+              klupske opreme i prostora uz mesečnu članarinu.
+            </p>
             <span class="service-card__cta">
               Saznaj više
-              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
               </svg>
             </span>
           </div>
@@ -144,8 +260,12 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- diagonal slash → dark -->
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 L1440,70 L1440,70 L0,70 Z" fill="#0a1a12"/>
+      <svg
+        viewBox="0 0 1440 70"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,0 L1440,70 L1440,70 L0,70 Z" fill="#0a1a12"></path>
       </svg>
     </div>
   </section>
@@ -154,29 +274,68 @@ import Layout from "../layouts/Layout.astro";
        WHY US — dark navy + topographic lines texture + feature grid
   ════════════════════════════════════════════════════════════════ -->
   <section class="section section--dark-topo">
-
     <!-- Topo lines layer -->
     <div class="topo-lines" aria-hidden="true">
-      <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        viewBox="0 0 1440 700"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <g stroke="rgba(74,186,130,0.1)" stroke-width="0.9" fill="none">
-          <path d="M-100,620 C180,588 340,628 540,598 C740,568 900,608 1100,578 C1290,552 1400,582 1540,565"/>
-          <path d="M-100,595 C185,560 345,602 548,570 C748,540 908,582 1108,550 C1298,522 1405,558 1540,540"/>
-          <path d="M-100,568 C192,530 352,576 558,542 C758,510 918,556 1118,522 C1308,492 1412,532 1540,512"/>
-          <path d="M-100,540 C200,500 360,548 568,512 C768,478 928,528 1128,492 C1318,460 1418,506 1540,484"/>
-          <path d="M-100,512 C208,470 370,520 580,482 C778,446 940,498 1140,460 C1330,428 1425,478 1540,455"/>
-          <path d="M-100,484 C215,440 382,492 592,452 C792,414 952,468 1155,428 C1345,395 1432,450 1540,425"/>
-          <path d="M-100,455 C225,408 395,462 605,420 C808,380 965,438 1168,395 C1358,360 1440,420 1540,394"/>
-          <path d="M-100,425 C238,375 408,432 620,388 C825,346 978,408 1182,362 C1372,325 1448,392 1540,362"/>
-          <path d="M-100,395 C250,342 425,402 638,355 C845,310 992,376 1198,328 C1388,290 1455,362 1540,330"/>
-          <path d="M-100,365 C262,308 440,372 655,322 C862,275 1005,345 1215,295 C1405,255 1462,332 1540,298"/>
-          <path d="M-100,335 C275,275 455,342 672,289 C882,240 1018,314 1232,262 C1422,222 1470,302 1540,268"/>
-          <path d="M-100,305 C288,242 470,312 690,256 C902,205 1032,282 1250,228 C1440,188 1478,272 1540,238"/>
-          <path d="M-100,275 C302,208 488,280 708,222 C922,168 1048,250 1268,195 C1458,154 1486,242 1540,208"/>
-          <path d="M-100,245 C315,175 505,248 728,188 C945,132 1065,218 1288,162 C1478,120 1492,212 1540,178"/>
-          <path d="M-100,215 C330,142 522,218 748,155 C968,98 1082,186 1308,128 C1495,86 1498,182 1540,148"/>
-          <path d="M-100,185 C345,110 540,185 768,122 C992,65 1099,154 1328,96 C1512,55 1504,152 1540,118"/>
-          <path d="M-100,158 C360,80 558,155 792,90 C1018,32 1118,124 1350,65 C1528,25 1510,122 1540,90"/>
-          <path d="M-100,130 C380,52 580,128 818,60 C1045,0 1138,95 1375,36 C1542,0 1518,95 1540,65"/>
+          <path
+            d="M-100,620 C180,588 340,628 540,598 C740,568 900,608 1100,578 C1290,552 1400,582 1540,565"
+          ></path>
+          <path
+            d="M-100,595 C185,560 345,602 548,570 C748,540 908,582 1108,550 C1298,522 1405,558 1540,540"
+          ></path>
+          <path
+            d="M-100,568 C192,530 352,576 558,542 C758,510 918,556 1118,522 C1308,492 1412,532 1540,512"
+          ></path>
+          <path
+            d="M-100,540 C200,500 360,548 568,512 C768,478 928,528 1128,492 C1318,460 1418,506 1540,484"
+          ></path>
+          <path
+            d="M-100,512 C208,470 370,520 580,482 C778,446 940,498 1140,460 C1330,428 1425,478 1540,455"
+          ></path>
+          <path
+            d="M-100,484 C215,440 382,492 592,452 C792,414 952,468 1155,428 C1345,395 1432,450 1540,425"
+          ></path>
+          <path
+            d="M-100,455 C225,408 395,462 605,420 C808,380 965,438 1168,395 C1358,360 1440,420 1540,394"
+          ></path>
+          <path
+            d="M-100,425 C238,375 408,432 620,388 C825,346 978,408 1182,362 C1372,325 1448,392 1540,362"
+          ></path>
+          <path
+            d="M-100,395 C250,342 425,402 638,355 C845,310 992,376 1198,328 C1388,290 1455,362 1540,330"
+          ></path>
+          <path
+            d="M-100,365 C262,308 440,372 655,322 C862,275 1005,345 1215,295 C1405,255 1462,332 1540,298"
+          ></path>
+          <path
+            d="M-100,335 C275,275 455,342 672,289 C882,240 1018,314 1232,262 C1422,222 1470,302 1540,268"
+          ></path>
+          <path
+            d="M-100,305 C288,242 470,312 690,256 C902,205 1032,282 1250,228 C1440,188 1478,272 1540,238"
+          ></path>
+          <path
+            d="M-100,275 C302,208 488,280 708,222 C922,168 1048,250 1268,195 C1458,154 1486,242 1540,208"
+          ></path>
+          <path
+            d="M-100,245 C315,175 505,248 728,188 C945,132 1065,218 1288,162 C1478,120 1492,212 1540,178"
+          ></path>
+          <path
+            d="M-100,215 C330,142 522,218 748,155 C968,98 1082,186 1308,128 C1495,86 1498,182 1540,148"
+          ></path>
+          <path
+            d="M-100,185 C345,110 540,185 768,122 C992,65 1099,154 1328,96 C1512,55 1504,152 1540,118"
+          ></path>
+          <path
+            d="M-100,158 C360,80 558,155 792,90 C1018,32 1118,124 1350,65 C1528,25 1510,122 1540,90"
+          ></path>
+          <path
+            d="M-100,130 C380,52 580,128 818,60 C1045,0 1138,95 1375,36 C1542,0 1518,95 1540,65"
+          ></path>
         </g>
       </svg>
     </div>
@@ -186,19 +345,36 @@ import Layout from "../layouts/Layout.astro";
       <div class="features-header">
         <div class="features-header__left">
           <p class="eyebrow eyebrow--light">Kajak Tara Drina</p>
-          <h2 class="section-title section-title--light">Sigurnost i<br/>avantura u jednom</h2>
-          <a href="/o-nama" class="btn btn--emerald" style="margin-top: 1.75rem;">
+          <h2 class="section-title section-title--light">
+            Sigurnost i<br />avantura u jednom
+          </h2>
+          <a
+            href="/o-nama"
+            class="btn btn--emerald"
+            style="margin-top: 1.75rem;"
+          >
             Saznaj više o nama
-            <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              class="btn__arrow"
+              fill="none"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </a>
         </div>
         <div class="features-header__right">
           <p class="features-lead">
-            Naše ture su pažljivo osmišljene tako da spajaju uzbudljivu avanturu,
-            potpuni mentalni mir i apsolutnu sigurnost. Verujemo da Drina ima
-            svoj tempo za svakoga — i za one koji traže mir, i za one koji traže akciju.
+            Naše ture su pažljivo osmišljene tako da spajaju uzbudljivu
+            avanturu, potpuni mentalni mir i apsolutnu sigurnost. Verujemo da
+            Drina ima svoj tempo za svakoga — i za one koji traže mir, i za one
+            koji traže akciju.
           </p>
         </div>
       </div>
@@ -208,43 +384,66 @@ import Layout from "../layouts/Layout.astro";
         <div class="feature-item">
           <span class="feature-item__bar"></span>
           <div>
-            <h3 class="feature-item__title">Licencirani trener i osnivač</h3>
-            <p class="feature-item__text">Marko Marjanović — dugogodišnji reprezentativac Srbije, licencirani trener kajaka i spasilac na vodi.</p>
+            <h3 class="feature-item__title">Glavni trener i instruktor</h3>
+            <p class="feature-item__text">
+              Marko Marjanović — master profesor fizičkog vaspitanja i sporta,
+              reprezentativac Srbije sa zapaženim rezultatima na međunarodnoj
+              sceni, licencirani trener kajaka i spasilac na vodi.
+            </p>
           </div>
         </div>
         <div class="feature-item">
           <span class="feature-item__bar"></span>
           <div>
             <h3 class="feature-item__title">Takmičarski program</h3>
-            <p class="feature-item__text">Aktivno se bavimo takmičarskim programom — među članovima su aktuelni reprezentativci Srbije.</p>
+            <p class="feature-item__text">
+              Aktivno se bavimo takmičarskim programom — među članovima su
+              aktuelni reprezentativci Srbije.
+            </p>
           </div>
         </div>
         <div class="feature-item">
           <span class="feature-item__bar"></span>
           <div>
-            <h3 class="feature-item__title">Bezbednost na prvom mestu</h3>
-            <p class="feature-item__text">Prsluk za spasavanje obavezan za sve. Ista disciplina koja gradi šampione — utkana u svaki program.</p>
+            <h3 class="feature-item__title">Uvek bezbedno na vodi</h3>
+            <p class="feature-item__text">
+              Nošenje prsluka za spasavanje nije opcija — već osnovno pravilo za
+              sve učesnike. Kroz jasno postavljene standarde, disciplinu i
+              odgovornost stvaramo sigurno okruženje u kome svaki polaznik može
+              da napreduje i razvije svoj puni potencijal.
+            </p>
           </div>
         </div>
         <div class="feature-item">
           <span class="feature-item__bar"></span>
           <div>
-            <h3 class="feature-item__title">Kompletna oprema</h3>
-            <p class="feature-item__text">Pouzdani kajaci, vesla i sigurnosna oprema prilagođena svakom učesniku. Dolazite samo u dobrom raspoloženju.</p>
+            <h3 class="feature-item__title">
+              Kompletna oprema, standard koji se podrazumeva
+            </h3>
+            <p class="feature-item__text">
+              Koristimo isključivo pouzdanu i profesionalnu opremu — od kajaka
+              do sigurnosnih elemenata — prilagođenu vašem nivou i potrebama.
+            </p>
           </div>
         </div>
         <div class="feature-item">
           <span class="feature-item__bar"></span>
           <div>
             <h3 class="feature-item__title">Organizovan prevoz</h3>
-            <p class="feature-item__text">Prevoz od baze do polazišta i nazad. Baza se nalazi na izletištu Rača u Bajinoj Bašti.</p>
+            <p class="feature-item__text">
+              Prevoz od baze do polazišta i nazad. Baza se nalazi na izletištu
+              Rača u Bajinoj Bašti.
+            </p>
           </div>
         </div>
         <div class="feature-item">
           <span class="feature-item__bar"></span>
           <div>
             <h3 class="feature-item__title">Za sve uzraste</h3>
-            <p class="feature-item__text">Porodice, parovi, grupe — bez prethodnog iskustva. Naši vodiči su tu da svako uđe sigurno na vodu.</p>
+            <p class="feature-item__text">
+              Porodice, parovi, grupe — bez prethodnog iskustva. Naši vodiči su
+              tu da se svako oseća sigurno na vodi.
+            </p>
           </div>
         </div>
       </div>
@@ -252,8 +451,14 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- mountain silhouette → white -->
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,110 L0,82 L36,70 L72,78 L108,55 L144,66 L180,42 L216,58 L252,34 L288,52 L324,26 L360,46 L396,20 L432,40 L468,16 L504,38 L540,12 L576,32 L612,8 L648,30 L684,14 L720,34 L756,10 L792,30 L828,6 L864,26 L900,18 L936,38 L972,14 L1008,34 L1044,20 L1080,40 L1116,26 L1152,48 L1188,34 L1224,56 L1260,44 L1296,65 L1332,52 L1368,72 L1404,60 L1440,80 L1440,110 Z" fill="#ffffff"/>
+      <svg
+        viewBox="0 0 1440 110"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,110 L0,82 L36,70 L72,78 L108,55 L144,66 L180,42 L216,58 L252,34 L288,52 L324,26 L360,46 L396,20 L432,40 L468,16 L504,38 L540,12 L576,32 L612,8 L648,30 L684,14 L720,34 L756,10 L792,30 L828,6 L864,26 L900,18 L936,38 L972,14 L1008,34 L1044,20 L1080,40 L1116,26 L1152,48 L1188,34 L1224,56 L1260,44 L1296,65 L1332,52 L1368,72 L1404,60 L1440,80 L1440,110 Z"
+          fill="#ffffff"></path>
       </svg>
     </div>
   </section>
@@ -286,18 +491,30 @@ import Layout from "../layouts/Layout.astro";
           <p class="eyebrow">O nama</p>
           <h2 class="section-title">Osnovani 2023. iz ljubavi prema Drini</h2>
           <p class="body-text">
-            Kajak kanu sportsko udruženje Tara-Drina osnovano je 2023. godine sa jasnim ciljem —
-            da ljubav prema reci i decenijsko iskustvo na vodi podelimo sa vama.
+            Kajak kanu sportsko udruženje Tara-Drina osnovano je 2023. godine sa
+            jasnim ciljem — da ljubav prema reci i decenijsko iskustvo na vodi
+            podelimo sa vama.
           </p>
           <p class="body-text">
-            Naš osnivač Marko Marjanović je master profesor fizičkog vaspitanja, dugogodišnji
-            reprezentativac Srbije i licencirani trener. Njegova vizija: kroz stručan rad i
-            maksimalnu bezbednost svima približiti lepotu ovog sporta.
+            Naš osnivač Marko Marjanović je master profesor fizičkog vaspitanja,
+            dugogodišnji reprezentativac Srbije i licencirani trener. Njegova
+            vizija: kroz stručan rad i maksimalnu bezbednost svima približiti
+            lepotu ovog sporta.
           </p>
           <a href="/o-nama" class="text-link">
             Više o klubu
-            <svg class="text-link__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              class="text-link__arrow"
+              fill="none"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </a>
         </div>
@@ -306,8 +523,14 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- mountain silhouette → pine -->
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,110 L0,88 L40,76 L80,85 L120,62 L160,74 L200,50 L240,64 L280,40 L320,56 L360,30 L400,48 L440,24 L480,44 L520,18 L560,38 L600,14 L640,34 L680,10 L720,32 L760,8 L800,28 L840,4 L880,24 L920,16 L960,36 L1000,12 L1040,32 L1080,20 L1120,40 L1160,28 L1200,50 L1240,38 L1280,60 L1320,48 L1360,70 L1400,58 L1440,78 L1440,110 Z" fill="#1a4a2e"/>
+      <svg
+        viewBox="0 0 1440 110"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,110 L0,88 L40,76 L80,85 L120,62 L160,74 L200,50 L240,64 L280,40 L320,56 L360,30 L400,48 L440,24 L480,44 L520,18 L560,38 L600,14 L640,34 L680,10 L720,32 L760,8 L800,28 L840,4 L880,24 L920,16 L960,36 L1000,12 L1040,32 L1080,20 L1120,40 L1160,28 L1200,50 L1240,38 L1280,60 L1320,48 L1360,70 L1400,58 L1440,78 L1440,110 Z"
+          fill="#1a4a2e"></path>
       </svg>
     </div>
   </section>
@@ -316,23 +539,50 @@ import Layout from "../layouts/Layout.astro";
        SCHOOL — dark forest + topo lines
   ════════════════════════════════════════════════════════════════ -->
   <section class="section section--forest-topo">
-
     <!-- Topo lines -->
     <div class="topo-lines" aria-hidden="true">
-      <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        viewBox="0 0 1440 600"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <g stroke="rgba(74,186,130,0.14)" stroke-width="0.9" fill="none">
-          <path d="M-100,540 C180,508 340,548 540,515 C740,482 900,522 1100,492 C1290,466 1400,498 1540,478"/>
-          <path d="M-100,510 C192,475 352,518 558,483 C758,448 918,492 1118,460 C1308,432 1412,468 1540,448"/>
-          <path d="M-100,480 C205,442 368,488 578,450 C778,412 938,460 1138,426 C1328,396 1422,436 1540,415"/>
-          <path d="M-100,450 C218,408 385,458 598,418 C800,378 958,428 1158,392 C1348,360 1432,404 1540,382"/>
-          <path d="M-100,420 C232,375 402,428 618,385 C822,345 978,398 1178,358 C1368,325 1442,372 1540,350"/>
-          <path d="M-100,390 C248,342 420,398 638,352 C845,308 995,368 1198,324 C1388,288 1452,340 1540,318"/>
-          <path d="M-100,360 C262,308 438,368 658,318 C868,272 1012,338 1218,290 C1408,252 1462,308 1540,285"/>
-          <path d="M-100,330 C278,275 458,338 678,285 C892,238 1028,308 1238,258 C1428,218 1472,278 1540,252"/>
-          <path d="M-100,300 C295,242 478,308 700,252 C918,205 1045,278 1258,225 C1448,182 1482,248 1540,220"/>
-          <path d="M-100,270 C312,208 498,278 722,218 C945,172 1062,248 1278,192 C1468,148 1492,218 1540,188"/>
-          <path d="M-100,240 C330,175 518,248 745,185 C972,138 1079,218 1298,160 C1488,115 1502,188 1540,158"/>
-          <path d="M-100,212 C348,142 538,218 768,152 C998,105 1096,188 1318,128 C1508,82 1512,158 1540,128"/>
+          <path
+            d="M-100,540 C180,508 340,548 540,515 C740,482 900,522 1100,492 C1290,466 1400,498 1540,478"
+          ></path>
+          <path
+            d="M-100,510 C192,475 352,518 558,483 C758,448 918,492 1118,460 C1308,432 1412,468 1540,448"
+          ></path>
+          <path
+            d="M-100,480 C205,442 368,488 578,450 C778,412 938,460 1138,426 C1328,396 1422,436 1540,415"
+          ></path>
+          <path
+            d="M-100,450 C218,408 385,458 598,418 C800,378 958,428 1158,392 C1348,360 1432,404 1540,382"
+          ></path>
+          <path
+            d="M-100,420 C232,375 402,428 618,385 C822,345 978,398 1178,358 C1368,325 1442,372 1540,350"
+          ></path>
+          <path
+            d="M-100,390 C248,342 420,398 638,352 C845,308 995,368 1198,324 C1388,288 1452,340 1540,318"
+          ></path>
+          <path
+            d="M-100,360 C262,308 438,368 658,318 C868,272 1012,338 1218,290 C1408,252 1462,308 1540,285"
+          ></path>
+          <path
+            d="M-100,330 C278,275 458,338 678,285 C892,238 1028,308 1238,258 C1428,218 1472,278 1540,252"
+          ></path>
+          <path
+            d="M-100,300 C295,242 478,308 700,252 C918,205 1045,278 1258,225 C1448,182 1482,248 1540,220"
+          ></path>
+          <path
+            d="M-100,270 C312,208 498,278 722,218 C945,172 1062,248 1278,192 C1468,148 1492,218 1540,188"
+          ></path>
+          <path
+            d="M-100,240 C330,175 518,248 745,185 C972,138 1079,218 1298,160 C1488,115 1502,188 1540,158"
+          ></path>
+          <path
+            d="M-100,212 C348,142 538,218 768,152 C998,105 1096,188 1318,128 C1508,82 1512,158 1540,128"
+          ></path>
         </g>
       </svg>
     </div>
@@ -341,20 +591,36 @@ import Layout from "../layouts/Layout.astro";
       <div class="split-layout split-layout--reversed">
         <div class="split-layout__text">
           <p class="eyebrow eyebrow--light">Počnite od nule</p>
-          <h2 class="section-title section-title--light">Škola kajaka<br/>na Drini</h2>
+          <h2 class="section-title section-title--light">
+            Škola kajaka<br />na Drini
+          </h2>
           <p class="body-text body-text--light">
             Školu vodi Marko Marjanović, licencirani trener i spasilac na vodi.
             Programi su prilagođeni rekreativnom veslanju — početnici, napredni
             ili individualni časovi.
           </p>
           <p class="body-text body-text--light">
-            Sva oprema je uključena. Škola se održava na izletištu Rača u Bajinoj Bašti,
-            na mirnoj i lakoj deonici Drine.
+            Sva oprema je uključena. Škola se održava na izletištu Rača u
+            Bajinoj Bašti, na mirnoj i lakoj deonici Drine.
           </p>
-          <a href="/skola-kajaka" class="btn btn--emerald" style="margin-top:0.5rem;">
+          <a
+            href="/skola-kajaka"
+            class="btn btn--emerald"
+            style="margin-top:0.5rem;"
+          >
             Saznaj više
-            <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              class="btn__arrow"
+              fill="none"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </a>
         </div>
@@ -370,13 +636,16 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,45 C360,90 1080,0 1440,45 L1440,90 L0,90 Z" fill="#0a1a12"/>
+      <svg
+        viewBox="0 0 1440 90"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,45 C360,90 1080,0 1440,45 L1440,90 L0,90 Z" fill="#0a1a12"
+        ></path>
       </svg>
     </div>
   </section>
-
-
 </Layout>
 
 <style>
@@ -403,9 +672,9 @@ import Layout from "../layouts/Layout.astro";
     inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba(13,32,22,0.3) 0%,
-      rgba(13,32,22,0.1) 40%,
-      rgba(13,32,22,0.65) 75%,
+      rgba(13, 32, 22, 0.3) 0%,
+      rgba(13, 32, 22, 0.1) 40%,
+      rgba(13, 32, 22, 0.65) 75%,
       #0d2016 100%
     );
   }
@@ -417,7 +686,7 @@ import Layout from "../layouts/Layout.astro";
     text-align: center;
   }
   .hero__eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.26em;
@@ -426,7 +695,7 @@ import Layout from "../layouts/Layout.astro";
     margin-bottom: 1.25rem;
   }
   .hero__title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: clamp(3.5rem, 10vw, 7.5rem);
     font-weight: 800;
     line-height: 0.95;
@@ -435,11 +704,14 @@ import Layout from "../layouts/Layout.astro";
     margin-bottom: 1.5rem;
     text-transform: uppercase;
   }
-  .hero__title em { font-style: italic; color: #4aba82; }
+  .hero__title em {
+    font-style: italic;
+    color: #4aba82;
+  }
   .hero__sub {
     font-size: 1.0625rem;
     line-height: 1.7;
-    color: rgba(255,255,255,0.72);
+    color: rgba(255, 255, 255, 0.72);
     max-width: 36rem;
     margin: 0 auto 2.5rem;
   }
@@ -454,18 +726,30 @@ import Layout from "../layouts/Layout.astro";
     bottom: 6.5rem;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255,255,255,0.4);
+    color: rgba(255, 255, 255, 0.4);
     animation: scrollFloat 2.5s ease-in-out infinite;
     z-index: 2;
   }
   @keyframes scrollFloat {
-    0%,100% { transform: translateX(-50%) translateY(0); }
-    50%      { transform: translateX(-50%) translateY(6px); }
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(6px);
+    }
   }
-  .scroll-dot { animation: scrollDot 2.5s ease-in-out infinite; }
+  .scroll-dot {
+    animation: scrollDot 2.5s ease-in-out infinite;
+  }
   @keyframes scrollDot {
-    0%,100% { transform: translateY(0); }
-    50%      { transform: translateY(8px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
   }
 
   /* ─── Topo lines (shared) ────────────────────────────────────────── */
@@ -491,18 +775,32 @@ import Layout from "../layouts/Layout.astro";
     pointer-events: none;
     z-index: 2;
   }
-  .section-wave svg { display: block; width: 100%; }
+  .section-wave svg {
+    display: block;
+    width: 100%;
+  }
 
   /* ─── Section base ───────────────────────────────────────────────── */
   .section {
     position: relative;
     padding: 6rem 0 8rem;
   }
-  .section--cream      { background: #f2ede4; }
-  .section--white      { background: #ffffff; }
-  .section--dark-topo  { background: #0a1a12; }
-  .section--forest-topo{ background: #1a4a2e; }
-  .section--cta        { background: #f2ede4; padding-bottom: 7rem; }
+  .section--cream {
+    background: #f2ede4;
+  }
+  .section--white {
+    background: #ffffff;
+  }
+  .section--dark-topo {
+    background: #0a1a12;
+  }
+  .section--forest-topo {
+    background: #1a4a2e;
+  }
+  .section--cta {
+    background: #f2ede4;
+    padding-bottom: 7rem;
+  }
 
   .container {
     max-width: 72rem;
@@ -519,7 +817,7 @@ import Layout from "../layouts/Layout.astro";
     margin: 0 auto 3.5rem;
   }
   .eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.24em;
@@ -527,9 +825,11 @@ import Layout from "../layouts/Layout.astro";
     color: #2a7a54;
     margin-bottom: 0.625rem;
   }
-  .eyebrow--light { color: #4aba82; }
+  .eyebrow--light {
+    color: #4aba82;
+  }
   .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: clamp(2.25rem, 5vw, 3.5rem);
     font-weight: 800;
     line-height: 1;
@@ -538,11 +838,13 @@ import Layout from "../layouts/Layout.astro";
     color: #0d2016;
     margin-bottom: 1rem;
   }
-  .section-title--light { color: #fff; }
+  .section-title--light {
+    color: #fff;
+  }
   .section-sub {
     font-size: 1rem;
     line-height: 1.7;
-    color: rgba(13,32,22,0.55);
+    color: rgba(13, 32, 22, 0.55);
   }
 
   /* ─── Tour cards ─────────────────────────────────────────────────── */
@@ -551,18 +853,24 @@ import Layout from "../layouts/Layout.astro";
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  @media (min-width: 768px) { .tour-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 768px) {
+    .tour-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
   .tour-card {
     display: block;
     text-decoration: none;
     border-radius: 0.875rem;
     overflow: hidden;
-    box-shadow: 0 4px 24px rgba(13,32,22,0.12);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 24px rgba(13, 32, 22, 0.12);
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
   }
   .tour-card:hover {
-    box-shadow: 0 16px 48px rgba(13,32,22,0.22);
+    box-shadow: 0 16px 48px rgba(13, 32, 22, 0.22);
     transform: translateY(-4px);
   }
   .tour-card__img-wrap {
@@ -570,24 +878,40 @@ import Layout from "../layouts/Layout.astro";
     height: 22rem;
     overflow: hidden;
   }
-  @media (min-width: 768px) { .tour-card__img-wrap { height: 26rem; } }
+  @media (min-width: 768px) {
+    .tour-card__img-wrap {
+      height: 26rem;
+    }
+  }
   .tour-card__img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .tour-card:hover .tour-card__img { transform: scale(1.06); }
+  .tour-card:hover .tour-card__img {
+    transform: scale(1.06);
+  }
   .tour-card__gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(13,32,22,0.92) 0%, rgba(13,32,22,0.45) 50%, rgba(13,32,22,0.1) 100%);
+    background: linear-gradient(
+      to top,
+      rgba(13, 32, 22, 0.92) 0%,
+      rgba(13, 32, 22, 0.45) 50%,
+      rgba(13, 32, 22, 0.1) 100%
+    );
     transition: background 0.3s ease;
   }
   .tour-card:hover .tour-card__gradient {
-    background: linear-gradient(to top, rgba(13,32,22,0.97) 0%, rgba(13,32,22,0.6) 50%, rgba(13,32,22,0.15) 100%);
+    background: linear-gradient(
+      to top,
+      rgba(13, 32, 22, 0.97) 0%,
+      rgba(13, 32, 22, 0.6) 50%,
+      rgba(13, 32, 22, 0.15) 100%
+    );
   }
   .tour-card__badge {
     position: absolute;
@@ -596,19 +920,21 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     align-items: center;
     gap: 0.375rem;
-    background: rgba(13,32,22,0.6);
+    background: rgba(13, 32, 22, 0.6);
     backdrop-filter: blur(6px);
-    border: 1px solid rgba(74,186,130,0.3);
+    border: 1px solid rgba(74, 186, 130, 0.3);
     border-radius: 100px;
     padding: 0.3rem 0.75rem;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #4aba82;
   }
-  .badge-sep { color: rgba(74,186,130,0.4); }
+  .badge-sep {
+    color: rgba(74, 186, 130, 0.4);
+  }
   .tour-card__body {
     position: absolute;
     bottom: 0;
@@ -618,9 +944,11 @@ import Layout from "../layouts/Layout.astro";
     transform: translateY(0.5rem);
     transition: transform 0.3s ease;
   }
-  .tour-card:hover .tour-card__body { transform: translateY(0); }
+  .tour-card:hover .tour-card__body {
+    transform: translateY(0);
+  }
   .tour-card__title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 2.25rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -632,19 +960,24 @@ import Layout from "../layouts/Layout.astro";
   .tour-card__desc {
     font-size: 0.88rem;
     line-height: 1.65;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1rem;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.35s ease, opacity 0.3s ease;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.3s ease;
   }
-  .tour-card:hover .tour-card__desc { max-height: 5rem; opacity: 1; }
+  .tour-card:hover .tour-card__desc {
+    max-height: 5rem;
+    opacity: 1;
+  }
   .tour-card__cta {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -656,7 +989,9 @@ import Layout from "../layouts/Layout.astro";
     height: 0.9rem;
     transition: transform 0.2s ease;
   }
-  .tour-card:hover .tour-card__arrow { transform: translateX(3px); }
+  .tour-card:hover .tour-card__arrow {
+    transform: translateX(3px);
+  }
 
   /* ─── Features section ───────────────────────────────────────────── */
   .features-header {
@@ -665,32 +1000,46 @@ import Layout from "../layouts/Layout.astro";
     gap: 2rem;
     margin-bottom: 4rem;
     padding-bottom: 4rem;
-    border-bottom: 1px solid rgba(74,186,130,0.12);
+    border-bottom: 1px solid rgba(74, 186, 130, 0.12);
   }
   @media (min-width: 768px) {
-    .features-header { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .features-header {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
   }
   .features-lead {
     font-size: 1.05rem;
     line-height: 1.75;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255, 255, 255, 0.55);
   }
   .feature-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
   }
-  @media (min-width: 640px) { .feature-grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1024px) { .feature-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  @media (min-width: 640px) {
+    .feature-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1024px) {
+    .feature-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 
   .feature-item {
     display: flex;
     gap: 1.125rem;
     padding: 2rem 1.5rem 2rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
   @media (min-width: 640px) {
-    .feature-item:nth-child(odd) { padding-right: 2rem; }
+    .feature-item:nth-child(odd) {
+      padding-right: 2rem;
+    }
   }
   .feature-item__bar {
     flex-shrink: 0;
@@ -701,7 +1050,7 @@ import Layout from "../layouts/Layout.astro";
     margin-top: 0.2rem;
   }
   .feature-item__title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: 0.02em;
@@ -713,7 +1062,7 @@ import Layout from "../layouts/Layout.astro";
   .feature-item__text {
     font-size: 0.9rem;
     line-height: 1.65;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255, 255, 255, 0.45);
   }
 
   /* ─── Split layout ───────────────────────────────────────────────── */
@@ -724,9 +1073,15 @@ import Layout from "../layouts/Layout.astro";
     align-items: center;
   }
   @media (min-width: 768px) {
-    .split-layout { grid-template-columns: 1fr 1fr; }
-    .split-layout--reversed .split-layout__media { order: 2; }
-    .split-layout--reversed .split-layout__text  { order: 1; }
+    .split-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+    .split-layout--reversed .split-layout__media {
+      order: 2;
+    }
+    .split-layout--reversed .split-layout__text {
+      order: 1;
+    }
   }
 
   /* Overlapping images composition */
@@ -743,9 +1098,13 @@ import Layout from "../layouts/Layout.astro";
     display: block;
     position: relative;
     z-index: 1;
-    box-shadow: 0 24px 64px rgba(13,32,22,0.18);
+    box-shadow: 0 24px 64px rgba(13, 32, 22, 0.18);
   }
-  @media (min-width: 768px) { .img-stack__main { height: 26rem; } }
+  @media (min-width: 768px) {
+    .img-stack__main {
+      height: 26rem;
+    }
+  }
 
   .img-stack__secondary {
     position: absolute;
@@ -756,7 +1115,7 @@ import Layout from "../layouts/Layout.astro";
     border-radius: 0.625rem;
     overflow: hidden;
     border: 4px solid #fff;
-    box-shadow: 0 12px 32px rgba(13,32,22,0.22);
+    box-shadow: 0 12px 32px rgba(13, 32, 22, 0.22);
     z-index: 2;
   }
   .img-stack__secondary img {
@@ -784,9 +1143,13 @@ import Layout from "../layouts/Layout.astro";
     display: block;
     position: relative;
     z-index: 1;
-    box-shadow: 0 24px 64px rgba(13,32,22,0.25);
+    box-shadow: 0 24px 64px rgba(13, 32, 22, 0.25);
   }
-  @media (min-width: 768px) { .split-img { height: 26rem; } }
+  @media (min-width: 768px) {
+    .split-img {
+      height: 26rem;
+    }
+  }
   .split-img__accent {
     position: absolute;
     inset: -0.875rem;
@@ -803,22 +1166,26 @@ import Layout from "../layouts/Layout.astro";
     right: -0.875rem;
     bottom: 0.875rem;
   }
-  .split-layout__media { position: relative; }
+  .split-layout__media {
+    position: relative;
+  }
 
   .body-text {
     font-size: 1rem;
     line-height: 1.75;
-    color: rgba(13,32,22,0.65);
+    color: rgba(13, 32, 22, 0.65);
     margin-bottom: 1rem;
   }
-  .body-text--light { color: rgba(255,255,255,0.62); }
+  .body-text--light {
+    color: rgba(255, 255, 255, 0.62);
+  }
 
   /* ─── Buttons ────────────────────────────────────────────────────── */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 0.88rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -826,44 +1193,64 @@ import Layout from "../layouts/Layout.astro";
     text-decoration: none;
     padding: 0.875rem 1.75rem;
     border-radius: 4px;
-    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+    transition:
+      background 0.2s,
+      color 0.2s,
+      border-color 0.2s,
+      transform 0.15s;
     cursor: pointer;
     border: 2px solid transparent;
   }
-  .btn:active { transform: translateY(1px); }
+  .btn:active {
+    transform: translateY(1px);
+  }
   .btn--primary {
     background: #4aba82;
     color: #0d2016;
     border-color: #4aba82;
   }
-  .btn--primary:hover { background: #3da870; border-color: #3da870; }
+  .btn--primary:hover {
+    background: #3da870;
+    border-color: #3da870;
+  }
   .btn--outline {
     background: transparent;
     color: #fff;
-    border-color: rgba(255,255,255,0.4);
+    border-color: rgba(255, 255, 255, 0.4);
   }
-  .btn--outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+  .btn--outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7);
+  }
   .btn--emerald {
     background: transparent;
     color: #4aba82;
     border-color: #4aba82;
   }
-  .btn--emerald:hover { background: #4aba82; color: #0d2016; }
-  .btn--large { font-size: 1.05rem; padding: 1.125rem 2.25rem; }
+  .btn--emerald:hover {
+    background: #4aba82;
+    color: #0d2016;
+  }
+  .btn--large {
+    font-size: 1.05rem;
+    padding: 1.125rem 2.25rem;
+  }
   .btn__arrow {
     width: 1rem;
     height: 1rem;
     transition: transform 0.2s ease;
     flex-shrink: 0;
   }
-  .btn:hover .btn__arrow { transform: translateX(3px); }
+  .btn:hover .btn__arrow {
+    transform: translateX(3px);
+  }
 
   /* ─── Text link ──────────────────────────────────────────────────── */
   .text-link {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 0.88rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -875,7 +1262,7 @@ import Layout from "../layouts/Layout.astro";
     margin-top: 1rem;
   }
   .text-link::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -886,13 +1273,17 @@ import Layout from "../layouts/Layout.astro";
     transform-origin: left;
     transition: transform 0.25s ease;
   }
-  .text-link:hover::after { transform: scaleX(1); }
+  .text-link:hover::after {
+    transform: scaleX(1);
+  }
   .text-link__arrow {
     width: 0.9rem;
     height: 0.9rem;
     transition: transform 0.2s ease;
   }
-  .text-link:hover .text-link__arrow { transform: translateX(3px); }
+  .text-link:hover .text-link__arrow {
+    transform: translateX(3px);
+  }
 
   /* ─── CTA block ──────────────────────────────────────────────────── */
   .cta-block {
@@ -901,7 +1292,7 @@ import Layout from "../layouts/Layout.astro";
     margin: 0 auto;
   }
   .cta-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: clamp(2.75rem, 6vw, 4.5rem);
     font-weight: 800;
     line-height: 0.95;
@@ -913,7 +1304,7 @@ import Layout from "../layouts/Layout.astro";
   .cta-sub {
     font-size: 1rem;
     line-height: 1.7;
-    color: rgba(13,32,22,0.5);
+    color: rgba(13, 32, 22, 0.5);
     margin-bottom: 2rem;
   }
 
@@ -924,7 +1315,9 @@ import Layout from "../layouts/Layout.astro";
     gap: 1.5rem;
   }
   @media (min-width: 768px) {
-    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   .service-card {
     display: flex;
@@ -933,12 +1326,14 @@ import Layout from "../layouts/Layout.astro";
     border-radius: 0.875rem;
     overflow: hidden;
     background: #fff;
-    border: 1px solid rgba(13,32,22,0.08);
-    box-shadow: 0 2px 16px rgba(13,32,22,0.07);
-    transition: box-shadow 0.3s, transform 0.3s;
+    border: 1px solid rgba(13, 32, 22, 0.08);
+    box-shadow: 0 2px 16px rgba(13, 32, 22, 0.07);
+    transition:
+      box-shadow 0.3s,
+      transform 0.3s;
   }
   .service-card:hover {
-    box-shadow: 0 12px 40px rgba(13,32,22,0.15);
+    box-shadow: 0 12px 40px rgba(13, 32, 22, 0.15);
     transform: translateY(-4px);
   }
   .service-card__img-wrap {
@@ -950,13 +1345,19 @@ import Layout from "../layouts/Layout.astro";
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .service-card:hover .service-card__img { transform: scale(1.05); }
+  .service-card:hover .service-card__img {
+    transform: scale(1.05);
+  }
   .service-card__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, rgba(13,32,22,0.35) 100%);
+    background: linear-gradient(
+      to bottom,
+      transparent 40%,
+      rgba(13, 32, 22, 0.35) 100%
+    );
   }
   .service-card__body {
     padding: 1.5rem;
@@ -965,7 +1366,7 @@ import Layout from "../layouts/Layout.astro";
     flex: 1;
   }
   .service-card__title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 1.6rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -977,7 +1378,7 @@ import Layout from "../layouts/Layout.astro";
   .service-card__text {
     font-size: 0.875rem;
     line-height: 1.65;
-    color: rgba(13,32,22,0.6);
+    color: rgba(13, 32, 22, 0.6);
     flex: 1;
     margin-bottom: 1.25rem;
   }
@@ -985,7 +1386,7 @@ import Layout from "../layouts/Layout.astro";
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -993,5 +1394,7 @@ import Layout from "../layouts/Layout.astro";
     color: #2a7a54;
     transition: gap 0.2s;
   }
-  .service-card:hover .service-card__cta { gap: 0.6rem; }
+  .service-card:hover .service-card__cta {
+    gap: 0.6rem;
+  }
 </style>

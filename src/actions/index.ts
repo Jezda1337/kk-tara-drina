@@ -15,8 +15,8 @@ export const server = {
       const message = fd.get("message");
 
       const { data, error } = await resend.emails.send({
-        from: "Acme <onboarding@resend.dev>",
-        to: ["megasrbin1@gmail.com"],
+        from: "Website Contact form>",
+        to: ["info@kajakdrina.rs"],
         subject: "KK Tara Drina - Kontakt forma",
         html: `
         <p>Puno ime i prezime: <strong>${fullName}</strong></p>

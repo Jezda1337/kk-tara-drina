@@ -7,7 +7,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "kajakdrina.rs",
+  site: "https://kajakdrina.rs",
   vite: {
     plugins: [tailwindcss(), noExternalPlugin()],
     build: {

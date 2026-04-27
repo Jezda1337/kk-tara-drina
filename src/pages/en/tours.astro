@@ -30,19 +30,29 @@ const includes = [
 ];
 ---
 
-<Layout title="Kayak tours on the Drina — KK Tara Drina">
-
+<Layout
+  title="Kayak adventures on the Drina | Kayak Canoe Sports Association Tara - Drina"
+>
   <!-- Page hero (standard inner-page style) -->
   <section class="page-hero">
-    <img src="https://picsum.photos/seed/drina1/1920/800" alt="" class="page-hero__bg" />
+    <img
+      src="https://picsum.photos/seed/drina1/1920/800"
+      alt=""
+      class="page-hero__bg"
+    />
     <div class="page-hero__overlay"></div>
     <div class="page-hero__content">
       <span class="eyebrow eyebrow--light">Adventure on the Drina</span>
       <h1 class="page-title">Kayak tours</h1>
     </div>
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z" fill="#f2ede4"/>
+      <svg
+        viewBox="0 0 1440 70"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z" fill="#f2ede4"
+        ></path>
       </svg>
     </div>
   </section>
@@ -53,20 +63,36 @@ const includes = [
       <div class="split-layout">
         <div class="split-layout__text">
           <span class="eyebrow">Kayak adventure</span>
-          <h2 class="section-title">What's included<br/>in every tour</h2>
+          <h2 class="section-title">What's included<br />in every tour</h2>
           <p class="body-text">
-            Each of our kayak tours is carefully designed to combine exciting adventure,
-            complete peace of mind and absolute safety. We believe the Drina has its own
-            pace for everyone — for those seeking tranquillity and for those craving action.
+            Each of our kayak tours is carefully designed to combine exciting
+            adventure, complete peace of mind and absolute safety. We believe
+            the Drina has its own pace for everyone — for those seeking
+            tranquillity and for those craving action.
           </p>
           <p class="body-text">
-            Whether you're picking up a paddle for the first time or are an experienced paddler,
-            our goal is for you to feel free and safe on the water. Just show up in a good mood.
+            Whether you're picking up a paddle for the first time or are an
+            experienced paddler, our goal is for you to feel free and safe on
+            the water. Just show up in a good mood.
           </p>
-          <a href="/en/contact" class="btn btn--primary" style="margin-top: 1rem;">
+          <a
+            href="/en/contact"
+            class="btn btn--primary"
+            style="margin-top: 1rem;"
+          >
             Book a tour
-            <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              class="btn__arrow"
+              fill="none"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </a>
         </div>
@@ -81,8 +107,12 @@ const includes = [
       </div>
     </div>
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 L1440,70 L1440,70 L0,70 Z" fill="#ffffff"/>
+      <svg
+        viewBox="0 0 1440 70"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,0 L1440,70 L1440,70 L0,70 Z" fill="#ffffff"></path>
       </svg>
     </div>
   </section>
@@ -92,22 +122,34 @@ const includes = [
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">All in one place</span>
-        <h2 class="section-title">Equipment & logistics — our responsibility</h2>
-        <p class="section-sub">The same precision and discipline required for top athletic results are built into every one of our programmes.</p>
+        <h2 class="section-title">
+          Equipment & logistics — our responsibility
+        </h2>
+        <p class="section-sub">
+          The same precision and discipline required for top athletic results
+          are built into every one of our programmes.
+        </p>
       </div>
       <div class="includes-feature-grid">
-        {includes.map((item) => (
-          <div class="includes-feature-card">
-            <div class="includes-feature-card__icon" set:html={item.icon}></div>
-            <h3 class="includes-feature-card__title">{item.title}</h3>
-            <p class="includes-feature-card__text">{item.text}</p>
-          </div>
-        ))}
+        {
+          includes.map((item) => (
+            <div class="includes-feature-card">
+              <div class="includes-feature-card__icon" set:html={item.icon} />
+              <h3 class="includes-feature-card__title">{item.title}</h3>
+              <p class="includes-feature-card__text">{item.text}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,80 C360,0 1080,80 1440,0 L1440,80 L0,80 Z" fill="#1a4a2e"/>
+      <svg
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,80 C360,0 1080,80 1440,0 L1440,80 L0,80 Z" fill="#1a4a2e"
+        ></path>
       </svg>
     </div>
   </section>
@@ -115,29 +157,50 @@ const includes = [
   <!-- Tour cards -->
   <section id="tours" class="section section--forest-topo">
     <div class="topo-lines" aria-hidden="true">
-      <svg viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        viewBox="0 0 1440 500"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <g stroke="rgba(74,186,130,0.12)" stroke-width="0.8" fill="none">
-          <path d="M-100,430 C200,395 360,435 560,402 C760,370 920,410 1120,378 C1310,350 1420,385 1540,368"/>
-          <path d="M-100,395 C215,358 378,400 580,366 C780,332 940,375 1140,340 C1330,310 1432,348 1540,330"/>
-          <path d="M-100,360 C232,320 395,365 600,328 C800,295 960,338 1160,302 C1350,270 1440,310 1540,292"/>
-          <path d="M-100,325 C250,282 412,328 620,290 C820,255 980,300 1180,262 C1370,228 1448,270 1540,252"/>
-          <path d="M-100,290 C268,244 430,292 638,252 C840,215 1000,262 1200,222 C1390,188 1455,232 1540,212"/>
+          <path
+            d="M-100,430 C200,395 360,435 560,402 C760,370 920,410 1120,378 C1310,350 1420,385 1540,368"
+          ></path>
+          <path
+            d="M-100,395 C215,358 378,400 580,366 C780,332 940,375 1140,340 C1330,310 1432,348 1540,330"
+          ></path>
+          <path
+            d="M-100,360 C232,320 395,365 600,328 C800,295 960,338 1160,302 C1350,270 1440,310 1540,292"
+          ></path>
+          <path
+            d="M-100,325 C250,282 412,328 620,290 C820,255 980,300 1180,262 C1370,228 1448,270 1540,252"
+          ></path>
+          <path
+            d="M-100,290 C268,244 430,292 638,252 C840,215 1000,262 1200,222 C1390,188 1455,232 1540,212"
+          ></path>
         </g>
       </svg>
     </div>
     <div class="container">
       <div class="section-header">
         <span class="eyebrow eyebrow--light">Our tours on the Drina</span>
-        <h2 class="section-title section-title--light">Choose your adventure</h2>
+        <h2 class="section-title section-title--light">
+          Choose your adventure
+        </h2>
         <p class="section-sub" style="color: rgba(255,255,255,0.45);">
-          Two carefully crafted routes — from a gentle introduction to an adrenaline-filled adventure past the famous Rock House.
+          Two carefully crafted routes — from a gentle introduction to an
+          adrenaline-filled adventure past the famous Rock House.
         </p>
       </div>
 
       <div class="tour-grid">
         <a href="/en/tours/perucac-raca" class="tour-card group">
           <div class="tour-card__img-wrap">
-            <img src="https://picsum.photos/seed/drina1/900/700" alt="Turquoise Drina below Perućac dam" class="tour-card__img"/>
+            <img
+              src="https://picsum.photos/seed/drina1/900/700"
+              alt="Turquoise Drina below Perućac dam"
+              class="tour-card__img"
+            />
             <div class="tour-card__gradient"></div>
             <div class="tour-card__badge">
               <span>~15 km</span><span class="badge-sep">·</span>
@@ -148,13 +211,24 @@ const includes = [
               <p class="tour-card__num">Tour 1</p>
               <h3 class="tour-card__title">Perućac → Rača</h3>
               <p class="tour-card__desc">
-                The perfect introduction to kayaking. Starting below the dam, past the Vrelo
-                waterfall — known as "The Year" — through turquoise Drina waters and pristine nature.
+                The perfect introduction to kayaking. Starting below the dam,
+                past the Vrelo waterfall — known as "The Year" — through
+                turquoise Drina waters and pristine nature.
               </p>
               <span class="tour-card__cta">
                 Learn more
-                <svg class="tour-card__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                  class="tour-card__arrow"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
                 </svg>
               </span>
             </div>
@@ -163,7 +237,11 @@ const includes = [
 
         <a href="/en/tours/raca-rogacica" class="tour-card group">
           <div class="tour-card__img-wrap">
-            <img src="https://picsum.photos/seed/tara2/900/700" alt="The Rock House on the Drina river" class="tour-card__img"/>
+            <img
+              src="https://picsum.photos/seed/tara2/900/700"
+              alt="The Rock House on the Drina river"
+              class="tour-card__img"
+            />
             <div class="tour-card__gradient"></div>
             <div class="tour-card__badge">
               <span>3–3.5h</span><span class="badge-sep">·</span>
@@ -174,13 +252,24 @@ const includes = [
               <p class="tour-card__num">Tour 2</p>
               <h3 class="tour-card__title">Rača → Rogačica</h3>
               <p class="tour-card__desc">
-                Paddle past the world-famous Rock House and through the Bujakovići rapids.
-                Incredible photos from angles only paddlers can reach.
+                Paddle past the world-famous Rock House and through the
+                Bujakovići rapids. Incredible photos from angles only paddlers
+                can reach.
               </p>
               <span class="tour-card__cta">
                 Learn more
-                <svg class="tour-card__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                  class="tour-card__arrow"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
                 </svg>
               </span>
             </div>
@@ -190,8 +279,13 @@ const includes = [
     </div>
 
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f2ede4"/>
+      <svg
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f2ede4"
+        ></path>
       </svg>
     </div>
   </section>
@@ -202,22 +296,39 @@ const includes = [
       <div class="cta-block">
         <span class="eyebrow">Ready for adventure?</span>
         <h2 class="cta-title">Book your spot</h2>
-        <p class="cta-sub">Contact us for information about dates and groups. We are based at the Rača picnic area in Bajina Bašta.</p>
+        <p class="cta-sub">
+          Contact us for information about dates and groups. We are based at the
+          Rača picnic area in Bajina Bašta.
+        </p>
         <a href="/en/contact" class="btn btn--primary btn--large">
           Send an enquiry
-          <svg class="btn__arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg
+            class="btn__arrow"
+            fill="none"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </a>
       </div>
     </div>
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0a1a12"/>
+      <svg
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0a1a12"
+        ></path>
       </svg>
     </div>
   </section>
-
 </Layout>
 
 <style>
@@ -227,26 +338,32 @@ const includes = [
     gap: 1.5rem;
   }
   @media (min-width: 640px) {
-    .includes-feature-grid { grid-template-columns: 1fr 1fr; }
+    .includes-feature-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   @media (min-width: 1024px) {
-    .includes-feature-grid { grid-template-columns: repeat(5, 1fr); }
+    .includes-feature-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
   .includes-feature-card {
     padding: 1.75rem 1.5rem;
-    border: 1px solid rgba(13,32,22,0.08);
+    border: 1px solid rgba(13, 32, 22, 0.08);
     border-radius: 0.75rem;
     background: #fff;
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition:
+      box-shadow 0.2s,
+      transform 0.2s;
   }
   .includes-feature-card:hover {
-    box-shadow: 0 8px 32px rgba(13,32,22,0.1);
+    box-shadow: 0 8px 32px rgba(13, 32, 22, 0.1);
     transform: translateY(-2px);
   }
   .includes-feature-card__icon {
     width: 2.5rem;
     height: 2.5rem;
-    background: rgba(74,186,130,0.1);
+    background: rgba(74, 186, 130, 0.1);
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
@@ -266,7 +383,7 @@ const includes = [
   .includes-feature-card__text {
     font-size: 0.85rem;
     line-height: 1.65;
-    color: rgba(13,32,22,0.55);
+    color: rgba(13, 32, 22, 0.55);
   }
 
   .tour-card__num {

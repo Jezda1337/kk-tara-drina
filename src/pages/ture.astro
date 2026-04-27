@@ -113,75 +113,13 @@ const includes = [
     </div>
   </section>
 
-  <!-- Includes -->
-  <section class="section section--white">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Sve na jednom mestu</span>
-        <h2 class="section-title">Sva oprema i logistika — naša briga</h2>
-        <p class="section-sub">
-          Ista ona preciznost i disciplina koje su potrebne za vrhunske sportske
-          rezultate, utkane su u svaki naš program.
-        </p>
-      </div>
-      <div class="includes-feature-grid">
-        {
-          includes.map((item) => (
-            <div class="includes-feature-card">
-              <div class="includes-feature-card__icon" set:html={item.icon} />
-              <h3 class="includes-feature-card__title">{item.title}</h3>
-              <p class="includes-feature-card__text">{item.text}</p>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-    <div class="section-wave" aria-hidden="true">
-      <svg
-        viewBox="0 0 1440 80"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M0,80 C360,0 1080,80 1440,0 L1440,80 L0,80 Z" fill="#1a4a2e"
-        ></path>
-      </svg>
-    </div>
-  </section>
-
   <!-- Tour cards -->
-  <section id="ture" class="section section--forest-topo">
-    <div class="topo-lines" aria-hidden="true">
-      <svg
-        viewBox="0 0 1440 500"
-        preserveAspectRatio="xMidYMid slice"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g stroke="rgba(74,186,130,0.12)" stroke-width="0.8" fill="none">
-          <path
-            d="M-100,430 C200,395 360,435 560,402 C760,370 920,410 1120,378 C1310,350 1420,385 1540,368"
-          ></path>
-          <path
-            d="M-100,395 C215,358 378,400 580,366 C780,332 940,375 1140,340 C1330,310 1432,348 1540,330"
-          ></path>
-          <path
-            d="M-100,360 C232,320 395,365 600,328 C800,295 960,338 1160,302 C1350,270 1440,310 1540,292"
-          ></path>
-          <path
-            d="M-100,325 C250,282 412,328 620,290 C820,255 980,300 1180,262 C1370,228 1448,270 1540,252"
-          ></path>
-          <path
-            d="M-100,290 C268,244 430,292 638,252 C840,215 1000,262 1200,222 C1390,188 1455,232 1540,212"
-          ></path>
-        </g>
-      </svg>
-    </div>
+  <section id="ture" class="section section--white">
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow eyebrow--light">Naše ture na Drini</span>
-        <h2 class="section-title section-title--light">
-          Izaberite svoju avanturu
-        </h2>
-        <p class="section-sub" style="color: rgba(255,255,255,0.45);">
+        <span class="eyebrow">Naše ture na Drini</span>
+        <h2 class="section-title">Izaberite svoju avanturu</h2>
+        <p class="section-sub">
           Dve pažljivo osmišljene rute — od mirnijeg uvoda do adrenalinske
           avanture pored Kućice na steni.
         </p>
@@ -272,7 +210,56 @@ const includes = [
         </a>
       </div>
     </div>
+  </section>
 
+  <!-- Includes -->
+  <section class="section section--white">
+    <div class="topo-lines" aria-hidden="true">
+      <svg
+        viewBox="0 0 1440 500"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g stroke="rgba(74,186,130,0.12)" stroke-width="0.8" fill="none">
+          <path
+            d="M-100,430 C200,395 360,435 560,402 C760,370 920,410 1120,378 C1310,350 1420,385 1540,368"
+          ></path>
+          <path
+            d="M-100,395 C215,358 378,400 580,366 C780,332 940,375 1140,340 C1330,310 1432,348 1540,330"
+          ></path>
+          <path
+            d="M-100,360 C232,320 395,365 600,328 C800,295 960,338 1160,302 C1350,270 1440,310 1540,292"
+          ></path>
+          <path
+            d="M-100,325 C250,282 412,328 620,290 C820,255 980,300 1180,262 C1370,228 1448,270 1540,252"
+          ></path>
+          <path
+            d="M-100,290 C268,244 430,292 638,252 C840,215 1000,262 1200,222 C1390,188 1455,232 1540,212"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Sve na jednom mestu</span>
+        <h2 class="section-title">Sva oprema i logistika — naša briga</h2>
+        <p class="section-sub">
+          Ista ona preciznost i disciplina koje su potrebne za vrhunske sportske
+          rezultate, utkane su u svaki naš program.
+        </p>
+      </div>
+      <div class="includes-feature-grid">
+        {
+          includes.map((item) => (
+            <div class="includes-feature-card">
+              <div class="includes-feature-card__icon" set:html={item.icon} />
+              <h3 class="includes-feature-card__title">{item.title}</h3>
+              <p class="includes-feature-card__text">{item.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
     <div class="section-wave" aria-hidden="true">
       <svg
         viewBox="0 0 1440 80"
